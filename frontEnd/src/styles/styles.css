@@ -1,0 +1,40 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home1 {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../public/images/vineyards.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home2 {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../public/images/barrels.jpg');
+    background-color: rgba(138, 43, 227, 0.4);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home3 {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../public/images/cup.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
