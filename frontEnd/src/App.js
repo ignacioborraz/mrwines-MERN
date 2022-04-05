@@ -2,6 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 //importo las páginas que se van a renderizar
 import Home from './pages/Home'
+import Welcome from  "./pages/Welcome"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
               {props.user ? <Route path='/login' element={<MyCarousel />} /> : <Route path='/login' element={<LogIn />} />}
               <Route path='/signout' element={<Home  />} />
               <Route path='/welcome' element={<Welcome  />} /> */}
+              <Route path="/Welcome" index element={<Welcome />} />
               <Route path="/*" index element={<Home />} />
           </Routes>
           {/* <MySnackBar /> */}

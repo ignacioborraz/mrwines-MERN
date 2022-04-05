@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.div-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-image: url(https://cdn.discordapp.com/attachments/942931026911559680/960922112145653930/U2ZKKDKS5OIXEHE7JGNX2BOURA.jpg);
+    background-size: contain;
+    background-position: top;
+}
+
+.custom-img {
+    width: 300px;
+    height: 300px;
+}
+
+.div-1 {
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    flex-direction: column;
+    width: 30rem;
+    text-align: center;
+    color: aliceblue;
+    margin-left: 40%;
+    font-family: 'Tangerine', cursive;
+    margin-top: 5%;
+}
+
+.p-1 {
+    margin-bottom: 1rem;
+}
+
+.custom-linkRouter {
+    text-decoration: none;
+    color: rgb(184, 49, 49);
+    font-weight: bold;
+}
+.custom-linkRouter:hover {
+    color: rgb(133, 40, 40);
+    
+}
+
+.div-2 {
+    margin-top: 1rem;
+}
+
+.custom-name {
+    font-weight: bold;
+    color: rgb(184, 49, 49);
+}
+
+@media screen and (max-width:800px){
+    .div-container {
+        background-size: cover;
+        background-position: top;
+    }
+}
+
