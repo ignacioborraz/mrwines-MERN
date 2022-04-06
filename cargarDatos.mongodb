@@ -1,0 +1,917 @@
+const database = 'mrWines'
+use(database)
+db.wines.drop()
+db.wines.insertMany([
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Reds",
+    "variety": "Merlot",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_me_res.png",
+    "color": "Intense red purple.",
+    "smell": "Excellent typical Merlot where we find above all notes of cherries accompanied by licorice, complemented by subtle touches of vanilla and toffee.",
+    "palate": "Silky and friendly from the beginning with elegant and balanced finish. The body is medium and the fresh black fruit makes this wine very balanced and pleasant.",
+    "food": "Italian cuisine not spicy and rich in tomato sauces. White meat garnished with creamy sauces and/or soft cheeses.",
+    "stars": [
+        "2"
+    ],
+    "price": 105,
+    "stock": {
+        "stock": [{
+            "amount": 251,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_ma_res.png",
+    "color": "Intense and deep ruby red.",
+    "smell": "Delicious aromas of black fruit such as berries, plums and cherries followed by pepper and subtle touches of vanilla and black chocolate. All very well balanced.",
+    "palate": "The beginning is marked by the dark plums and spices making this wine very generous in taste. The final structure is wide and round thanks to the presence of the barrels that has been excellently integrated. The after taste is long and elegant.",
+    "food": "Harmonizes perfectly with all types of barbecues, ripe cheeses and sweetand-sour sauces. Stews and herbs are another partner for this wine.",
+    "stars": [
+        "3"
+    ],
+    "price": 35,
+    "stock": {
+        "stock": [{
+            "amount": 924,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Reds",
+    "variety": "Intense red",
+    "country": "Chile",
+    "harvest": 5,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2020/12/cdd_intense_red.png",
+    "color": "Very Intense purple.",
+    "smell": "Delicate notes of prunes interwoven with soft touches of tobacco and dark chocolate produced by the oak barrels.",
+    "palate": "Characterised as a full wine, smooth and concentrated in the mouth. Intense black fruit notes can be tasted from the start, with a long and lingering finish.",
+    "food": "Ideal to accompany with Asian food and seasoned dishes.",
+    "stars": [
+        "5"
+    ],
+    "price": 105,
+    "stock": {
+        "stock": [{
+            "amount": 1515,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Reds",
+    "variety": "Pinot Noir",
+    "country": "Chile",
+    "harvest": 2,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2020/12/cdd_intense_red.png",
+    "color": "Bright and soft ruby red.",
+    "smell": "Complex aromas of strawberries and raspberries and notes of toasted French oak.",
+    "palate": "A medium full body Pinot Noir with good structure and a long, lingering finish.",
+    "food": "Great with chicken, pork, vegetarian dishes or even a gusty fish dish.",
+    "stars": [
+        "4"
+    ],
+    "price": 168,
+    "stock": {
+        "stock": [{
+            "amount": 582,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Reds",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "harvest": 2,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2020/12/cdd_intense_red.png",
+    "color": "Deep and intense ruby red..",
+    "smell": "Gorgeous and lovely brigth cherry, blackcurrant and dark plum with toasted oak.",
+    "palate": "Medium bodied with silky tannis and long, ripe fruit and berry aftertaste, with impressive balance of fruit and polish tannins.",
+    "food": "Red meats, spicy dishes and ripe cheeses such as Gruyere or blue cheese.",
+    "stars": [
+        "4"
+    ],
+    "price": 127,
+    "stock": {
+        "stock": [{
+            "amount": 472,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Sparkling",
+    "variety": "Extra Brut",
+    "country": "Chile",
+    "harvest": 2,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2020/12/cdd_devils_brut.png",
+    "color": "LLight yellow.",
+    "smell": "Delicate citrus notes interlace with green apple in the company of a light mineral touch from the valley’s limestone-rich soils.",
+    "palate": "The minerality comes through from the start along with rich and well-balanced acidity and a subtle touch of lime.",
+    "food": "Foods, especially sushi.",
+    "stars": [
+        "4"
+    ],
+    "price": 151,
+    "stock": {
+        "stock": [{
+            "amount": 581,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Rosé",
+    "variety": "Intense Rosé",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2020/12/cdd_devils_rose.png",
+    "color": "Intense strawberry colour with bright purple hints.",
+    "smell": "Deep aromas of red berries, blackberries and wild raspberries.",
+    "palate": "The pleasant acidity and intense body is maintained on the palate for a good time, accompanied by remarkable blackberry and fresh plums.",
+    "food": "It is very easy to drink on its own or joined with light dishes specially grilled tuna. White cheeses with good acidity such as mozzarella match this wine very well.",
+    "stars": [
+        "3"
+    ],
+    "price": 125,
+    "stock": {
+        "stock": [{
+            "amount": 324,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_ro_sc-di_res.png",
+    "color": "Light salmon.",
+    "smell": "Fresh, with deep touches of red berries, blackberries and wild raspberries",    
+    "palate": "The pleasant acidity and medium body is maintained on the palate for a good time, accompanied by remarkable flavours of blackberries and fresh plums.",
+    "food": "Ideal to accompany salads, fishes, seafood and cheeses with good acidity such as mozzarella.",
+    "stars": [
+        "3"
+    ],
+    "price": 109,
+    "stock": {
+        "stock": [{
+            "amount": 445,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "White",
+    "variety": "Pinot Grigio",
+    "country": "Chile",
+    "harvest": 3,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_pg_sc-di_res.png",
+    "color": "Clean and bright straw with green hues.",
+    "smell": "Fresh and classic pears aromas.",    
+    "palate": "Gentle, round and mouth - filling wine, with crisp acidity",
+    "food": "Ideal to join with salads and delicate fish such as sole. It also pairs wonderfully with shrimps and oysters.",
+    "stars": [
+        "3"
+    ],
+    "price": 114,
+    "stock": {
+        "stock": [{
+            "amount": 951,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "White",
+    "variety": "Sauvignon Blanc",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_sb_sc-di_res.png",
+    "color": "Straw yellow with soft green hues.",
+    "smell": "Fresh and citric. Peach with hints of gooseberry and tropical fruit.",    
+    "palate": "Gentle, round and mouth - filling wine, with crisp acidity",
+    "food": "Enjoy it with sea bass, ceviche and fresh salads.",
+    "stars": [
+        "3"
+    ],
+    "price": 110,
+    "stock": {
+        "stock": [{
+            "amount": 144,
+            "adminId": "624daf1ecebdc5a47624aae1"
+        }],
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Casillero del Diablo",
+    "type": "White",
+    "variety": "Chardonnay",
+    "country": "Chile",
+    "harvest": 1,
+    "photo": "https://www.casillerodeldiablo.com/wp-content/uploads/2021/12/cdd_eng_ch_sc_res.png",
+    "color": "Pale greenish yellow with golden and bright hints.",
+    "smell": "Fresh, showing its fruity character from the beginning. Notes of pineapple and peaches stand out along with soft hints of hazelnut.",
+    "palate": "Wine with good structure, an excellent balance, fresh and lively acidity. Medium bodied with a long and dry end palate. At the end you find green pear and delicate hints of white peach complemented with toast impression.",
+    "food": "Perfect to enjoy with delicate fish such as grilled sea bass, sole or turbot, garnished with capers or herbs creamy sauces.",
+    "stars": [
+        "4"
+    ],
+    "price": 50,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Chateau",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "France",
+    "harvest": "3",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10978_1.jpg",
+    "color": "Light salmon.",
+    "smell": "The presence of fruity aromas of cherries, plums, sour cherries define the typical descriptors of the varietal.",
+    "palate": "The pleasant acidity and medium body is maintained on the palate for a good time, accompanied by remarkable flavours of blackberries and fresh plums.",
+    "food": "Ideal to accompany salads, fishes, seafood and cheeses with good acidity such as mozzarella.",
+    "stars": [
+        3
+    ],
+    "price": 58,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Bartenura",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Italy",
+    "harvest": "5",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10757.jpg",
+    "color": "Pink, with ruby reflections.",
+    "smell": "Delicate and fresh aromas.",
+    "palate": "The pleasant acidity and medium body is maintained on the palate for a good time.",
+    "food": "Ideal to accompany salads, fishes, seafood and cheeses with good acidity such as mozzarella.",
+    "stars": [
+        4
+    ],
+    "price": 62,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Vik La Piu Belle Rose",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "France",
+    "harvest": "1",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10761_base.jpg",
+    "color": "Ruby red with marked violet reflections, very lively.",
+    "smell": "Plum jam and a persistent cherry.",
+    "palate": "It has a great balance between sugar and acidity, with an unctuous and voluminous body, with a fresh fruitiness.",
+    "food": "Ideal to accompany salads and seafood.",
+    "stars": [
+        2
+    ],
+    "price": 128,
+    "stock": {
+        "stock": 60,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Hito",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Spain",
+    "harvest": "2",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10555_1.jpg",
+    "color": "Cherry red color with intense ruby halo.",
+    "smell": "There are notes of fruits such as sour cherry, cherry and raspberry.",
+    "palate": "Fresh and balanced wine perfect for pairing with summer, friends and the sea.",
+    "food": "Drink on its own or joined with light dishes specially grilled chicken.",
+    "stars": [
+        3
+    ],
+    "price": 59,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Sentero",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Spain",
+    "harvest": "4",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10720.jpg",
+    "color": "Cherry red color with intense ruby halo.",
+    "smell": "On the nose, a touch of candied strawberry, plum jam and a persistent cherry.",
+    "palate": "In the mouth it has a great balance between sugar and acidity, with an unctuous and voluminous body, with a fresh fruitiness.",
+    "food": "Drink with light dishes specially grilled tuna.",
+    "stars": [
+        3
+    ],
+    "price": 70,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Las Moras",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "3",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be72791.png",
+    "color": "Pink, with ruby reflections.",
+    "smell": "Delicate and fresh aromas. There are notes of fruits such as sour cherry, cherry and raspberry.",
+    "palate": "Fresh and balanced wine perfect for pairing with summer, friends and the sea.",
+    "food": "Drink on its own or joined with light dishes specially grilled tuna.",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Elementos",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "2",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be72777.jpg",
+    "color": "Ruby red with marked violet reflections, very lively.",
+    "smell": "The presence of fruity aromas of cherries, plums, sour cherries define the typical descriptors of the varietal.",
+    "palate": "Sweet and soft tannins. Harmonic with clear perception of red fruits.",
+    "food": "It is very easy to drink with white cheeses with good acidity such as mozzarella.",
+    "stars": [
+        3
+    ],
+    "price": 5,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Las Moras",
+    "type": "Reds",
+    "variety": "Syrah",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be72782_1.jpg",
+    "color": "Deep, dark red.",
+    "smell": "Delicate notes of plums and blackcurrants are perfectly complemented by a subtle touch of cedar from the oak barrel.",
+    "palate": "Presents good structure and density with outstanding notes of plums and blackcurrants. Smooth, velvety tannins lead to a long and elegant finish.",
+    "food": "This wine pairs beautifully with various cuts of red meats, pork, and lamb. Also recommended with creamy cheeses.",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Rutini",
+    "type": "Reds",
+    "variety": "Syrah",
+    "country": "Argentina",
+    "harvest": "5",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be70457_2.jpg",
+    "color": "Deep, bright, intense ruby-red.",
+    "smell": "Delicate aromas of red cherries and plums intermingle with an elegant touch of blackcurrant. Aging in oak barrels lends remarkable complexity on the nose with notes of vanilla and cedar.",
+    "palate": "This wine has warm structure with smooth and enveloping tannins at the same time. The fruit is perfectly balanced with the contributions of the oak and ends with a pleasingly long and lingering finish.",
+    "food": "This Cabernet Sauvignon is ideal with various cuts of red meats. Also recommended with aged cheeses.",
+    "stars": [
+        4
+    ],
+    "price": 12,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Dedicado",
+    "type": "Reds",
+    "variety": "Malvec",
+    "country": "Argentina",
+    "harvest": "5",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be72960_2.jpg",
+    "color": "Intense violet.",
+    "smell": "Stands out for its intense red and black fruit notes, emphasised by a touch of cherry and plum on the nose.",
+    "palate": "In the mouth, the wine stands out for its elegance and structure. The fluctuating temperatures help ensure the fruit notes feel fresher.",
+    "food": "It is a wine that perfectly accompanies any pasta dish and diverse types of cheeses, such as Camembert or Roquefort.",
+    "stars": [
+        4
+    ],
+    "price": 14,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Hieron Rosso",
+    "type": "Reds",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "harvest": "3",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10857_2.jpg",
+    "color": "Red with violet hues.",
+    "smell": "Soft notes of black plums, spices and white pepper perfectly combine with a toasted flavour provided by barrel ageing.",
+    "palate": "On the palate, it shows good structure and balance. Notes of plums and spices stand out, along with elegant and silky tannins, giving way to a persistent finish.",
+    "food": "Ideal for pairing with roasted red meats and mature cheeses",
+    "stars": [
+        3
+    ],
+    "price": 9,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "I Somelieri",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Italy",
+    "harvest": "2",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/V/I/VI10865_BASE.jpg",
+    "color": "Bright, intense, violet-red.",
+    "smell": "This wine expresses delicate notes of plum and black cherries, which accompany a soft, delicate toasted notes from the barrel ageing.",
+    "palate": "This is a very elegant and well-structured wine, with a marked character and strong tannins. It is characterised by the prominent expression of fruits, specifically plum and black cherry. Its ageing in barrels gives this wine a greater degree of complexity.",
+    "food": "Ideal with roasted red meats and aged cheeses.",
+    "stars": [
+        3
+    ],
+    "price": 12,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Mas Alta Cirerets",
+    "type": "Reds",
+    "variety": "Blend",
+    "country": "Spain",
+    "harvest": "1",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10036_1.jpg",
+    "color": "Dark and deep purple.",
+    "smell": "A ripe wine with pronounced notes of black cherries, blackcurrants, plums, and a subtle touch of vanilla from the oak barrels.",
+    "palate": "Delicate notes of black plums complemented by silky tannins. An enveloping wine with well-balanced palate",
+    "food": "Red meats, lamb, and dishes prepared with game meats.",
+    "stars": [
+        3
+    ],
+    "price": 14,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Don Luciano Crianza",
+    "type": "Reds",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "harvest": "3",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/v/i/vi10731_1.jpg",
+    "color": "Dark and deep purple.",
+    "smell": "Ripe, densely packed with black cherry and dark plum, slightly spicy, with a soft touch of bitter chocolate",
+    "palate": "Notes of dark plums, with firm and round tannins, velvety texture, smooth, well balanced and mouth filling wine.",
+    "food": "Different kind of grilled meat. Lamb stews with herbs and other preparations based on this meat or game meat.",
+    "stars": [
+        3
+    ],
+    "price": 9,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Altas Cumbre",
+    "type": "White",
+    "variety": "Sauvignon Blanc",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be02781sauv.-blanc.gif",
+    "color": "Light, lemon yellow.",
+    "smell": "Attractive aromas of grapefruit and gooseberrie, all complemented with a soft mineral and saline notes.",
+    "palate": "Beautifully balanced and well-crafted blend. Medium acidity and bright palate with flavours of lime and grapefruit.",
+    "food": "Thanks to its versality, this wine matches perfectly with fresh sea food and different types of salad.",
+    "stars": [
+        2
+    ],
+    "price": 3,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Trumpeter",
+    "type": "White",
+    "variety": "Torrontés",
+    "country": "Argentina",
+    "harvest": "2",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/t/r/trumpeter-rva.to-1.jpg",
+    "color": "Bright and clean straw colour with green reflections.",
+    "smell": "It dazzles with fruity, floral and citrus notes.",
+    "palate": "Smooth and round from the beginning. It has a crisp acidity and a pleasant freshness",
+    "food": "Perfect with fish and shellfish, salads and different types of appetisers. ",
+    "stars": [
+        2
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Saurus",
+    "type": "White",
+    "variety": "Chardonnay",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://vinotecaligier.com/media/catalog/product/cache/1/image/500x500/9df78eab33525d08d6e5fb8d27136e95/b/e/be72607.jpg",
+    "color": "Light yellow lemon.",
+    "smell": "Fresh and intense aromas with notes of fruits-apricots.",
+    "palate": "It is round with a very good structure. It's acidity makes the wine fresher and more pleasant on the palate.",
+    "food": "Fish and various types of salads.",
+    "stars": [
+        3
+    ],
+    "price": 11,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Qubo",
+    "type": "Reds",
+    "variety": "Cabernet Sauvignon",
+    "country": "Argentina",
+    "harvest": "7",
+    "photo": "https://static.wixstatic.com/media/550aad_8598e663ce204f2b8ab9c0d2d76655cb~mv2.png/v1/fill/w_140,h_440,al_c,usm_0.66_1.00_0.01,enc_auto/Qubo%20cabernet%20perlado.png",
+    "color": "Intense and deep red-colored wine.",
+    "smell": "On the nose, pepper and vanilla are perceived, along with tobacco notes",
+    "palate": "Full-bodied wine, promising a delicious astringent finishing and a soft aftertaste",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Qubo",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "5",
+    "photo": "https://static.wixstatic.com/media/550aad_ad9990075070425dbe1a3f0445842a51~mv2.png/v1/fill/w_139,h_440,al_c,usm_0.66_1.00_0.01,enc_auto/Qubo%20malbec%20perlado.png",
+    "color": "It has an intense and deep purplish color.",
+    "smell": "Its aroma reminisces blackberries and plums.",
+    "palate": "In the mouth it is complex, highlighting berries and notes coming from its aging in wood. Long and soft finishing.",
+    "food": "",
+    "stars": [
+        4
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Raices Argentinas",
+    "type": "Reds",
+    "variety": "Cabernet Sauvignon",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://static.wixstatic.com/media/550aad_adf05da00c8042e7a9d0423828481dc7~mv2.png/v1/crop/x_0,y_10,w_342,h_1150/fill/w_129,h_420,al_c,usm_0.66_1.00_0.01,enc_auto/montaje%20cab%20final%20baja.png",
+    "color": "Intense ruby-colored wine, brilliant and clean.",
+    "smell": "On the nose, the varietal exhibits all its typicality, giving aromas of black fruits, green pepper and coffee",
+    "palate": "The mouth has a strong presence and good volume, strong tannins and balanced acidity. Long finishing.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Raices Argentinas",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://static.wixstatic.com/media/550aad_f220f8bd736847c7aabc84eca9a87180~mv2.png/v1/crop/x_0,y_13,w_342,h_1142/fill/w_130,h_425,al_c,usm_0.66_1.00_0.01,enc_auto/montaje%20malbec%20final%20baja.png",
+    "color": "Intense purple-colored wine, brilliant and clean.",
+    "smell": "On the nose, it has Malbec characteristic fruits of Maipú: ripe plums, dark chocolate and mild leather notes..",
+    "palate": "In the mouth, it is sweet and gentle, with a delicate vanilla touch. Its aging in oak gives the wine complexity and a long finishing.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Cuatro Fincas",
+    "type": "Sparkling",
+    "variety": "Extra Brut",
+    "country": "Argentina",
+    "harvest": "2",
+    "photo": "https://static.wixstatic.com/media/550aad_e19970e0d79e4862baf59ca2b453b3e9~mv2.png/v1/fill/w_150,h_435,al_c,usm_0.66_1.00_0.01,enc_auto/FINAL%20mas%20liviano%20espumante%20cuatro%20finca.png",
+    "color": "A soft yellow color of greenish tints, with a fine and persistent perlage",
+    "smell": "The aroma is fully highlighted by fresh fruit, like the white peach.",
+    "palate": "The flavor is perceived balanced in body and structure, with an acidity that highlights the freshness and youth.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Cuatro Fincas",
+    "type": "Reds",
+    "variety": "Cavernet Sauvignon Merlot",
+    "country": "Argentina",
+    "harvest": "5",
+    "photo": "https://static.wixstatic.com/media/550aad_e66da7e41dff4fd993e3caef7bf66e27~mv2.png/v1/fill/w_139,h_430,al_c,usm_0.66_1.00_0.01,enc_auto/CUATRO-FINCAS-CS-ME%20baja.png",
+    "color": "Ruby red wine with violet sparkles.",
+    "smell": "On the nose it is highlighted by its opulence in red fruits and black pepper. ",
+    "palate": "In the mouth they are marked tannins, giving a concentrated wine, robust and rich fruit. the presence of vanilla, coconut and tobacco stands out.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Cuatro Fincas",
+    "type": "Reds",
+    "variety": "Malbec Syrah",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://static.wixstatic.com/media/550aad_2ec795793c7b43e68cfc9d78ce559469~mv2.png/v1/crop/x_4,y_0,w_322,h_1000/fill/w_140,h_425,al_c,usm_0.66_1.00_0.01,enc_auto/CUATRO-FINCAS-MA-SY%20baja.png",
+    "color": "Dark and intense red wine",
+    "smell": "The nose combines in an impeccable balance the spicy aromas of Syrah, with the fruit of Malbec. ",
+    "palate": "Highlights notes of vanilla and leather. In the mouth is a wine of good acidity, flavors of plum jam and black fruits, it Presents balanced, so tannins and delicate sensations, with a sweet and long nish.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Vincent",
+    "type": "White",
+    "variety": "Sweet White",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://static.wixstatic.com/media/550aad_4eae30216a9b4222beb686dc2ef090be~mv2.png/v1/crop/x_0,y_23,w_800,h_2471/fill/w_145,h_456,al_c,usm_0.66_1.00_0.01,enc_auto/vincent%20blanco%20dulce.png",
+    "color": "Pale yellow wine with greenish reflections.",
+    "smell": "Sweet and fresh entry, aromas of pear, pineapple and white flowers are perceived on the nose.",
+    "palate": "On the palate it is unctuous, fresh and with good acidity. It is recommended to serve at 8°C.",
+    "food": "Ideal for creating cocktails with ripe red fruit juices and ice. It can also be drunk on its own as a dessert wine.",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Vincent",
+    "type": "White",
+    "variety": "Chardonnay",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://static.wixstatic.com/media/550aad_74f094e4121948a7aeb4b9393e7322f2~mv2.png/v1/crop/x_95,y_0,w_502,h_1547/fill/w_136,h_420,al_c,usm_0.66_1.00_0.01,enc_auto/relieve%20solo%20web.png",
+    "color": "Yellow-colored wine with green flashes.",
+    "smell": "Pear and pineapple aromas, with light vanilla notes.",
+    "palate": "In the mouth, it is long, fresh and has a good acidity. ",
+    "food": "",
+    "stars": [
+        4
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Vincent",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "2",
+    "photo": "https://static.wixstatic.com/media/550aad_f215c4c5812e4e178a0a87d76bc9cc64~mv2.png/v1/fill/w_133,h_420,al_c,usm_0.66_1.00_0.01,enc_auto/mockup%20final%20vincent%202020%20web.png",
+    "color": "It has an intense and deep purplish color.",
+    "smell": "Its aroma reminisces blackberries and plums.",
+    "palate": "In the mouth it is complex, highlighting berries and notes coming from its aging in wood. Long and soft finishing.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Vincent",
+    "type": "Reds",
+    "variety": "Cabernet Sauvignon",
+    "country": "Argentina",
+    "harvest": "3",
+    "photo": "https://static.wixstatic.com/media/550aad_940de4ce5d55437a8eb9596198260f33~mv2.png/v1/fill/w_134,h_420,al_c,usm_0.66_1.00_0.01,enc_auto/relieve%20rosa%20web.png",
+    "color": "Intense and deep red-colored wine.",
+    "smell": "On the nose, pepper and vanilla are perceived, along with tobacco notes. ",
+    "palate": "Full-bodied wine, promising a delicious astringent finishing and a soft aftertaste.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "",
+    "type": "Reds",
+    "variety": "",
+    "country": "Argentina",
+    "harvest": "",
+    "photo": "",
+    "color": "",
+    "smell": "",
+    "palate": "",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "",
+    "type": "Reds",
+    "variety": "",
+    "country": "Argentina",
+    "harvest": "",
+    "photo": "",
+    "color": "",
+    "smell": "",
+    "palate": "",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "",
+    "type": "Reds",
+    "variety": "",
+    "country": "Argentina",
+    "harvest": "",
+    "photo": "",
+    "color": "",
+    "smell": "",
+    "palate": "",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 10,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+])

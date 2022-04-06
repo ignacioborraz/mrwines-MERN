@@ -20,7 +20,7 @@ const wineControllers = {
     
     getTypeWines: async (req,res) => {
         let wines
-        let type = req.body.type
+        let {type} = req.body.type
         let error = null
         try {
             wines = await Wine.find({type:type})
@@ -37,12 +37,12 @@ const wineControllers = {
 
     oneWine: async (req,res) => {
         const id = req.params.id
-        const user = req.user._id
+        //const user = req.user._id
         let wines
         let error = null
         try {
             wines = await Wine.findOne({_id:id})
-                .populate("stock")
+                //.populate("stock")
         } catch (err) {
             error = err
             console.log(error)
@@ -55,10 +55,10 @@ const wineControllers = {
     },
     
     uploadWine: async (req,res) => {
-        const {nameWine,type,variety,country,harvest,smell,color,photo,stock,stars,price} = req.body
-        const user = req.user._id
+        const {nameWine,type,variety,country,harvest,smell,color,palate,photo,stock,stars,price} = req.body
+        //const user = req.user._id
         try {
-            const newWine = new Wine ({nameWine,type,variety,country,harvest,smell,color,photo,stock,stars,price}).save()
+            const newWine = new Wine ({nameWine,type,variety,country,harvest,smell,color,palate,photo,stock,stars,price}).save()
             res.json({success: true,
                 response: {newWine},
                 message: "the wine has been uploaded"})
@@ -76,7 +76,7 @@ const wineControllers = {
     },
 
     modifyInfoWine: async (req,res) => {
-        const {nameWine,type,variety,country,harvest,smell,color,photo,price} = req.body
+        const {nameWine,type,variety,country,harvest,smell,color,palate,photo,price} = req.body
         const id = req.params.id
         const user = req.user._id
         try {
@@ -88,6 +88,7 @@ const wineControllers = {
                 "country": country,
                 "harvest": harvest,
                 "smell": smell,
+                "palate": palate,
                 "color": color,
                 "photo": photo,
                 "price": price}}, {new: true})
@@ -105,11 +106,11 @@ const wineControllers = {
     modifyStockWine: async (req,res) => {
         const {stock} = req.body
         const id = req.params.id
-        const user = req.user._id
+        //const user = req.user._id
         try {
             const modifyWine = await Wine
             .findOneAndUpdate({"_id": id}, {$set:{
-                "stock": stock}}, {new: true})
+                "stock.stock": stock}}, {new: true})
             res.json({success: true,
                 response: {modifyWine},
                 message: "the stock has been modified"})

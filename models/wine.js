@@ -7,15 +7,13 @@ const wineSchema = new mongoose.Schema ({
     country: {type:String, required:true},
     harvest: {type:Number, required:true},
     smell: {type:String, required:true},
+    palate: {type:String, required:true},
     color: {type:String, required:true},
     photo: {type:String, required:true},
     stock: {
-        stock: [{
-            amount: {type: String},
-            userId: {type:mongoose.Types.ObjectId, ref:'user'}
-        }],
+        stock: {type:Number, required:true},
         shipping: [{
-            amount: {type: String},
+            amount: {type:String},
             userId: {type:mongoose.Types.ObjectId, ref:'user'}
         }]
     },
