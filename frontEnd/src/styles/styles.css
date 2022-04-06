@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
+    
 }
 .home {
     width: 100%;
@@ -16,9 +17,11 @@
     align-items: center;
     justify-content: center;
     margin: .5rem 0;
+    
 }
 .topHome {
     background-image: url('../../public/images/vineyards.jpg');
+    margin-top:0;
 }
 .bestWines {
     background-image: url('../../public/images/cellar.jpg');
@@ -85,14 +88,144 @@
     width: 100%;
     margin-bottom: 26vh;
 }
+.signBody{
+     display:flex;
+    flex-direction: column; 
+    border-radius:2em;
+    border:1px solid black;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    align-self:center;
+    min-height: 62vh;
+    min-width:40%;
+    margin-top: 4vh;
+    backdrop-filter:blur(7px);
+    background-color:rgba(255, 255, 255, 0.116);
 
+}
+.containerForm{
+    background-image: linear-gradient(120deg, #800040 0%, #fccb90 100%); ;
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+    background-size:cover;
+}
+.signuptext{
+    font-size:2.5em;
+    
+}
+.inputForm{
+    margin-top:10px;
+    border-radius:5px;
+    height: 5vh;
+    border: 1px solid black; 
+    /* width: 40vw; */
+    min-width: 280px;
+    max-width: 700px; 
+    margin: 1rem 0.75rem 0;
+    background-color:rgba(255, 255, 255, 0.082);
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+}
+.inputForm::placeholder{
+    color:white;  
+}
+.btnForm{
+    margin-top:1rem;
+    height: 2em;
+    border:1px solid black;
+    background-color:rgba(255, 255, 255, 0.082);
+    border-radius:7px;
+    color:white;
+    height:2.3em;
+    width:8em;
+    justify-content: center;
+    margin-bottom:1em;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: -2px 2px 2px black;
+}
+.divBtn{
+    display:flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.textForm{
+    font-family: 'Roboto', sans-serif;
+    color:white;
+    
+}
+.text-shadow{
+    text-shadow:2px 3px rgb(29, 17, 17);
+    font-size:1.2em;
+    text-align:center;
+    margin-top:2em;
+}
+.textForm p{
+    font-size:1.2em;
+    font-family: 'Roboto', sans-serif;
+    color:white !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+.textDecoration{
+    text-decoration: none !important;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    border-bottom:2px solid white;
+  
+}
+.textDecoration:hover{
+    color:#c091a9;
+    font-weight: bold;
+    font-size:1em;
+    border-bottom:2px solid #c091a9;
+}
+.BgSignUp{
+    background-image: url('../../public/images/backgroundForm.jpg');
+}
+.BgSignIn{
+    background-image: url('../../public/images/backgroundSignIn.jpg');
+    background-size:cover;
+}
+.GoogleImg{
+ 
+    width:6em;
+    height:4.2em;
+}
+.divGoogle{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:0;
+    
+}
+.iconoNav{
+    color:#800040 !important;
+    background-color: rgba(255, 255, 255, 0.336)!important;
+    border: 1px solid #800040;
+    border-radius:2em !important;
+}
 
 @media screen and (max-width: 600px){
     .logoHome{
       width: 60vw;
     }
+    .signBody{
+        width:70%;
+
+    }
 }
+
 @media screen and (max-width: 900px){
+
     .logoHome{
         width: 40vw;
       }
@@ -103,6 +236,15 @@
     }
     .cardTopFive{
         margin: .5rem;
+    }
+    .signBody{
+        width:65%;
+
+    }
+}
+@media screen and (max-width: 450px){
+    .signBody{
+        width:95%;
     }
 }
 @media screen and (min-width: 1500px){
