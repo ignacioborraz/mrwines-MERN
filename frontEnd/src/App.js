@@ -2,6 +2,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 //importo las páginas que se van a renderizar
 import Home from './pages/Home'
+import Welcome from  "./pages/Welcome"
+import Error404 from "./pages/Error404"
+import Wineinfo from "./pages/Wineinfo"
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
               {props.user ? <Route path='/login' element={<MyCarousel />} /> : <Route path='/login' element={<LogIn />} />}
               <Route path='/signout' element={<Home  />} />
               <Route path='/welcome' element={<Welcome  />} /> */}
+              <Route path="/Welcome" index element={<Welcome />} />
+              <Route path="/Error404" index element={<Error404 />} />
+              <Route path="/Wineinfo" index element={<Wineinfo />} />
               <Route path="/*" index element={<Home />} />
           </Routes>
           {/* <MySnackBar /> */}
