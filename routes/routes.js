@@ -42,7 +42,7 @@ Router.route('/wines/:id')
 Router.route('/stock/:id')
 .put(modifyStockWine)
 
-Router.route('/tineraries')
+/* Router.route('/tineraries')
 .get(getTineraries)
 .post(uploadTinerary)
 
@@ -79,6 +79,6 @@ Router.route('/tineraries/comment')
 .put(passport.authenticate('jwt', {session: false}), modifyComment)
 
 Router.route('/tineraries/comment/:id')
-.post(passport.authenticate('jwt', {session: false}), deleteComment)
+.post(passport.authenticate('jwt', {session: false}), deleteComment) */
 
 module.exports = Router
