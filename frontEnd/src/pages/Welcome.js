@@ -17,7 +17,7 @@ function Welcome() {
           </p>
         </div>
         <div className="div-2">
-          <p>
+          <p className="p-2">
             <LinkRouter className="custom-linkRouter" to="signIn">
               <p>Go to Experience</p>
             </LinkRouter>

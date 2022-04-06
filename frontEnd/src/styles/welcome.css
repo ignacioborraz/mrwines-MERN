@@ -67,4 +67,92 @@
         background-position: top;
     }
 }
+@media screen and (max-width:1000px){
+    .div-container {
+        background-size: cover;
+        background-position: top;
+    }
+}
+@media screen and (max-width:805px){
+    .div-1 {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.603);
+        height: 100%;
+        width: 100%;
+        font-size: 3.2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .div-2 {
+
+        font-size: 3.2rem;
+    }
+    .p-1 {
+        margin: 0;
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-width:420px){
+    .div-1 {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.603);
+        height: 100%;
+        width: 100%;
+        font-size: 2.8rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .div-2 {
+        margin: 0;
+        font-size: 2.8rem;
+    }
+    .p-1 {
+        margin: 0;
+        font-size: 2.8rem;
+    }
+    .div-container {
+        margin: 0;
+    }
+}
+@media screen and (max-width:320px){
+    .div-1 {
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.603);
+        height: 100%;
+        width: 100%;
+        font-size: 2.4rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .div-2 {
+        margin: 0;
+        font-size: 2.4rem;
+    }
+    .p-1 {
+        margin: 0;
+        font-size: 2.4rem;
+    }
+}
+@media screen and (max-width:240px){
+    .div-1 {
+        background-color: rgba(0, 0, 0, 0.603);
+        height: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .div-2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    .p-1 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+    .p-2 {
+        margin-top: 2rem;
+    }
+}
+
 
