@@ -1,38 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap');.error{
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap'); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error{
     background-image: url("../assets/fondoerror.jpg");
     background-size: cover;
-    height: auto;
+    height: 100vh;
 }
 
 .mainbox {
     background-color: rgba(0, 0, 0, 0.664);
     margin: auto;
-    height: 600px;
+    height: 100vh;
     width: 100%;
     
   }
 .error3{
     margin: auto;
-    height: 600px;
-width: 600px;
+    height: 100vh;
+width: 50%;
 position: relative;
 }
   
     .err {
       color:white;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 12rem;
+      font-size: 20rem;
       position:absolute;
       left: 20%;
-      top: 8%;
+      top: 1%;
       font-family: 'Times New Roman', Times, serif;
-    }
+     }
   
   .far {
     position: absolute;
-    font-size: 8.5rem;
+    font-size: 12.5rem;
     left: 42%;
-    top: 15%;
+    top: 19%;
     color: white;
 
   }
@@ -40,26 +46,23 @@ position: relative;
    .err2 {
       color: white;
       font-family: 'Nunito Sans', sans-serif;
-      font-size: 12rem;
+      font-size: 20rem;
       position:absolute;
       left: 68%;
-      top: 8%;
+      top: 1%;
       font-family: 'Times New Roman', Times, serif;
-
     }
   
   .msg {
       text-align: center;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 1.6rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 3rem;
       position:absolute;
       left: 16%;
       top: 45%;
-      width: 75%;
+      width: 70%;
       color: white;
-      font-family: 'Tangerine', cursive;font-family: 'Roboto Slab', serif;
-      font-size: 2rem;
-      font-weight: 700;
+      font-weight: 400;
     }
     .copa{
         height: 75vh;
