@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import user from "./user.svg"
+import user from "./UserRed.svg"
 
 import "../styles/NavBar.css"
 import { Link as LinkRouter } from "react-router-dom"
@@ -162,10 +162,10 @@ const NavBar2 = (props) => {
                                     ) : (
                                         <div>
                                             <MenuItem onClick={handleCloseUserMenu} className="navLi">
-                                                <LinkRouter className="nav-linkUser" aria-current="page" to="/signIn">Sign in</LinkRouter>
+                                                <LinkRouter className="nav-linkUser" aria-current="page" to="/SignIn">Sign in</LinkRouter>
                                             </MenuItem>
                                             <MenuItem onClick={handleCloseUserMenu} className="navLi">
-                                                <LinkRouter className="nav-linkUser " to="/signUp">Sign Up</LinkRouter>
+                                                <LinkRouter className="nav-linkUser " to="/SignUp">Sign Up</LinkRouter>
                                             </MenuItem>
                                         </div>
                                     )

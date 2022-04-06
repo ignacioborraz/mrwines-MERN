@@ -2,6 +2,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 //importo las páginas que se van a renderizar
 import Home from './pages/Home'
+import SignIn from "./pages/SignIn"
+import SignUp from "./pages/SignUp"
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
               <Route path='/signout' element={<Home  />} />
               <Route path='/welcome' element={<Welcome  />} /> */}
               <Route path="/*" index element={<Home />} />
+              <Route path="/SignIn" index element={<SignIn/>}/>
+              <Route path ="/SignUp" index element={<SignUp/>}/>
           </Routes>
           {/* <MySnackBar /> */}
       </BrowserRouter>
