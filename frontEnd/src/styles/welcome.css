@@ -61,7 +61,7 @@
     color: rgb(184, 49, 49);
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:1000px){
     .div-container {
         background-size: cover;
         background-position: top;
@@ -84,7 +84,6 @@
         padding-right: 3rem;
     }
     .div-2 {
-
         font-size: 3.2rem;
     }
     .p-1 {
@@ -154,5 +153,3 @@
         margin-top: 2rem;
     }
 }
-
-
