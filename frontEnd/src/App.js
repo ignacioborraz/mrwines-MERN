@@ -2,9 +2,14 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 //importo las páginas que se van a renderizar
 import Home from './pages/Home'
+<<<<<<< HEAD
 import Welcome from  "./pages/Welcome"
 import Error404 from "./pages/Error404"
 import Wineinfo from "./pages/Wineinfo"
+=======
+import SignIn from "./pages/SignIn"
+import SignUp from "./pages/SignUp"
+>>>>>>> 3e18237ab2178ce7f3bbdfdd4c460deb6983641c
 
 function App() {
   return (
@@ -20,6 +25,8 @@ function App() {
               <Route path="/Error404" index element={<Error404 />} />
               <Route path="/Wineinfo" index element={<Wineinfo />} />
               <Route path="/*" index element={<Home />} />
+              <Route path="/SignIn" index element={<SignIn/>}/>
+              <Route path ="/SignUp" index element={<SignUp/>}/>
           </Routes>
           {/* <MySnackBar /> */}
       </BrowserRouter>
