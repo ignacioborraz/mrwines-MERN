@@ -128,11 +128,13 @@ const NavBar2 = (props) => {
                                         <span className='spanUser'> {props.user.name.firstName}</span>
                                         <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                             <Avatar alt="Remy Sharp" className='logo' src={props.user.imageUrl} />
+                                            
                                         </IconButton>
                                     </div>
                                 ) :
                                     (<IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                                        <Avatar alt="Remy Sharp" className='logo' src={user} />
+                                        {/* <Avatar alt="Remy Sharp" className='logo' src={user} /> */}
+                                        <Avatar className="iconoNav" alt="Remy Sharp"  variant="rounded" />
                                     </IconButton>)
                             }
                         </Tooltip>

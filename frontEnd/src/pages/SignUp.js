@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {Link as LinkRouter } from 'react-router-dom';
+import Navbar from "../components/Navbar"
+
+
 
  export default function SignUp(props) {
 
@@ -16,7 +19,8 @@ import {Link as LinkRouter } from 'react-router-dom';
     }
 
     return (
-        <div className="containerForm">
+        <div className="containerForm BgSignUp">
+            <Navbar/>
             <h1 className=" title white signuptext">Sign up</h1>
         <div className='signBody'>       
             
@@ -35,6 +39,9 @@ import {Link as LinkRouter } from 'react-router-dom';
                 </div>
                 <div className="divBtn">
                     <button type="submit" className="btnForm">Create Account</button>
+                </div>
+                <div className="textForm text-shadow divGoogle">
+                    <p>Sign up with </p><img className="GoogleImg" src={process.env.PUBLIC_URL+"images/Logogoogle.png"}/>
                 </div>
             </form>
             </div>
