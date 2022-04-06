@@ -1,4 +1,5 @@
 import {Link as LinkRouter} from "react-router-dom"
+import Typography from '@mui/material/Typography';
 
 
 //importo los estilos
@@ -11,6 +12,7 @@ export default function Home () {
                     <h1 className='festiveFont shadows title' sx={{color: 'rgb(165, 126, 196)', padding: '15px', marginTop: '50px', marginBottom: '10px'}}>Mr Wines</h1>
                     <h5 className='fredokaFont subtitle'>EXCELENCE AND PLEASURE</h5>
                     <LinkRouter to="cities" className='linksHero'><h5 variant='h5' className='fredokaFont button'>START!</h5></LinkRouter>
+                    <Typography>hola</Typography>
                 </div>
                 <div className='home2'> {/* para aplicar el fondo */}
                     <h1 className='festiveFont shadows title' sx={{color: 'rgb(165, 126, 196)', padding: '15px', marginTop: '50px', marginBottom: '10px'}}>Mr Wines</h1>
