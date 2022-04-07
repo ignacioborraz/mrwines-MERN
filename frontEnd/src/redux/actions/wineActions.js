@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const urlMrWines = 'http://localhost:3000/'
 
-const cityActions = {
+const wineActions = {
 
     getWines: () => {
         return async(dispatch, getState) => {
@@ -14,7 +14,7 @@ const cityActions = {
     getTypeWines: () => {
         return async(dispatch, getState) => {
             const answer = await axios.get(urlMrWines+`api/types`)
-            dispatch({type:'GET_WINES', payload:answer.data.response.wines})
+            dispatch({type:'GET_TYPES', payload:answer.data.response.wines})
         }
     },
 
@@ -73,6 +73,4 @@ const cityActions = {
 
 }
 
-export default cityActions;
-
-//la accion despacha al reductor
+export default wineActions
