@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Welcome from  "./pages/Welcome"
 import Error404 from "./pages/Error404"
 import Wineinfo from "./pages/Wineinfo"
+import WineDetails from "./pages/WineDetails"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 
@@ -21,9 +22,10 @@ function App() {
               <Route path="/Welcome" index element={<Welcome />} />
               <Route path="/Error404" index element={<Error404 />} />
               <Route path="/Wineinfo" index element={<Wineinfo />} />
-              <Route path="/*" index element={<Home />} />
+              <Route path="/WineDetails" index element={<WineDetails />} />              
               <Route path="/SignIn" index element={<SignIn/>}/>
               <Route path ="/SignUp" index element={<SignUp/>}/>
+              <Route path="/*" index element={<Home />} />
           </Routes>
           {/* <MySnackBar /> */}
       </BrowserRouter>

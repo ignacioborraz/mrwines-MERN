@@ -7,7 +7,7 @@ import dosCopas from "../assets/dosCopas.png"
 function Wineinfo(){
 
 return (
-<div>
+<div className="div" >
 
 <div className="container2">
       <div>
@@ -31,7 +31,7 @@ return (
       </div>
     </div>
 
-<body className="custom-div">
+<div className="custom-div">
   <section class="section-plans" id="section-plans">
 
     <div class="row">
@@ -305,7 +305,7 @@ return (
 
 
   </section>
-</body>
+</div>
 </div>
 
 

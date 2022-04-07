@@ -840,7 +840,7 @@ db.wines.insertMany([
     "color": "Intense and deep red-colored wine.",
     "smell": "On the nose, pepper and vanilla are perceived, along with tobacco notes. ",
     "palate": "Full-bodied wine, promising a delicious astringent finishing and a soft aftertaste.",
-    "food": "",
+    "food": "Ideal to accompany meats, such as deer and wild boar.",
     "stars": [
         3
     ],
