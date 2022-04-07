@@ -6,6 +6,7 @@ import Welcome from  "./pages/Welcome"
 import Error404 from "./pages/Error404"
 import Wineinfo from "./pages/Wineinfo"
 import WineDetails from "./pages/WineDetails"
+import Carrito from "./pages/Carrito"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/Welcome" index element={<Welcome />} />
               <Route path="/Error404" index element={<Error404 />} />
               <Route path="/Wineinfo" index element={<Wineinfo />} />
+              <Route path="/Carrito" index element={<Carrito />} />
               <Route path="/WineDetails" index element={<WineDetails />} />
               <Route path="/*" index element={<Home />} />
           </Routes>

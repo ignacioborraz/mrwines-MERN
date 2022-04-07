@@ -30,8 +30,10 @@
 }
 
 .custom-div3-details {
+	margin: 1rem 0;
     display: flex;
     align-items: center;
+	justify-content: space-around;
     width: 100%;
     height: 5rem;
 }
@@ -48,18 +50,36 @@
 }
 
 .custom-div1-details-subContainer {
-    background-color: rgba(194, 194, 194, 0.534);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    border: 2px solid rgb(110, 110, 110);
+    border: 20px solid;
+	border-image: url("../assets//marco.png");
+	border-image-slice: 14%;
+	border-image-repeat: round;
+	border-image-width: 30px;
+	border-image-outset: 20px;
 }
 
 .custom-price {
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.input-customised {
+	height: 4rem;
+	border: none;
+	width: 3rem;
+}
+.button-customised {
+	height: 4rem;
+	border: none;
+	cursor: pointer;
+}
+.container-input-number {
+	display: flex;
 }
 /* ///////////////////////Accordion///////////////// */
 
