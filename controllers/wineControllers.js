@@ -7,6 +7,7 @@ const wineControllers = {
         let error = null
         try {
             wines = await Wine.find()
+            //console.log(wines)
         } catch (err) {
             error = err
             console.log(error)
@@ -20,10 +21,11 @@ const wineControllers = {
     
     getTypeWines: async (req,res) => {
         let wines
-        let {type} = req.body.type
+        let type = req.body.type
         let error = null
         try {
             wines = await Wine.find({type:type})
+            //console.log(wines)
         } catch (err) {
             error = err
             console.log(error)
@@ -43,6 +45,7 @@ const wineControllers = {
         try {
             wines = await Wine.findOne({_id:id})
                 //.populate("stock")
+            //console.log(wines)
         } catch (err) {
             error = err
             console.log(error)
@@ -55,13 +58,14 @@ const wineControllers = {
     },
     
     uploadWine: async (req,res) => {
-        const {nameWine,type,variety,country,harvest,smell,color,palate,photo,stock,stars,price} = req.body
+        const {nameWine,type,variety,country,harvest,smell,color,palate,food,photo,stock,stars,price} = req.body
         //const user = req.user._id
         try {
-            const newWine = new Wine ({nameWine,type,variety,country,harvest,smell,color,palate,photo,stock,stars,price}).save()
+            const newWine = new Wine ({nameWine,type,variety,country,harvest,smell,color,palate,food,photo,stock,stars,price}).save()
             res.json({success: true,
                 response: {newWine},
                 message: "the wine has been uploaded"})
+            //console.log(wines)
         }
         catch (error) {
             console.log(error)
@@ -72,13 +76,22 @@ const wineControllers = {
 
     deleteWine: async (req,res) => {
         const id = req.params.id
-        await Wine.findOneAndDelete({_id:id})
+        try {
+            await Wine.findOneAndDelete({_id:id})
+            res.json({success: true,
+                message: "the wine has been deleted"})
+        }
+        catch (error) {
+            console.log(error)
+            res.json({ success: true,
+                message: "sorry! we couldn't deleted the wine, please try again!" })
+        }
     },
 
     modifyInfoWine: async (req,res) => {
-        const {nameWine,type,variety,country,harvest,smell,color,palate,photo,price} = req.body
+        const {nameWine,type,variety,country,harvest,smell,color,palate,food,photo,price} = req.body
         const id = req.params.id
-        const user = req.user._id
+        //const user = req.user._id
         try {
             const modifyWine = await Wine
             .findOneAndUpdate({"_id": id}, {$set:{
@@ -89,6 +102,7 @@ const wineControllers = {
                 "harvest": harvest,
                 "smell": smell,
                 "palate": palate,
+                "food": food,
                 "color": color,
                 "photo": photo,
                 "price": price}}, {new: true})
@@ -104,12 +118,13 @@ const wineControllers = {
     },
 
     modifyStockWine: async (req,res) => {
-        const {stock} = req.body
+        const stock = req.body
+        console.log(stock)
         const id = req.params.id
         //const user = req.user._id
         try {
             const modifyWine = await Wine
-            .findOneAndUpdate({"_id": id}, {$set:{
+            .findOneAndUpdate({"_id": id}, {$push:{
                 "stock.stock": stock}}, {new: true})
             res.json({success: true,
                 response: {modifyWine},

@@ -2,11 +2,8 @@
 import {combineReducers} from 'redux'
 
 //importo los redutores de REDUX que se van a combinar:
-import cityReducer from './cityReducer'
-import tineraryReducer from './tineraryReducer'
-import userReducer from './userReducer'
-import activityReducer from './activityReducer'
+import wineReducer from './wineReducer'
 
-const mainReducer = combineReducers({cityReducer,tineraryReducer,userReducer,activityReducer})
+const mainReducer = combineReducers({wineReducer})
 
 export default mainReducer

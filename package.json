@@ -12,5 +12,8 @@
         "passport": "^0.5.2",
         "passport-jwt": "^4.0.0",
         "react-redux": "^7.2.8"
+    },
+    "scripts": {
+        "start": "nodemon server.js"
     }
 }

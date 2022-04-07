@@ -735,7 +735,7 @@ db.wines.insertMany([
     "color": "Ruby red wine with violet sparkles.",
     "smell": "On the nose it is highlighted by its opulence in red fruits and black pepper. ",
     "palate": "In the mouth they are marked tannins, giving a concentrated wine, robust and rich fruit. the presence of vanilla, coconut and tobacco stands out.",
-    "food": "",
+    "food": "Ideal to accompany red meat, pasta or white meat with spicy sauces.",
     "stars": [
         3
     ],
@@ -756,7 +756,7 @@ db.wines.insertMany([
     "color": "Dark and intense red wine",
     "smell": "The nose combines in an impeccable balance the spicy aromas of Syrah, with the fruit of Malbec. ",
     "palate": "Highlights notes of vanilla and leather. In the mouth is a wine of good acidity, flavors of plum jam and black fruits, it Presents balanced, so tannins and delicate sensations, with a sweet and long nish.",
-    "food": "",
+    "food": "Enjoy it with pasta with red sauces.",
     "stars": [
         3
     ],
@@ -798,7 +798,7 @@ db.wines.insertMany([
     "color": "Yellow-colored wine with green flashes.",
     "smell": "Pear and pineapple aromas, with light vanilla notes.",
     "palate": "In the mouth, it is long, fresh and has a good acidity. ",
-    "food": "",
+    "food": "Red meats, hard cheeses (parmesan, reggianito), pasta with red sauces.",
     "stars": [
         4
     ],
@@ -819,7 +819,7 @@ db.wines.insertMany([
     "color": "It has an intense and deep purplish color.",
     "smell": "Its aroma reminisces blackberries and plums.",
     "palate": "In the mouth it is complex, highlighting berries and notes coming from its aging in wood. Long and soft finishing.",
-    "food": "",
+    "food": "Ideal to accompany red meats.",
     "stars": [
         3
     ],
@@ -852,16 +852,16 @@ db.wines.insertMany([
     }
 },
 {
-    "nameWine": "",
+    "nameWine": "Toia",
     "type": "Reds",
-    "variety": "",
+    "variety": "Blend",
     "country": "Argentina",
-    "harvest": "",
-    "photo": "",
-    "color": "",
-    "smell": "",
-    "palate": "",
-    "food": "",
+    "harvest": "5",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/toiatoiatoiaaaaaaaaasaasdasd1-1956a369ba983c004716028789744762-1024-1024.jpg",
+    "color": "Very intense red and violet colors.",
+    "smell": "The nose recalls candied red fruits, leather and the complexity of toasted oak.",
+    "palate": "In the mouth it is full, powerful and very long. Elegant.",
+    "food": "Drink it with pasta with red sauces.",
     "stars": [
         3
     ],
@@ -873,16 +873,289 @@ db.wines.insertMany([
     }
 },
 {
-    "nameWine": "",
+    "nameWine": "Argento",
     "type": "Reds",
-    "variety": "",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "6",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/argento-single-vineyard-finca-altamira-malbec1-6362fa391fa56bb92e15930069961382-640-0.jpg",
+    "color": "Deep violet red color",
+    "smell": "Predominance of red fruits.",
+    "palate": "Smooth on the palate unctuous with great volume and persistence.",
+    "food": "Ideal to accompany red meat, pasta or white meat with spicy sauces.",
+    "stars": [
+        3
+    ],
+    "price": 7,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Nieto Senetiner",
+    "type": "Reds",
+    "variety": "Malvec",
+    "country": "Argentina",
+    "harvest": "9",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/nsnse-00031-8d0a234b1c1f58215515805857070607-480-0.jpg",
+    "color": "Wine with a defined profile, deep red color and good intensity",
+    "smell": " Its notes of small red fruits and plums are the most dominant elements. That together with the touch of vanilla delivered by the wood give it elegance.",
+    "palate": "On the palate it presents itself with great personality, good body, fruity, harmonious and sensual.",
+    "food": "Ideal to accompany white meat with spicy sauces.",
+    "stars": [
+        3
+    ],
+    "price": 6,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Piatelli",
+    "type": "Reds",
+    "variety": "Cabernet Sauvignon",
     "country": "Argentina",
     "harvest": "",
-    "photo": "",
-    "color": "",
-    "smell": "",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/piattelli-reserva-cabernet-sauvigon-salta-11-6d335fbb71bbf5b9df15870893165664-640-0.jpg",
+    "color": "ntense purple in color.",
+    "smell": "bright aromas of red fruit and spices. ",
+    "palate": "Its body is full-bodied and its mouth is filled with red with soft tannins, leading to a long and elegant finish.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 12,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Altos Las Hormigas",
+    "type": "Reds",
+    "variety": "Malvec",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/altos-las-hormigas-tinto1-58a165edb7352b231e15968230929276-640-0.jpg",
+    "color": "A wine with a bright and attractive red color,",
+    "smell": "On the nose combines notes of red fruit and spices, but at the same time displays subtle citrus notes reminiscent of the peel of a fresh tangerine. ",
+    "palate": "On the palate it is a round wine, very easy to drink, with a silky texture and intense flavour. ",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Ben Marco",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "6",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/benmarco-malbec1-78fa41b1c2bea1761315880360848089-640-0.jpg",
+    "color": "Intense purple color",
+    "smell": "Aromas of ripe red fruit and roasted coffee beans. It is an exuberant wine, with a great structure, with penetrating flavors of blackcurrant and currant jam, balanced acidity and well-marked, round tannins.",
     "palate": "",
     "food": "",
+    "stars": [
+        3
+    ],
+    "price": 13,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Andeluna",
+    "type": "Reds",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/andeluna-13000000-malbec1-e5fed1c06f884c52d116189244467988-640-0.jpg",
+    "color": "Intense violet color.",
+    "smell": "Aromas in first impression? Oral notes such as violets, are present giving it a particular elegance. Red fruits (strawberry and blackberry) also appear.",
+    "palate": "On the palate it is fresh, with a consistent acidity. Smooth and balanced tannins. expression of the area.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 5,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Malamado",
+    "type": "Reds",
+    "variety": "Malvec",
+    "country": "Argentina",
+    "harvest": "8",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/malamado-malbec1-542d153a67da6d26f615871719627587-640-0.jpg",
+    "color": "Good intensity purple hue with some hints of orange.",
+    "smell": "Delicate and intense aroma of dried fruits, such as almonds, chestnuts and walnuts, in a suitable combination with notes of plums, figs, dried peaches.",
+    "palate": "Sweet and silky entry, with wide development and a persistent finish.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 16,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Don Nicanor",
+    "type": "White",
+    "variety": "Chardonnay",
+    "country": "Argentina",
+    "harvest": "3",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/don-nicanor-ch1-741122f8fb902b031415893738340591-640-0.jpg",
+    "color": "Yellow in color with green reflections.",
+    "smell": " it expresses elegant aromas of white flowers, peaches and apricots, which are combined with notes of vanilla from the passage through oak. ",
+    "palate": "On the palate it is friendly, fresh and unctuous.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 9,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Tomero",
+    "type": "White",
+    "variety": "Sauvignon Blanc",
+    "country": "Argentina",
+    "harvest": "5",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/tomerosauvignonblancc1-7fad63471d592729a415971726492339-640-0.jpg",
+    "color": "Bright greenish yellow colour. ",
+    "smell": "Intense aromas with the presence of cabbage and peas.",
+    "palate": "Sweet on the palate, fresh finish, with aromas of herbs such as rue that reveal the typicity of the variety.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 7,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Nieto Senetiner",
+    "type": "White",
+    "variety": "Chardonnay",
+    "country": "Argentina",
+    "harvest": "15",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/nietosenetine-rsenetiner-chardonnay1-a0a335a5504c4a7d9d15961253798902-640-0.jpg",
+    "color": "Intense white with greenish iridations that denote its indisputable personality.",
+    "smell": "On the nose, perfumes of fruit, apples and pineapple, butter and light toasted aromas of the oak from the barrel are combined.",
+    "palate": "With a distinguished body on the palate and a fullness on the palate that confirms its structure.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Salentein",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "4",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/salentein-re-sryah-rosado1-89836ede1980cca47116469231591584-640-0.jpg",
+    "color": "Pale pink, bright.",
+    "smell": "On the nose, intense aromas of fresh fruits such as strawberries and cherries are perceived, combined with subtle floral notes.",
+    "palate": "In the mouth it is fruity, with balanced acidity, fresh and persistent finish.",
+    "food": "The flavors are fruity in a rosé that would make a great companion to shrimp in sweet and sour sauce.",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Flora",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "3",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/flora-by-rose1-e5f61565ddc83d6c6b16470309605929-640-0.jpg",
+    "color": "In the glass a pale pink color is appreciated",
+    "smell": "On the nose the wine is expressed with delicate notes of very fresh red fruit and flowers.",
+    "palate": "In the mouth it expresses itself with a fresh acidity that sustains memories of freshly harvested herbs and forest fruits.",
+    "food": "Drink it with sour sauce.",
+    "stars": [
+        3
+    ],
+    "price": 12,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Rosadia",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/mendel-rosadia1-5c8af0a26a5121326716276715835831-640-0.jpg",
+    "color": "Bright pink light.",
+    "smell": "On the nose it is full of citrus and red apple notes.",
+    "palate": "On the palate it is full of aromas of ripe grapefruit. It is light and refreshing.",
+    "food": "Ideal to accompany seafood, light cheeses and desserts.",
+    "stars": [
+        3
+    ],
+    "price": 21,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Sottano",
+    "type": "Rosé",
+    "variety": "Malbec Rosé",
+    "country": "Argentina",
+    "harvest": "6",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/sottaniomalbecroseee1-9de4edac5264759dd916118587712694-640-0.jpg",
+    "color": "ubtle pink color, attractive and bright.",
+    "smell": "Aromas of cherries, strawberries, strawberries and some floral notes such as roses are among its aromatic descriptors. ",
+    "palate": "Fluid, fresh and captivating on the palate, the fruit and citrus notes stand out due to its delicate natural acidity.",
+    "food": "Drink it with light cheeses and desserts.",
     "stars": [
         3
     ],
@@ -894,24 +1167,108 @@ db.wines.insertMany([
     }
 },
 {
-    "nameWine": "",
-    "type": "Reds",
-    "variety": "",
+    "nameWine": "Maimara",
+    "type": "Rosé",
+    "variety": "Rosé",
     "country": "Argentina",
-    "harvest": "",
-    "photo": "",
-    "color": "",
-    "smell": "",
-    "palate": "",
-    "food": "",
+    "harvest": "14",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/rosademaimaramaimara1-6c0e4313a8680be4c716210000988616-640-0.jpg",
+    "color": "Intense pink, bright.",
+    "smell": " Intense, strawberry aromas that stand out over the aroma of the barrels in which it was fermented and aged.",
+    "palate": "Light, simple, fine and elegant, very fresh due to its high natural acidity, it repeats the strawberry that we find on the nose.",
+    "food": "Ideal to accompany with sushi or a tasty curry",
     "stars": [
         3
     ],
-    "price": 10,
+    "price": 13,
     "stock": {
         "stock": 1451,
         "shipping": [
         ]
     }
 },
+{
+    "nameWine": "Portillo",
+    "type": "Rosé",
+    "variety": "Malbec Rosé",
+    "country": "Argentina",
+    "harvest": "1",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/portillo-rose-malbec1-1280d5b0dd68b77d5115949254012699-640-0.jpg",
+    "color": "Pale pink color with bright red hues.",
+    "smell": "Very perfumed nose with hints of fruit such as strawberries, cherries and sweets. ",
+    "palate": "On the palate: fresh with marked acidity and a persistent finish.",
+    "food": "Drink it with seasonal vegetables, sushi or a tasty curry",
+    "stars": [
+        3
+    ],
+    "price": 4,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Lagarde",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "2",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/lagarde-goes-pink1-5a05c958515a6f177715871756783158-640-0.jpg",
+    "color": "Pink with ruby reflections.",
+    "smell": "Delicate and fresh with notes of fruits such as morello cherry, cherry and raspberry.",
+    "palate": "Its entry into the mouth is fresh and balanced, it has good acidity and unctuousness.",
+    "food": "Fresh grilled fish or a typical summer menu, whether seasonal vegetables, sushi or a tasty curry",
+    "stars": [
+        3
+    ],
+    "price": 11,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Quintessential",
+    "type": "Rosé",
+    "variety": "Malbec Rosé",
+    "country": "Argentina",
+    "harvest": "8",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/quintaesencia-malbec-rose1-cb1c570f168457d3ae16364646062440-640-0.jpg",
+    "color": "Delicate rosé.",
+    "smell": "With aromas of strawberries, strawberries, with hints of dry aromatic herbs.",
+    "palate": "On the palate it is a fresh, fruity wine, with a delicate and smooth mid palate.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 35,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+},
+{
+    "nameWine": "Padrillos",
+    "type": "Rosé",
+    "variety": "Rosé",
+    "country": "Argentina",
+    "harvest": "3",
+    "photo": "https://d2r9epyceweg5n.cloudfront.net/stores/001/069/568/products/padrillosrose1-511fe99c86e263889515882537673219-640-0.jpg",
+    "color": "A bright pink color surprises the eye",
+    "smell": "Aromas of fresh raspberries and strawberries and notes of white roses seduce the nose.",
+    "palate": "Sweet, friendly entry, enveloping the mouth with lively acidity that provides a very pleasant freshness, with an elegant structure, but light and tasty at the same time.",
+    "food": "",
+    "stars": [
+        3
+    ],
+    "price": 8,
+    "stock": {
+        "stock": 1451,
+        "shipping": [
+        ]
+    }
+}
 ])
