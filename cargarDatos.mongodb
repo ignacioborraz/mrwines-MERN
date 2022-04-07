@@ -630,7 +630,7 @@ db.wines.insertMany([
     "color": "Intense and deep red-colored wine.",
     "smell": "On the nose, pepper and vanilla are perceived, along with tobacco notes",
     "palate": "Full-bodied wine, promising a delicious astringent finishing and a soft aftertaste",
-    "food": "",
+    "food": "Drink it with pastas with strong sauces.",
     "stars": [
         3
     ],
@@ -651,7 +651,7 @@ db.wines.insertMany([
     "color": "It has an intense and deep purplish color.",
     "smell": "Its aroma reminisces blackberries and plums.",
     "palate": "In the mouth it is complex, highlighting berries and notes coming from its aging in wood. Long and soft finishing.",
-    "food": "",
+    "food": "Goes very well with red meats, grilled meats, hard cheeses and pasta with tomato sauce.",
     "stars": [
         4
     ],
@@ -672,7 +672,7 @@ db.wines.insertMany([
     "color": "Intense ruby-colored wine, brilliant and clean.",
     "smell": "On the nose, the varietal exhibits all its typicality, giving aromas of black fruits, green pepper and coffee",
     "palate": "The mouth has a strong presence and good volume, strong tannins and balanced acidity. Long finishing.",
-    "food": "",
+    "food": "Drink it with Chocolates and nuts.",
     "stars": [
         3
     ],
@@ -693,7 +693,7 @@ db.wines.insertMany([
     "color": "Intense purple-colored wine, brilliant and clean.",
     "smell": "On the nose, it has Malbec characteristic fruits of Maipú: ripe plums, dark chocolate and mild leather notes..",
     "palate": "In the mouth, it is sweet and gentle, with a delicate vanilla touch. Its aging in oak gives the wine complexity and a long finishing.",
-    "food": "",
+    "food": "Great red wine to accompany roast beef, stews, pasta with tomato and cheese sauces, and game meats.",
     "stars": [
         3
     ],
@@ -714,7 +714,7 @@ db.wines.insertMany([
     "color": "A soft yellow color of greenish tints, with a fine and persistent perlage",
     "smell": "The aroma is fully highlighted by fresh fruit, like the white peach.",
     "palate": "The flavor is perceived balanced in body and structure, with an acidity that highlights the freshness and youth.",
-    "food": "",
+    "food": "Ideal to accompany paellas, risottos with seafood and traditional preparations with a certain spiciness",
     "stars": [
         3
     ],
@@ -924,7 +924,7 @@ db.wines.insertMany([
     "color": "ntense purple in color.",
     "smell": "bright aromas of red fruit and spices. ",
     "palate": "Its body is full-bodied and its mouth is filled with red with soft tannins, leading to a long and elegant finish.",
-    "food": "",
+    "food": "Drink it with Red meats and cheeses.",
     "stars": [
         3
     ],
@@ -945,7 +945,7 @@ db.wines.insertMany([
     "color": "A wine with a bright and attractive red color,",
     "smell": "On the nose combines notes of red fruit and spices, but at the same time displays subtle citrus notes reminiscent of the peel of a fresh tangerine. ",
     "palate": "On the palate it is a round wine, very easy to drink, with a silky texture and intense flavour. ",
-    "food": "",
+    "food": "It pairs very well with a cut of lean roast and roasted salad",
     "stars": [
         3
     ],
@@ -966,7 +966,7 @@ db.wines.insertMany([
     "color": "Intense purple color",
     "smell": "Aromas of ripe red fruit and roasted coffee beans. It is an exuberant wine, with a great structure, with penetrating flavors of blackcurrant and currant jam, balanced acidity and well-marked, round tannins.",
     "palate": "",
-    "food": "",
+    "food": "Drink it with homemade pizza with truffles and Parmesan cheese",
     "stars": [
         3
     ],
@@ -987,7 +987,7 @@ db.wines.insertMany([
     "color": "Intense violet color.",
     "smell": "Aromas in first impression? Oral notes such as violets, are present giving it a particular elegance. Red fruits (strawberry and blackberry) also appear.",
     "palate": "On the palate it is fresh, with a consistent acidity. Smooth and balanced tannins. expression of the area.",
-    "food": "",
+    "food": "Drink it with fresh tagliatelle, fresh black truffle sauce and Parmesan cheese.",
     "stars": [
         3
     ],
@@ -1008,7 +1008,7 @@ db.wines.insertMany([
     "color": "Good intensity purple hue with some hints of orange.",
     "smell": "Delicate and intense aroma of dried fruits, such as almonds, chestnuts and walnuts, in a suitable combination with notes of plums, figs, dried peaches.",
     "palate": "Sweet and silky entry, with wide development and a persistent finish.",
-    "food": "",
+    "food": "Drink it with cubes of blue or Roquefort cheese, halved walnuts and fresh Muscatel grapes.",
     "stars": [
         3
     ],
@@ -1029,7 +1029,7 @@ db.wines.insertMany([
     "color": "Yellow in color with green reflections.",
     "smell": " it expresses elegant aromas of white flowers, peaches and apricots, which are combined with notes of vanilla from the passage through oak. ",
     "palate": "On the palate it is friendly, fresh and unctuous.",
-    "food": "",
+    "food": "It is excellent to taste a salmon grilled with butter and sage.",
     "stars": [
         3
     ],
@@ -1050,7 +1050,7 @@ db.wines.insertMany([
     "color": "Bright greenish yellow colour. ",
     "smell": "Intense aromas with the presence of cabbage and peas.",
     "palate": "Sweet on the palate, fresh finish, with aromas of herbs such as rue that reveal the typicity of the variety.",
-    "food": "",
+    "food": "Ideal when eating salads but with mild dressings.",
     "stars": [
         3
     ],
@@ -1071,7 +1071,7 @@ db.wines.insertMany([
     "color": "Intense white with greenish iridations that denote its indisputable personality.",
     "smell": "On the nose, perfumes of fruit, apples and pineapple, butter and light toasted aromas of the oak from the barrel are combined.",
     "palate": "With a distinguished body on the palate and a fullness on the palate that confirms its structure.",
-    "food": "",
+    "food": "Drink it with spaghetti carbonara and for pasta without filling, with creamy sauces based on cream or cheese.",
     "stars": [
         3
     ],
@@ -1239,7 +1239,7 @@ db.wines.insertMany([
     "color": "Delicate rosé.",
     "smell": "With aromas of strawberries, strawberries, with hints of dry aromatic herbs.",
     "palate": "On the palate it is a fresh, fruity wine, with a delicate and smooth mid palate.",
-    "food": "",
+    "food": "Combine Parmesan cheese, smoked cow or goat cheese, and mozzarella cheese. Keep in mind that the intensity of the food must be consistent with the intensity of the wine.",
     "stars": [
         3
     ],
@@ -1260,7 +1260,7 @@ db.wines.insertMany([
     "color": "A bright pink color surprises the eye",
     "smell": "Aromas of fresh raspberries and strawberries and notes of white roses seduce the nose.",
     "palate": "Sweet, friendly entry, enveloping the mouth with lively acidity that provides a very pleasant freshness, with an elegant structure, but light and tasty at the same time.",
-    "food": "",
+    "food": "Drink it with white fish such as hake, cod, sea bream, monkfish or turbot.",
     "stars": [
         3
     ],

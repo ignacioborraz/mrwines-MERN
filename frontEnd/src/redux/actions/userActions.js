@@ -1,10 +1,16 @@
-import axios from 'axios';
+import axios from 'axios'
+
+const urlMrWines = 'http://localhost:3000/'
 
 const userActions = {
+
     signUpUser: (userData) => {
+        //el formulario debe tener los inputs de registro en una variable que se llame userData
+        //chequeen el modelo para ver LOS CAMPOS REQUERIDOS
+        //falta configurar la creacion de ADMIN
         //console.log(userData)
         return async (dispatch, getState) => {
-            const res = await axios.post('https://mytinerary-borraz.herokuapp.com/api/auth/signUp', {userData}) //envio a la api los datos del usuario nuevo
+            const res = await axios.post(urlMrWines+'api/auth/signUp', {userData})
             //console.log(res)
             dispatch({ //despacho al reductor
                 type: 'message',
@@ -16,13 +22,17 @@ const userActions = {
             })
         }
     },
+
     logInUser: (userLogin) => {
+        //el formulario debe tener los inputs de registro en una variable que se llame userLogin
+        //chequeen el modelo para ver LOS CAMPOS REQUERIDOS
+        //falta configurar el cambio a ADMIN
         //console.log(userLogin)
         return async (dispatch, getState) => {
-            const res = await axios.post('https://mytinerary-borraz.herokuapp.com/api/auth/logIn', {userLogin})
+            const res = await axios.post(urlMrWines+'api/auth/logIn', {userLogin})
             //console.log(res)
-            if(res.data.success) { //si tiene exito
-                localStorage.setItem('token',res.data.response.token) //en el almacenamiento local guardamos el token para que no se cierre sesion cuando salgamos
+            if(res.data.success) {
+                localStorage.setItem('token',res.data.response.token)
                 dispatch({
                     type: 'user',
                     payload: res.data.response.userData
@@ -39,11 +49,12 @@ const userActions = {
             }
         } 
     },
+
     signOutUser: (closeData) => {
         //console.log(closeData)
         return async (dispatch, getState) => {
-            const res = axios.post('https://mytinerary-borraz.herokuapp.com/api/auth/signOut',{closeData}) //envio a la api los datos del usuario que cierra sesion
-            //console.log(res)
+            const res = axios.post(urlMrWines+'api/auth/signOut',{closeData})
+            //console.log(res) //es solo para chequear que el usuario se haya deslogueado
             localStorage.removeItem('token')
             dispatch({
                 type: 'user',
@@ -51,10 +62,11 @@ const userActions = {
             })
         }   
     },
+
     verifyToken: (token) => {
         return async (dispatch, getState) => {
             //console.log(token)
-            const user = await axios.get('https://mytinerary-borraz.herokuapp.com/api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} )
+            const user = await axios.get(urlMrWines+'api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} )
             //console.log(user)
             if (user.data.success) {
                 dispatch({
@@ -76,5 +88,4 @@ const userActions = {
     }
 }
 
-export default userActions;
-//la accion despacha al reductor
+export default userActions
