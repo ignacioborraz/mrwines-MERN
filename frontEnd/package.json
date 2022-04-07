@@ -8,6 +8,7 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.4.2",
+    "@mui/lab": "^5.0.0-alpha.76",
     "@mui/material": "^5.5.1",
     "@mui/styled-engine-sc": "^5.1.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -24,7 +25,6 @@
     "sweetalert": "^2.1.2",
     "swiper": "^8.0.6",
     "web-vitals": "^2.1.4"
-    
   },
   "scripts": {
     "start": "react-scripts start",

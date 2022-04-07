@@ -97,6 +97,9 @@ const NavBar2 = (props) => {
                             <MenuItem className="navLi" onClick={handleCloseNavMenu}>
                                 <LinkRouter className="nav-linkUser" to="/shop">Shop</LinkRouter>
                             </MenuItem>
+                            <MenuItem className="navLi" onClick={handleCloseNavMenu}>
+                                <LinkRouter className="nav-linkUser" to="/shop">Blog</LinkRouter>
+                            </MenuItem>
 
 
                         </Menu>
@@ -115,7 +118,10 @@ const NavBar2 = (props) => {
                             <LinkRouter className="linkGeneral" aria-current="page" to="/home">Home</LinkRouter>
                         </Button>
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/shop">shop</LinkRouter>
+                            <LinkRouter className="linkGeneral" to="/shop">Shop</LinkRouter>
+                        </Button>
+                        <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
+                            <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
                         </Button>
 
                     </Box>
@@ -164,7 +170,7 @@ const NavBar2 = (props) => {
                                     ) : (
                                         <div>
                                             <MenuItem onClick={handleCloseUserMenu} className="navLi">
-                                                <LinkRouter className="nav-linkUser" aria-current="page" to="/SignIn">Sign in</LinkRouter>
+                                                <LinkRouter className="nav-linkUser" aria-current="page" to="/SignIn">Sign In</LinkRouter>
                                             </MenuItem>
                                             <MenuItem onClick={handleCloseUserMenu} className="navLi">
                                                 <LinkRouter className="nav-linkUser " to="/SignUp">Sign Up</LinkRouter>

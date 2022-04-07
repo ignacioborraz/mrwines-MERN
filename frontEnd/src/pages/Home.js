@@ -1,6 +1,6 @@
 import {Link as LinkRouter} from "react-router-dom"
 import BestWinesCard from "../components/bestWinesCard"
-import Navbar from "../components/Navbar"
+
 
 //importo los estilos
 import '../styles/styles.css'
@@ -9,7 +9,7 @@ export default function Home () {
         return (
             <>
                 <div className='home topHome'>
-                <Navbar/>
+                
                     <div className="sepia">
                         <img className="logoHome" src={process.env.PUBLIC_URL+"logoB.png"}/>
                         <h1 className='title slogan'>Feel the taste of the vines</h1>

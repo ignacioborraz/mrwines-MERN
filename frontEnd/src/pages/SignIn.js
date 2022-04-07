@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import userActions from '../redux/actions/userActions';
 import { Link as LinkRouter } from 'react-router-dom';
-import Navbar from "../components/Navbar"
+
 
 function SignIn(props) {
 
@@ -20,7 +20,7 @@ function SignIn(props) {
 	return (
         
         <div className="containerForm BgSignIn">
-            <Navbar/>
+           
             <h1 className=" title white signuptext">Sign in</h1>
 		<div className='signBody'>
 			
@@ -44,6 +44,8 @@ function SignIn(props) {
             
 		</div>
         <div className="textForm text-shadow"><p>You don't have an account?</p><p>Please <LinkRouter className="textDecoration" to="/signUp">sign up</LinkRouter></p></div>
+
+
         </div>
 	)
 }

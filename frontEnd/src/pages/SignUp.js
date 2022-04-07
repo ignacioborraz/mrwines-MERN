@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Link as LinkRouter } from 'react-router-dom';
-import Navbar from "../components/Navbar"
+
 
 
 
@@ -20,7 +20,7 @@ import Navbar from "../components/Navbar"
 
     return (
         <div className="containerForm BgSignUp">
-            <Navbar/>
+            
             <h1 className=" title white signuptext">Sign up</h1>
         <div className='signBody'>       
             
