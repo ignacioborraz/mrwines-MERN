@@ -42,18 +42,7 @@ Router.route('/wines/:id')
 Router.route('/stock/:id')
 .put(modifyStockWine)
 
-/* Router.route('/tineraries')
-.get(getTineraries)
-.post(uploadTinerary)
-
-Router.route('/tineraries/:id')
-.delete(deleteTin)
-//.put(modifyTin)
-.get(oneTinerary)
-
-Router.route('/tineraries/cities/:id')
-.get(findTinFromCity)
-
+/*
 const topicControllers = require('../controllers/topicControllers')
 const {getTopics,oneTopic,uploadTopic,deleteTopic,modifyTopic,likeTopic,addComment,modifyComment,deleteComment} = topicControllers
 

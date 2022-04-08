@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.containerCardBlog{
+display:flex;
+flex-wrap:wrap;
+flex-direction:row;
+min-height:100vh;
+justify-content: center;
+}
+.Card{
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+}
+
+.cardBlog{
+    margin:15px;
+    
+    
+    
+}
+.containerBlog{
+    padding-top:8.5em;
+/*     background-image: linear-gradient(135deg, rgba(133, 80, 31, 0.632) 0%, #582800 100%);
+ */    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+ background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    align-items:center;
+    text-align:center;
+}
+.h1Blog{
+    font-size:4em;
+    font-weight: bold;
+   
+}
+.h2Blog{
+    font-weight: bold;
+    font-size:2em;
+    margin-bottom:1em;
+}
+.CommentBody{
+    display:flex;
+    justify-content: center;
+    border:2px solid black;
+    margin:10px;
+    border-radius:5px;
+    flex-direction:column;
+}
+.Comment{
+    margin-bottom:10px;
+
+}
+.NameComment{
+    font-weight: bold !important;
+    padding:5px !important;
+}
+.BoxComment{
+    display:flex;
+    flex-direction:column;
+}
+.btnComment{
+    margin-top:5px;
+    width:5em;
+    border-radius:3px;
+}
+.textarea{
+    resize:none;
+}

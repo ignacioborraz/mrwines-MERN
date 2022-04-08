@@ -17,11 +17,13 @@ function WineDetails() {
             <h2>$4000,00 x caja</h2>
           </div>
           <div className="custom-div3-details">
-            <div>
-              <button>Stock</button>
+            <div className = "container-input-number">
+              <button className = "button-customised">+</button>
+              <input className="input-customised" type="number" />
+              <button  className = "button-customised">-</button>
             </div>
             <div>
-                <button>Añadir al carrito</button>
+              <button>Añadir al carrito</button>
             </div>
           </div>
           <div className="custom-div4-details">

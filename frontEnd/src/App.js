@@ -1,6 +1,8 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
-//importo las páginas que se van a renderizar
+import Footer from "../src/components/Footer"
+import NavBar from "../src/components/Navbar"
+
 import Home from './pages/Home'
 import Welcome from  "./pages/Welcome"
 import Error404 from "./pages/Error404"
@@ -8,10 +10,13 @@ import Wineinfo from "./pages/Wineinfo"
 import WineDetails from "./pages/WineDetails"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import Blog from "./pages/blog"
 
 function App() {
   return (
-      <BrowserRouter> {/* buscador de rutas */}
+      <div>
+      <BrowserRouter>
+      <NavBar/>
           <Routes> 
 {/*               <Route path="/cities" element={<Cities />} />
               <Route path ="/cities/:id" element={<CityDetail />}/> v
@@ -25,10 +30,15 @@ function App() {
               <Route path="/WineDetails" index element={<WineDetails />} />              
               <Route path="/SignIn" index element={<SignIn/>}/>
               <Route path ="/SignUp" index element={<SignUp/>}/>
+              <Route path ="/blog" index element={<Blog/>}/>
               <Route path="/*" index element={<Home />} />
           </Routes>
-          {/* <MySnackBar /> */}
+          
+          <Footer/>
       </BrowserRouter>
+    
+      </div>
+      		
   )
 }
 

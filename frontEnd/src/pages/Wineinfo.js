@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Wineinfo.css"
 import Botellavino from "../assets/botellavino.png"
 import dosCopas from "../assets/dosCopas.png"
+import ControlledCheckbox from "../components/ControlledCheckbox"
 
 
 function Wineinfo(){
@@ -24,7 +25,7 @@ return (
             </div>
             </div>
             <div className="div-3">
-               <input className="divinput" typeof="text" placeholder="Select your wine"/>
+              <ControlledCheckbox/>
             </div>
             </div>
         </section>
