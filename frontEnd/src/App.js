@@ -1,6 +1,4 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Footer from "../src/components/Footer"
-import NavBar from "../src/components/Navbar"
 
 import Footer from "../src/components/Footer"
 import NavBar from "../src/components/Navbar"
@@ -13,6 +11,7 @@ import WineDetails from "./pages/WineDetails"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Blog from "./pages/blog"
+
 function App() {
   return (
       <div>

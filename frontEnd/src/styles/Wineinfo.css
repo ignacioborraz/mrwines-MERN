@@ -14,11 +14,11 @@
   margin-top: 5rem !important;
 }
 
-body {
+.body-info {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  background: linear-gradient(80deg, rgba(179, 72, 72, 0.555), white);
+  /* background: linear-gradient(80deg, rgba(179, 72, 72, 0.555), white); */
   
 }
 

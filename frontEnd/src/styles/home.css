@@ -7,6 +7,9 @@
     font-family: 'Roboto Slab', serif;
     
 }
+.home-container{
+    background-color: white;
+}
 .home {
     width: 100%;
     min-height: 102vh;
@@ -16,12 +19,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: .5rem 0;
-    
 }
 .topHome {
     background-image: url('../../public/images/vineyards.jpg');
-    margin-top:0;
 }
 .bestWines {
     background-image: url('../../public/images/cellar.jpg');
@@ -42,7 +42,8 @@
     max-width: 90vw;
 }
 .title{
-    text-shadow: -2px 2px 2px black;
+    text-shadow: 2px 2px black;
+    font-size: 5rem;
 }
 .cardTopFive{
     background-color: white;
@@ -54,7 +55,26 @@
     transition: all .4s;
 }
 .cardTopFive:hover{
- box-shadow: 0px 0px 12px 7.5px #800040;
+ box-shadow: 0px 0px 6px 3px rgb(178 18 52);
+}
+.price{
+    text-align: end;
+}
+.btnShop-div{
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+    border-top: 1px solid black;
+    margin-top: .5rem;
+}
+.btnShop{
+    background-color: black;
+    padding: .5rem;
+    color: white;
+    border-radius: 15px;
+}
+.btnShop:hover{
+    background-color: rgb(178 18 52);
 }
 .bestWineImg{
     width: 130px;
@@ -72,13 +92,13 @@
 .aboutText{
     width: 70vw;
     max-height: 70vh;
-    margin: 1rem;
-    padding: .75rem;
+    margin: 1.5rem;
+    padding: 1.5rem;
     border-radius: 15px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     color: white;
     background-color: rgba(0, 0, 0, 0.301);
-    font-size: larger;
+    font-size: 1.5rem;
     overflow-y: auto;
 }
 .sepia{
@@ -91,7 +111,7 @@
 .signBody{
      display:flex;
     flex-direction: column; 
-    border-radius:2em;
+    border-radius:15px;
     border:1px solid black;
     width: 40%;
     justify-content: center;
@@ -101,9 +121,8 @@
     min-height: 62vh;
     min-width:40%;
     margin-top: 4vh;
-    backdrop-filter:blur(7px);
+    backdrop-filter:blur(8px);
     background-color:rgba(255, 255, 255, 0.116);
-
 }
 .containerForm{
     background-image: linear-gradient(120deg, #800040 0%, #fccb90 100%); ;
@@ -113,21 +132,16 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
-    
-    
-    
     background-size:cover;
 }
 .signuptext{
     font-size:2.5em;
-    
 }
 .inputForm{
     margin-top:10px;
-    border-radius:5px;
+    border-radius:15px;
     height: 5vh;
     border: 1px solid black; 
-    /* width: 40vw; */
     min-width: 280px;
     max-width: 700px; 
     margin: 1rem 0.75rem 0;
@@ -150,7 +164,7 @@
     justify-content: center;
     margin-bottom:1em;
     font-family: 'Roboto', sans-serif;
-    text-shadow: -2px 2px 2px black;
+    text-shadow: 2px 2px black;
 }
 .divBtn{
     display:flex;
@@ -160,10 +174,9 @@
 .textForm{
     font-family: 'Roboto', sans-serif;
     color:white;
-    
 }
 .text-shadow{
-    text-shadow:2px 3px rgb(29, 17, 17);
+    text-shadow:2px 2px black;
     font-size:1.2em;
     text-align:center;
     margin-top:2em;
@@ -180,7 +193,6 @@
     color:white;
     font-family: 'Roboto', sans-serif;
     border-bottom:2px solid white;
-  
 }
 .textDecoration:hover{
     color:#c091a9;
@@ -196,7 +208,6 @@
     background-size:cover;
 }
 .GoogleImg{
- 
     width:6em;
     height:4.2em;
 }
@@ -205,12 +216,11 @@
     justify-content: center;
     align-items:center;
     margin-top:0;
-    
 }
 .iconoNav{
-    color:#800040 !important;
+    color:rgb(178 18 52) !important;
     background-color: rgba(255, 255, 255, 0.336)!important;
-    border: 1px solid #800040;
+    border: 1px solid rgb(178 18 52);
     border-radius:2em !important;
 }
 
@@ -220,7 +230,6 @@
     }
     .signBody{
         width:70%;
-
     }
 }
 
