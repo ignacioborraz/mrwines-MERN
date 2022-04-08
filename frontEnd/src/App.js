@@ -42,7 +42,8 @@ function App(props) {
                     <Route path="/Wineinfo" index element={<Wineinfo />} />
                     <Route path="/WineDetails" index element={<WineDetails />} />              
                     {props.user ? <Route path='/SignIn' element={<Home />} /> : <Route path='/SignIn' element={<SignIn />} />}
-                    {props.user ? <Route path='/SignUp' element={<Home />} /> : <Route path='/SignIn' element={<SignUp />} />}
+                    {/* {props.user ? <Route path='/SignUp' element={<Home />} /> : <Route path='/SignIn' element={<SignUp />} />} */}
+                    <Route path ="/SignUp" index element={<SignUp/>}/>
                     <Route path ="/blog" index element={<Blog/>}/>
                     <Route path="/*" index element={<Home />} />
                 </Routes>
