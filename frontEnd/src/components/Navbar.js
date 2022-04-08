@@ -118,7 +118,7 @@ const NavBar2 = (props) => {
                             <LinkRouter className="linkGeneral" aria-current="page" to="/home">Home</LinkRouter>
                         </Button>
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/shop">Shop</LinkRouter>
+                            <LinkRouter className="linkGeneral" to="/Wineinfo">Shop</LinkRouter>
                         </Button>
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
                             <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
@@ -134,7 +134,6 @@ const NavBar2 = (props) => {
                                         <span className='spanUser'> {props.user.name.firstName}</span>
                                         <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                             <Avatar alt="Remy Sharp" className='logo' src={props.user.imageUrl} />
-                                            
                                         </IconButton>
                                     </div>
                                 ) :

@@ -1,4 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
+
+const urlMrWines = 'http://localhost:3000/'
 
 const activityActions = { //las acciones son eventos en forma de objetos
     getActivities: () => { //retorno una funcion asincrona debido a que las acciones a primera "vista" no pueden ser asincronas

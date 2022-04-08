@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema ({
     country: {type:String},
     city: {type:String},
     adress: {type:String},
+    ship: {type:Array},
     from: {type:Array},
     uniqueString: {type:String, required:true},
     verification: {type:Boolean, required:true}
