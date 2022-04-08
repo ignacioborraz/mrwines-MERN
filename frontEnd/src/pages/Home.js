@@ -1,13 +1,13 @@
 import {Link as LinkRouter} from "react-router-dom"
-import BestWinesCard from "../components/bestWinesCard"
+import WinesCard from "../components/WinesCard"
 
 
 //importo los estilos
-import '../styles/styles.css'
+import '../styles/home.css'
 
 export default function Home () {
         return (
-            <>
+            <div className="home-container">
                 <div className='home topHome'>
                 
                     <div className="sepia">
@@ -19,11 +19,11 @@ export default function Home () {
                 <div className='home bestWines'>
                     <h1 className="title white">TOP FIVE</h1>
                     <div className="topFiveDiv">
-                        <BestWinesCard/>
-                        <BestWinesCard/>
-                        <BestWinesCard/>
-                        <BestWinesCard/>
-                        <BestWinesCard/>
+                        <WinesCard/>
+                        <WinesCard/>
+                        <WinesCard/>
+                        <WinesCard/>
+                        <WinesCard/>
                     </div>
                 </div>
 
@@ -31,7 +31,6 @@ export default function Home () {
                     <h1 className="title white">ABOUT US</h1>
                     <p className="aboutText">Hello wine lovers! You may be wondering what Mr. Wines is. Well, Mr. Wines started as a dream, became a project and ended up made in reality. We are a group of 6 young entrepreneurs, passionate about wine and the infinite universe of experiences it offers us. The rich history, culture and folklore around this sacred drink only strengthens the tasty experience that the grape gives us. We decided to undertake this dream by establishing our own wine cellar to gather the best collection of wines and share it with all lovers of the vine.</p>
                 </div>
-            </>
+            </div>
         )
     }
-

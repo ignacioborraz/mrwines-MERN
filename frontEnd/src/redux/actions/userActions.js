@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const urlMrWines = 'http://localhost:4000/'
+//const urlMrWines = 'http://localhost:4000/'
+const urlMrWines = 'https://mrwines.herokuapp.com/'
 
 const userActions = {
 
