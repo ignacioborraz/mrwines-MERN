@@ -16,41 +16,29 @@ import user from "./UserRed.svg"
 import "../styles/NavBar.css"
 import { Link as LinkRouter } from "react-router-dom"
 
+import userActions from '../redux/actions/userActions'
+import {connect} from 'react-redux'
 
-
-
-
-const NavBar2 = (props) => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+const NavBar = (props) => {
+    const [anchorElNav, setAnchorElNav] = React.useState(null)
+    const [anchorElUser, setAnchorElUser] = React.useState(null)
     const [navbar, setNavbar] = React.useState(false)
+
+    const handleOpenNavMenu = (event) => {setAnchorElNav(event.currentTarget)}
+    const handleOpenUserMenu = (event) => {setAnchorElUser(event.currentTarget)}
+    const handleCloseNavMenu = () => {setAnchorElNav(null)}
+    const handleCloseUserMenu = () => {setAnchorElUser(null)}
+    
     const colorNav = () => {
-        if (window.scrollY >= 5) {
-            setNavbar(true)
-        } else {
-            setNavbar(false)
-        }
+        if (window.scrollY >= 5) {setNavbar(true)}
+        else {setNavbar(false)}
     }
+    
     function signOutUser() {
         console.log(props.user.email)
-        
-        props.signOut(props.user.email)
+        props.signOutUser(props.user.email)
     }
+
     window.addEventListener("scroll", colorNav)
     return (
         <AppBar className='App-header' position="static">
@@ -131,9 +119,9 @@ const NavBar2 = (props) => {
                             {
                                 props.user ? (
                                     <div>
-                                        <span className='spanUser'> {props.user.name.firstName}</span>
+                                        <span className='spanUser'> {props.user.userName}</span>
                                         <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                                            <Avatar alt="Remy Sharp" className='logo' src={props.user.imageUrl} />
+                                            <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />
                                         </IconButton>
                                     </div>
                                 ) :
@@ -186,5 +174,14 @@ const NavBar2 = (props) => {
     );
 };
 
+const mapDispatchToProps = {
+	signOutUser: userActions.signOutUser,
+}
 
-export default (NavBar2);
+const mapStateToProps = (state) => {
+	return {
+		user: state.userReducer.user,
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

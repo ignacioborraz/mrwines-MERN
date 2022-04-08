@@ -4,12 +4,13 @@ const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
 
-const urlMrWines = 'http://localhost:3000/'
+const urlFront = 'http://localhost:3000/'
+const urlMrWines = 'http://localhost:4000/'
 
 const userControllers = {
 
     newAdmin: async (req,res) => {
-        console.log(req)
+        //console.log(req)
         let {userName,lastName,email,password,userPhoto} = req.body
         const hashWord = bcryptjs.hashSync(password, 10)
         let from = "newAdminForm"
@@ -29,7 +30,9 @@ const userControllers = {
     },
 
     signUpUser: async (req,res) => {
-        let {userName,lastName,email,password,from,userPhoto,country} = req.body.userData
+        //console.log(req)
+        let {userName,lastName,userPhoto,email,password,from} = req.body.userData
+        //const {file} = req.files
         const test = req.body.test
         try {
             const mrUser = await User.findOne({email})
@@ -61,7 +64,8 @@ const userControllers = {
                 }
             } else {
                 const hashWord = bcryptjs.hashSync(password, 10)
-                const newMrUser = await new User({userName,lastName,email,password:[hashWord],userPhoto,country,city,adress,ship,from:[from],uniqueString: crypto.randomBytes(15).toString('hex'),verification: false})
+                const newMrUser = await new User({userName,lastName,userPhoto,email,password:[hashWord],from:[from],uniqueString:crypto.randomBytes(15).toString('hex'),verification: false})
+                //console.log(newMrUser)
                 if (from === "SignUpForm") {
                     await newMrUser.save()
                     await sendEmail(email, newMrUser.uniqueString)
@@ -84,6 +88,7 @@ const userControllers = {
     },
 
     logInUser: async (req, res) => {
+        //console.log(req)
         const {email, password, from} = req.body.userLogin
         try {
             const mrUser = await User.findOne({email})
@@ -175,7 +180,7 @@ const userControllers = {
         if (user) {
             user.verification = true
             await user.save()
-            res.redirect(urlMrWines+"welcome")
+            res.redirect(urlFront+"welcome")
         }
         else { res.json({success: false, response: `email has not been confirmed yet!`}) }
     }

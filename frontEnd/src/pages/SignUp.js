@@ -1,52 +1,76 @@
-import React, { useEffect, useState } from 'react'
-import {Link as LinkRouter } from 'react-router-dom';
+import React, {useState} from 'react'
+import {Link as LinkRouter } from 'react-router-dom'
 
+import GoogleSignUp from '../components/gSignup'
 
+import {connect} from 'react-redux'
+import userActions from '../redux/actions/userActions'
 
+function SignUp(props) {
 
- export default function SignUp(props) {
+    //defino las variables de estado
+    const [name,setName] = useState("")
+    const [lastName,setLastName] = useState("")
+    const [userPhoto,setUserPhoto] = useState("")
+    const [mail,setMail] = useState("")
+    const [pass,setPass] = useState("")
+    //const [file,setFile] = useState()
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const userData={
-            name:event.target[0].value,
-            Lastname:event.target[1].value,
-            email:event.target[2].value,
-            password:event.target[3].value,
-            from:"form-Signup"
+			userName: name,
+            lastName: lastName,
+            userPhoto: userPhoto,
+            email: mail,
+			password: pass,
+			from: "SignUpForm"
         }
+        //console.log(userData)
         props.signUpUser(userData)
     }
 
     return (
         <div className="containerForm BgSignUp">
-            
             <h1 className=" title white signuptext">Sign up</h1>
-        <div className='signBody'>       
-            
-            <form onSubmit={handleSubmit} className='form'>
-                <div>
-                    <input name="Name" className="inputForm" placeholder="Name" type="text" />
-                </div>
-                <div>
-                    <input name="Last name" className="inputForm" placeholder="Last name" type="text" />
-                </div>
-                <div>
-                    <input name="email" className="inputForm" placeholder="Email address" type="email" />
-                </div>
-                <div>
-                    <input name='password' className="inputForm" placeholder="Create password" type="password" />
-                </div>
-                <div className="divBtn">
-                    <button type="submit" className="btnForm">Create Account</button>
-                </div>
-                <div className="textForm text-shadow divGoogle">
-                    <p>Sign up with </p><img className="GoogleImg" src={process.env.PUBLIC_URL+"images/Logogoogle.png"}/>
-                </div>
-            </form>
-            </div>
-            <div className="textForm text-shadow"><p>You have an account?</p><p>Please <LinkRouter className="textDecoration" to="/SignIn">sign in</LinkRouter></p></div>
+            <div className='signBody'>
+                <form onSubmit={handleSubmit} className='form'>
+                    <div>
+                        <input name="Name" className="inputForm" placeholder="Name" type="text" value={name} onChange={e=>setName(e.target.value)} required />
+                    </div>
+                    <div>
+                        <input name="Last name" className="inputForm" placeholder="Last name" type="text" value={lastName} onChange={e=>setLastName(e.target.value)} required />
+                    </div>
+                    <div>
+                        {/* <input name="User Photo" className="inputForm" placeholder="URL photo" type="file" value={file} onChange={e=>setFile(e.target.files)} required /> */}
+                        <input name="User Photo" className="inputForm" placeholder="URL photo" type="text" value={userPhoto} onChange={e=>setUserPhoto(e.target.value)} required />
 
+                    </div>
+                    <div>
+                        <input name="Email" className="inputForm" placeholder="Email address" type="email" value={mail} onChange={e=>setMail(e.target.value)} required />
+                    </div>
+                    <div>
+                        <input name='Password' className="inputForm" placeholder="Create password" type="password" value={pass} onChange={e=>setPass(e.target.value)} required />
+                    </div>
+                    <div className="divBtn">
+                        <button type="submit" className="btnForm">Create Account</button>
+                    </div>
+                    <GoogleSignUp />
+                </form>
+            </div>
+            <div className="textForm text-shadow">
+                <p>You have an account?</p><p>Please <LinkRouter className="textDecoration" to="/SignIn">sign in</LinkRouter></p>
+            </div>
         </div>
     )
 }
+
+const mapDispatchToProps = {
+    signUpUser: userActions.signUpUser
+}
+const mapStateToProps = (state) => {
+    return {
+        message: state.userReducer.message
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

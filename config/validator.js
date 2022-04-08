@@ -22,7 +22,7 @@ const validator = (req, res, next) => {
                 'string.max': 'last name: max 20 characters'}),
         userPhoto: joi.string()
             .trim()
-            .domain()
+//            .domain()
             .required(),
         email: joi.string().email({minDomainSegments:2})
             .required()

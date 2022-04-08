@@ -1,57 +1,58 @@
+import React, {useState} from 'react'
+import {Link as LinkRouter } from 'react-router-dom'
 
-import React from 'react'
-import { connect } from 'react-redux';
-import userActions from '../redux/actions/userActions';
-import { Link as LinkRouter } from 'react-router-dom';
+import GoogleSignIn from '../components/gLogin'
 
+import {connect} from 'react-redux'
+import userActions from '../redux/actions/userActions'
 
 function SignIn(props) {
 
+	const [mail,setMail] = useState("")
+    const [pass,setPass] = useState("")
+
 	const handleSubmit = (event) => {
 		event.preventDefault()
-		const logedUser = {
-			email: event.target[0].value,
-			password: event.target[1].value,
-			from: "form-Signup"
+		const userLogin = {
+			email: mail,
+			password: pass,
+			from: "SignInForm"
 		}
-		props.signInUser(logedUser)
+		console.log(userLogin)
+		props.logInUser(userLogin)
 	}
 
 	return (
-        
         <div className="containerForm BgSignIn">
-           
             <h1 className=" title white signuptext">Sign in</h1>
-		<div className='signBody'>
-			
-	
-			<form onSubmit={handleSubmit} className='form'>
-				<div>
-					<input name="email" className="inputForm" placeholder="Email address" type="email" />
-				</div>
-				<div>
-					<input name='password' className="inputForm" placeholder="Password" type="password" />
-				</div>
-				<div className="divBtn">
-					<button type="submit" className="btnForm"> Sign in  </button>
-                    <button type="submit" className="btnForm"> Admin  </button>
-				</div>
-                
-				<div className="textForm text-shadow divGoogle">
-                    <p>Sign In with </p><img className="GoogleImg" src={process.env.PUBLIC_URL+"images/Logogoogle.png"}/>
-                </div>
-			</form>
-            
-		</div>
-        <div className="textForm text-shadow"><p>You don't have an account?</p><p>Please <LinkRouter className="textDecoration" to="/signUp">sign up</LinkRouter></p></div>
-
-
+			<div className='signBody'>
+				<form onSubmit={handleSubmit} className='form'>
+					<div>
+						<input name="Email" className="inputForm" placeholder="Email address" type="email" value={mail} onChange={e=>setMail(e.target.value)} required />
+					</div>
+					<div>
+						<input name='Password' className="inputForm" placeholder="Password" type="password" value={pass} onChange={e=>setPass(e.target.value)} required />
+					</div>
+					<div className="divBtn">
+						<button type="submit" className="btnForm"> Sign in  </button>
+						<button type="submit" className="btnForm"> Admin  </button>
+					</div>
+						<GoogleSignIn />
+				</form>
+			</div>
+			<div className="textForm text-shadow">
+				<p>You don't have an account?</p><p>Please <LinkRouter className="textDecoration" to="/signUp">sign up</LinkRouter></p>
+			</div>
         </div>
 	)
 }
 
 const mapDispatchToProps = {
-	signInUser: userActions.signInUser,
+    logInUser: userActions.logInUser
 }
-
-export default connect(null, mapDispatchToProps)(SignIn);
+const mapStateToProps = (state) => {
+    return {
+        message: state.userReducer.message
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

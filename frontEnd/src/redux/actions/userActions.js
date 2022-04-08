@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const urlMrWines = 'http://localhost:3000/'
+const urlMrWines = 'http://localhost:4000/'
 
 const userActions = {
 
@@ -11,7 +11,7 @@ const userActions = {
         //console.log(userData)
         return async (dispatch, getState) => {
             const res = await axios.post(urlMrWines+'api/auth/signUp', {userData})
-            //console.log(res)
+            console.log(res)
             dispatch({ //despacho al reductor
                 type: 'message',
                 payload: {
