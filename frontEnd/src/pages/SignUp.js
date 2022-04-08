@@ -21,7 +21,7 @@ import {Link as LinkRouter } from 'react-router-dom';
     return (
         <div className="containerForm BgSignUp">
             
-            <h1 className=" title white signuptext">Sign up</h1>
+            <h1 className=" title white .title">Sign up</h1>
         <div className='signBody'>       
             
             <form onSubmit={handleSubmit} className='form'>
