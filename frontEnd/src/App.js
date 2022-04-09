@@ -7,12 +7,13 @@ import NavBar from "./components/Navbar"
 import Home from './pages/Home'
 import Welcome from  "./pages/Welcome"
 import Error404 from "./pages/Error404"
-import Wineinfo from "./pages/Wineinfo"
+import Shop from "./pages/Shop"
 import WineDetails from "./pages/WineDetails"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Blog from "./pages/blog"
-import Carrito from "./pages/Carrito"
+import ShoppingCart from "./pages/ShoppingCart"
+import NewAdmin from './pages/NewAdmin'
 
 import {connect} from 'react-redux'
 import userActions from './redux/actions/userActions'
@@ -30,22 +31,21 @@ function App(props) {
         <BrowserRouter>
             <NavBar/>
                 <Routes> 
-                    {/*<Route path="/cities" element={<Cities />} />
-                    <Route path ="/cities/:id" element={<CityDetail />}/> v
-                    <Route path='/signup' element={<SignUp  />} />
-                    {props.user ? <Route path='/login' element={<MyCarousel />} /> : <Route path='/login' element={<LogIn />} />}
-                    <Route path='/signout' element={<Home  />} />
-                    <Route path='/welcome' element={<Welcome  />} /> */}
-                    <Route path="/Welcome" index element={<Welcome />} />
-                    <Route path="/Error404" index element={<Error404 />} />
-                    <Route path="/shipping" index element={<Carrito />} />
-                    <Route path="/Wineinfo" index element={<Wineinfo />} />
-                    <Route path="/WineDetails" index element={<WineDetails />} />              
-                    {props.user ? <Route path='/SignIn' element={<Home />} /> : <Route path='/SignIn' element={<SignIn />} />}
-                    {/* {props.user ? <Route path='/SignUp' element={<Home />} /> : <Route path='/SignIn' element={<SignUp />} />} */}
-                    <Route path ="/SignUp" index element={<SignUp/>}/>
-                    <Route path ="/blog" index element={<Blog/>}/>
-                    <Route path="/*" index element={<Home />} />
+                    <Route path="/welcome" element={<Welcome />} />
+                    <Route path="/*" element={<Error404 />} />
+                    <Route path="/shoppingCart" element={<ShoppingCart />} />
+                    <Route path="/shop" element={<Shop />} />
+                    <Route path="/wine" element={<WineDetails />} />
+                    {/* <Route path ="/wine/:id" element={<WineDetails />}/> */}        
+                    {props.user ? <>
+                        <Route path='/signIn' element={<Home />} /> <Route path='/signUp' element={<Error404 />} />
+                    </> : <>
+                        <Route path='/signIn' element={<SignIn />} /> <Route path='/signIn' element={<SignUp />} />
+                    </>}
+                    <Route path ="/signUp" element={<SignUp/>}/>
+                    <Route path ="/newAdmin" element={<NewAdmin/>}/>
+                    <Route path ="/blog" element={<Blog/>}/>
+                    <Route path="/" index element={<Home />} />
                 </Routes>
             <Footer/>
         </BrowserRouter>
@@ -55,9 +55,9 @@ function App(props) {
 const mapDispatchToProps = {
 	verifyToken: userActions.verifyToken,
 }
+
 const mapStateToProps = (state) => {
-    return {
-        user: state.userReducer.user
-    }
+    return {user: state.userReducer.user}
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(App)

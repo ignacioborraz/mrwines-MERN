@@ -32,7 +32,7 @@ function GoogleSignIn(props) {
             cookiePolicy={'single_host_origin'}
             render = { renderProps => (
                 <>
-                <IconButton onClick={renderProps.onClick} sx={{bgcolor: 'rgb(165, 126, 196)', color: 'white', height: '40px', '&:hover': {bgcolor: 'rgba(0, 0, 0, 0.5)'}}}>
+                <IconButton onClick={renderProps.onClick} sx={{marginTop: '0.5rem', border: '1px solid black', bgcolor: 'rgba(255, 255, 255, 0.3)', color: 'white', width: '40px', height: '40px', '&:hover': {bgcolor: 'rgba(0, 0, 0, 0.5)'}}}>
                     <GoogleIcon />
                 </IconButton>
                 </>

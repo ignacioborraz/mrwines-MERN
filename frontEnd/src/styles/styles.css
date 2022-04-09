@@ -131,7 +131,7 @@
     min-width: 280px;
     max-width: 700px; 
     margin: 1rem 0.75rem 0;
-    background-color:rgba(255, 255, 255, 0.082);
+    background-color:rgba(255, 255, 255, 0.3);
     text-align:center;
     font-family: 'Roboto', sans-serif;
 }
@@ -142,7 +142,7 @@
     margin-top:1rem;
     height: 2em;
     border:1px solid black;
-    background-color:rgba(255, 255, 255, 0.082);
+    background-color:rgba(255, 255, 255, 0.3);
     border-radius:7px;
     color:white;
     height:2.3em;
@@ -151,6 +151,9 @@
     margin-bottom:1em;
     font-family: 'Roboto', sans-serif;
     text-shadow: -2px 2px 2px black;
+}
+.btnForm:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .divBtn{
     display:flex;

@@ -6,7 +6,7 @@ const userControllers = require('../controllers/userControllers')
 const {newAdmin,signUpUser,logInUser,signOutUser,verifyEmail,verifyToken} = userControllers
 
 Router.route('/auth/newAdmin')
-.post(newAdmin)
+.post(validator,newAdmin)
 
 Router.route('/auth/signUp')
 .post(validator,signUpUser)

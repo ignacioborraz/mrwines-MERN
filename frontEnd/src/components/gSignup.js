@@ -15,12 +15,12 @@ function GoogleSignUp(props) {
     const responseGoogle = async (res) => {
         //console.log(res)
         const userData = {
-            //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
             userName: res.profileObj.givenName,
             lastName: res.profileObj.familyName,
             userPhoto: res.profileObj.imageUrl,
             email: res.profileObj.email,
             password: res.profileObj.googleId,
+            admin: false,
             from: "google"
         }
         //console.log(userData)
@@ -35,7 +35,7 @@ function GoogleSignUp(props) {
             cookiePolicy={'single_host_origin'}
             render = { renderProps => (
                 <>
-                <IconButton onClick={renderProps.onClick} sx={{bgcolor: 'rgb(165, 126, 196)', color: 'white', height: '40px', '&:hover': {bgcolor: 'rgba(0, 0, 0, 0.5)'}}}>
+                <IconButton onClick={renderProps.onClick} sx={{marginTop: '0.5rem', border: '1px solid black', bgcolor: 'rgba(255, 255, 255, 0.3)', color: 'white', width: '40px', height: '40px', '&:hover': {bgcolor: 'rgba(0, 0, 0, 0.5)'}}}>
                     <GoogleIcon />
                 </IconButton>
                 </>

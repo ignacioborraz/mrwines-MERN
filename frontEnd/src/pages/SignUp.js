@@ -24,6 +24,7 @@ function SignUp(props) {
             userPhoto: userPhoto,
             email: mail,
 			password: pass,
+            admin: false,
 			from: "SignUpForm"
         }
         //console.log(userData)
@@ -32,7 +33,7 @@ function SignUp(props) {
 
     return (
         <div className="containerForm BgSignUp">
-            <h1 className=" title white signuptext">Sign up</h1>
+            <h1 className="title white title">Sign up</h1>
             <div className='signBody'>
                 <form onSubmit={handleSubmit} className='form'>
                     <div>
@@ -54,8 +55,8 @@ function SignUp(props) {
                     </div>
                     <div className="divBtn">
                         <button type="submit" className="btnForm">Create Account</button>
+                        <GoogleSignUp />
                     </div>
-                    <GoogleSignUp />
                 </form>
             </div>
             <div className="textForm text-shadow">

@@ -23,3 +23,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, HOST, ()=>console.log('SERVER READY ON PORT '+PORT))
+
+/* app.listen(PORT, ()=>console.log('SERVER READY ON PORT '+PORT)) */
+
+
+/*en JSON
+    "scripts": {
+        "start": "nodemon server.js"
+    }
+*/

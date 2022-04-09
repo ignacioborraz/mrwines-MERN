@@ -54,7 +54,11 @@
   background-color: transparent !important;
 }
 .spanUser{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 .pruebaMenu{
   margin-right: 2rem!important;
@@ -79,8 +83,5 @@
   }
   .userImg {
     width: 4rem;
-  }
-  .spanUser{
-display: none;
   }
 }

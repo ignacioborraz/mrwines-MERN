@@ -15,10 +15,9 @@ function SignIn(props) {
 		event.preventDefault()
 		const userLogin = {
 			email: mail,
-			password: pass,
-			from: "SignInForm"
+			password: pass
 		}
-		console.log(userLogin)
+		//console.log(userLogin)
 		props.logInUser(userLogin)
 	}
 
@@ -35,9 +34,8 @@ function SignIn(props) {
 					</div>
 					<div className="divBtn">
 						<button type="submit" className="btnForm"> Sign in  </button>
-						<button type="submit" className="btnForm"> Admin  </button>
-					</div>
 						<GoogleSignIn />
+					</div>
 				</form>
 			</div>
 			<div className="textForm text-shadow">

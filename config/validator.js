@@ -37,7 +37,8 @@ const validator = (req, res, next) => {
                 'string.pattern': 'only lower & UPPER & numbers',
                 'string.min': 'password: min 8 characters',
                 'string.max': 'password: max 30 characters'}),
-        from: joi.string()
+        from: joi.string(),
+        admin: joi.boolean()
     })
     const validation = schema.validate(req.body.userData, {abortEarly:false})
     if (validation.error) {
