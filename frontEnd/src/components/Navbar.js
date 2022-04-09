@@ -118,7 +118,7 @@ const NavBar2 = (props) => {
                             <LinkRouter className="linkGeneral" aria-current="page" to="/home">Home</LinkRouter>
                         </Button>
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/Wineinfo">Shop</LinkRouter>
+                            <LinkRouter className="linkGeneral" to="/Shop">Shop</LinkRouter>
                         </Button>
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
                             <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>

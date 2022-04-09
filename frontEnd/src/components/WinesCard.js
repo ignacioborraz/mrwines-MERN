@@ -4,12 +4,12 @@ import {Link as LinkRouter} from 'react-router-dom'
 
  const WinesCard = () => {
   return (
-    <div className='cardTopFive'>
+    <div className='cardTopWines'>
           <>
-              <div sx={{minWidth:200, maxWidth: 350, marginTop: 4}}>
-                <div>
-                  <img className='bestWineImg' src={process.env.PUBLIC_URL+"images/pinotNoir.jpg"}/>
-                  <div>
+              <div>
+                <div className="card-div">
+                  <img className='topWineImg' src={process.env.PUBLIC_URL+"images/pinotNoir.jpg"}/>
+                  <div className="infoCard-div">
                     <h2>Luca</h2>
                     <h3>Pinot noir</h3>
                     <h3 className='price'>$3500</h3>

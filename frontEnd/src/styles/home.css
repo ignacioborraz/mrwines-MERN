@@ -9,10 +9,10 @@
 }
 .home-container{
     background-color: white;
+    width: 100%;
 }
 .home {
-    width: 100%;
-    min-height: 102vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -45,18 +45,16 @@
     text-shadow: 2px 2px black;
     font-size: 5rem;
 }
-.cardTopFive{
+.cardTopWines{
     background-color: white;
     padding: .8rem;
     border: 1px solid black;
     border-radius: 15px;
-    /* width: auto; */
     margin: 1rem;
     transition: all .4s;
-    min-width: 200px !important;
-    max-width: 350px !important;
+    width: 220px ;
 }
-.cardTopFive:hover{
+.cardTopWines:hover{
  box-shadow: 0px 0px 6px 3px rgb(178 18 52);
 }
 .price{
@@ -66,7 +64,7 @@
     display: flex;
     justify-content: center;
     padding: .5rem;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     margin-top: .5rem;
 }
 .btnShop{
@@ -78,12 +76,18 @@
 .btnShop:hover{
     background-color: rgb(178 18 52);
 }
-.bestWineImg{
+.card-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topWineImg{
     width: 130px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 .topFiveDiv{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     border-radius: 15px;
     max-width: 98vw;
@@ -99,11 +103,13 @@
     border-radius: 15px;
     backdrop-filter: blur(8px);
     color: white;
-    background-color: rgba(0, 0, 0, 0.301);
+    /* background-color:rgba(255, 255, 255, 0.116); */
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
     font-size: 1.5rem;
     overflow-y: auto;
 }
-.sepia{
+.logoTitle-div{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +117,7 @@
     margin-bottom: 26vh;
 }
 .signBody{
-     display:flex;
+    display:flex;
     flex-direction: column; 
     border-radius:15px;
     border:1px solid black;
@@ -124,10 +130,10 @@
     min-width:40%;
     margin-top: 4vh;
     backdrop-filter:blur(8px);
-    background-color:rgba(255, 255, 255, 0.116);
+    /* background-color:rgba(255, 255, 255, 0.116); */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .containerForm{
-    /* background-image: linear-gradient(120deg, #800040 0%, #fccb90 100%); ; */
     display:flex;
     flex-direction:column;
     width:100%;
@@ -135,8 +141,8 @@
     align-items: center;
     justify-content: center;
     background-size:cover;
-    padding-top:10em;
-    padding-bottom:2em;
+    padding-top:10rem;
+    padding-bottom:2rem;
 }
 .inputForm{
     margin-top:10px;
@@ -152,19 +158,17 @@
 }
 .inputForm::placeholder{
     color: rgba(0, 0, 0, 0.50);
-    /* color:white; */
     font-weight: bold;
-    /* text-shadow: 1px 1px black; */
 }
 .btnForm{
     margin-top:1rem;
-    height: 2em;
+    height: 2rem;
     border:1px solid black;
     background-color:black;
     border-radius:5px;
     color:white;
-    height:2.3em;
-    width:8em;
+    height:2rem;
+    width:8rem;
     justify-content: center;
     margin-bottom:1em;
     font-family: 'Roboto', sans-serif;
@@ -211,7 +215,7 @@
     border-bottom:2px solid rgb(178 18 52);
 }
 .BgSignUp{
-    background-image: url('../../public/images/backgroundForm.jpg');
+    background-image: url('../../public/images/backgroundForm1.jpg');
 }
 .BgSignIn{
     background-image: url('../../public/images/backgroundSignIn.jpg');
@@ -244,24 +248,34 @@
     .containerForm{
         padding-top:2em;
     }
+    .aboutText{
+        width: 70vw;
+        max-height: 60vh;
+        margin: 1.5rem;
+        padding: 1.5rem;
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.301);
+        font-size: 1rem;
+        overflow-y: auto;
+    }
 }
 
 @media screen and (max-width: 900px){
-
     .logoHome{
         width: 40vw;
       }
-    .topFiveDiv{
+    /* .topFiveDiv{
         justify-content: left;
         width: 98%;
         overflow-x: auto;
-    }
+    } */
     .cardTopFive{
         margin: .5rem;
     }
     .signBody{
         width:65%;
-
     }
 }
 @media screen and (max-width: 450px){
@@ -270,13 +284,22 @@
     }
 }
 @media screen and (min-width: 1500px){
-    .bestWineImg{
-        width: 10vw;
-    }
     .cardTopFive{
         margin: 2rem;
     }
     .bestWineImg{
         width: 200px;
+    }
+    .aboutText{
+        width: 50vw;
+        max-height: 60vh;
+        margin: 1.5rem;
+        padding: 1.5rem;
+        border-radius: 15px;
+        backdrop-filter: blur(8px);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.301);
+        font-size: 2.5rem;
+        overflow-y: auto;
     }
 }

@@ -60,7 +60,6 @@
     margin-right: 2rem!important;
   }
 
-  
   @media (max-width: 567px) {
     .navbar {
       padding: 0;
@@ -71,11 +70,9 @@
     }
     .linkLogo {
       font-size: 1.5rem !important;
-      
     }
     .logo {
       width: 2rem;
-      
     }
     .userImg {
       width: 4rem;
