@@ -2,6 +2,7 @@
   background-color: transparent !important;
   background-color:rgba(3, 1, 1, 0.144) !important;
   width: 100%;
+  height: 15vh;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -9,8 +10,9 @@
   transition: all 1s;
   flex-wrap: nowrap;
 }
-.navbarBackgound {
+.navbarBackground {
   width: 100%;
+  height: 15vh;
   position: fixed;
   display: flex;
   justify-content: space-between !important;

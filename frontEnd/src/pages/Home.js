@@ -1,6 +1,6 @@
 //import {Link as LinkRouter} from "react-router-dom"
 import WinesCard from "../components/WinesCard"
-import '../styles/home.css'
+import '../styles/styles.css'
 
 export default function Home () {
     return (

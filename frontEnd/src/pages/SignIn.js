@@ -5,6 +5,8 @@ import GoogleSignIn from '../components/gLogin'
 
 import {connect} from 'react-redux'
 import userActions from '../redux/actions/userActions'
+ import Snackbar from "../components/Snackbar" 
+ import '../styles/styles.css'
 
 function SignIn(props) {
 
@@ -22,7 +24,9 @@ function SignIn(props) {
 	}
 
 	return (
-        <div className="containerForm BgSignIn">
+        <div className="containerFormSign BgSignIn">
+		
+		<Snackbar/>
             <h1 className=" title white signuptext">Sign in</h1>
 			<div className='signBody'>
 				<form onSubmit={handleSubmit} className='form'>
@@ -40,7 +44,9 @@ function SignIn(props) {
 			</div>
 			<div className="textForm text-shadow">
 				<p>You don't have an account?</p><p>Please <LinkRouter className="textDecoration" to="/signUp">sign up</LinkRouter></p>
-			</div>
+			
+		</div>
+		
         </div>
 	)
 }

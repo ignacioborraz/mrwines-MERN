@@ -1,4 +1,4 @@
-import '../styles/home.css'
+import '../styles/styles.css'
 import {Link as LinkRouter} from 'react-router-dom'
 
 //cuando esté el filtro se va a eliminar esta card y usar la otra

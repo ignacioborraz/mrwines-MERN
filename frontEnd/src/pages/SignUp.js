@@ -5,6 +5,8 @@ import GoogleSignUp from '../components/gSignup'
 
 import {connect} from 'react-redux'
 import userActions from '../redux/actions/userActions'
+import Snackbar from "../components/Snackbar"
+import '../styles/styles.css'
 
 function SignUp(props) {
 
@@ -32,7 +34,8 @@ function SignUp(props) {
     }
 
     return (
-        <div className="containerForm BgSignUp">
+        <div className="containerFormSign BgSignUp">
+            <Snackbar/> 
             <h1 className="title white title">Sign up</h1>
             <div className='signBody'>
                 <form onSubmit={handleSubmit} className='form'>
