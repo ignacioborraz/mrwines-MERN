@@ -120,6 +120,7 @@
   .pruebaMenu{
     margin-right: 2rem!important;
   }
+}
 
   @media (max-width: 567px) {
     .navbar {

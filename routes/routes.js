@@ -31,7 +31,7 @@ Router.route('/wines')
 .get(getWines)
 .post(uploadWine)
 
-Router.route('/types')
+Router.route('/types/:id')
 .get(getTypeWines)
 
 Router.route('/wines/:id')

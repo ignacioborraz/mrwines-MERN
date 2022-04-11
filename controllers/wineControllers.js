@@ -21,7 +21,7 @@ const wineControllers = {
     
     getTypeWines: async (req,res) => {
         let wines
-        let type = req.body.type
+        let type = req.params.id
         let error = null
         try {
             wines = await Wine.find({type:type})

@@ -12,9 +12,9 @@ const wineActions = {
         }
     },
 
-    getTypeWines: () => {
+    getTypeWines: (id) => {
         return async(dispatch, getState) => {
-            const answer = await axios.get(urlMrWines+`api/types`)
+            const answer = await axios.get(urlMrWines+`api/types/${id}`)
             dispatch({type:'GET_TYPES', payload:answer.data.response.wines})
         }
     },
