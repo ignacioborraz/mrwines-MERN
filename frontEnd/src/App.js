@@ -17,6 +17,7 @@ import NewAdmin from './pages/NewAdmin'
 
 import {connect} from 'react-redux'
 import userActions from './redux/actions/userActions'
+import Snackbar from "../src/components/Snackbar"
 
 function App(props) {
 
@@ -48,6 +49,7 @@ function App(props) {
                     <Route path="/" index element={<Home />} />
                 </Routes>
             <Footer/>
+            <Snackbar/>
         </BrowserRouter>
     )
 }

@@ -95,7 +95,7 @@ const userControllers = {
         try {
             const mrUser = await User.findOne({email})
             if (!mrUser) {
-                res.json({success: false, message: `${email} has no account in MyTinerary, please SIGN UP!`})
+                res.json({success: false, message: `${email} has no account in mrWines, please SIGN UP!`})
             } else {
                 let from = mrUser.from
                 console.log(from)
@@ -109,14 +109,17 @@ const userControllers = {
                                 email: mrUser.email,
                                 userPhoto: mrUser.userPhoto,
                                 admin: mrUser.admin,
-                                from: mrUser.from}
+                                from: mrUser.from};
                                 console.log(userData)
-                            const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 1000*60*60*24 })
+                         await mrUser.save() ////agregue un await
+                          const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 1000*60*60*24 })
                             res.json({
                                 success: true, 
                                 from: from, 
                                 response: {token, userData}, 
-                                message: `welcome back ${userData.userName}!`})
+                                message: `welcome back" ${userData.userName}!`
+                            })
+                                console.log(userData.userName + "NOMBREDELLOGEADO")
                         } else {
                             res.json({ success: false, 
                                 from: from,  
@@ -143,7 +146,7 @@ const userControllers = {
                         res.json({ success: true, 
                             from: from, 
                             response: {token, userData}, 
-                            message: `welcome back!`})
+                            message: `welcome back" ${userData.userName}!`})
                     } else {
                         res.json({ success: false, 
                             from: from,  
@@ -174,7 +177,7 @@ const userControllers = {
                 userPhoto:req.user.userPhoto,
                 admin: req.user.admin,
                 from:"token"},
-            message:"Hi! Welcome back "+req.user.name}) 
+            message:"Hi! Welcome back "+req.user.userName}) 
         } else {
             res.json({
                 success:false,

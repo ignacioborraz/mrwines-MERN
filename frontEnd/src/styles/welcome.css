@@ -14,15 +14,9 @@
     align-items: center;
     background-color: black;
     background-image: url(https://cdn.discordapp.com/attachments/942931026911559680/960922112145653930/U2ZKKDKS5OIXEHE7JGNX2BOURA.jpg);
-    background-size: contain;
+    background-size: cover;
     background-position: top;
 }
-
-.custom-img {
-    width: 300px;
-    height: 300px;
-}
-
 .div-1 {
     height: 20rem;
     display: flex;
@@ -32,33 +26,28 @@
     flex-direction: column;
     width: 30rem;
     text-align: center;
-    color: aliceblue;
+    color: white;
     margin-left: 40%;
-    font-family: 'Tangerine', cursive;
-    margin-top: 5%;
+    margin-top: 5vh;
 }
-
-.p-1 {
-    margin-bottom: 1rem;
+.div-2{
+    margin-top: 10vh;
+    font-size: 2.5rem;
 }
-
 .custom-linkRouter {
     text-decoration: none;
-    color: rgb(184, 49, 49);
-    font-weight: bold;
+    color: white;
+    text-decoration: underline;
 }
 .custom-linkRouter:hover {
-    color: rgb(133, 40, 40);
-    
+    color: rgb(178 18 52);
+    text-decoration: underline;
 }
-
-.div-2 {
-    margin-top: 1rem;
-}
-
 .custom-name {
     font-weight: bold;
-    color: rgb(184, 49, 49);
+    color: rgb(178 18 52);
+    margin-bottom: 5vh;
+    font-size: 5rem;
 }
 
 @media screen and (max-width:1000px){
@@ -66,8 +55,6 @@
         background-size: cover;
         background-position: top;
     }
-}
-@media screen and (max-width:1000px){
     .div-container {
         background-size: cover;
         background-position: top;

@@ -1,8 +1,6 @@
 //importo de librerias externas
 import React from 'react'
 import GoogleLogin from 'react-google-login'
-import GoogleIcon from '@mui/icons-material/Google'
-import {IconButton} from '@mui/material'
 
 //importo los estilos
 import '../styles/styles.css'
@@ -32,9 +30,9 @@ function GoogleSignIn(props) {
             cookiePolicy={'single_host_origin'}
             render = { renderProps => (
                 <>
-                <IconButton onClick={renderProps.onClick} sx={{marginTop: '0.5rem', border: '1px solid black', bgcolor: 'rgba(255, 255, 255, 0.3)', color: 'white', width: '40px', height: '40px', '&:hover': {bgcolor: 'rgba(0, 0, 0, 0.5)'}}}>
-                    <GoogleIcon />
-                </IconButton>
+                <button onClick={renderProps.onClick} className='btnForm'>
+                    <img className='googleImg' src={process.env.PUBLIC_URL + "google.png"}/>
+                </button>
                 </>
             )}
         />
