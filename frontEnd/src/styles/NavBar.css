@@ -70,12 +70,45 @@
     padding: 0;
   }
   .navbarBackgound {
-    padding: 0;
-    background-color: #000 !important;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between !important;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    transition: all 1s;
   }
-  .linkLogo {
-    font-size: 1.5rem !important;
-    
+  .linkGeneral {
+    padding: 1rem 1.4rem;
+    border-radius: 5px;
+    color: black;
+    color:white;
+    text-shadow:2px 2px black;
+    font-weight: bold;
+    font-size: x-large;
+    text-decoration: none;
+  }
+  .nav-linkUser {
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+  }
+  .navLi {
+    list-style-type: none !important;
+    font-size:1.4em !important;
+    font-weight: bold !important;
+  }
+  .linkGeneral:hover {
+    color: rgb(178 18 52);
+    background-color: rgba(255, 255, 255, 0.281);
+  }
+  .linkAvatar {
+    text-decoration: none;
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
   }
   .logo {
     width: 2rem;
@@ -84,4 +117,28 @@
   .userImg {
     width: 4rem;
   }
-}
+  .pruebaMenu{
+    margin-right: 2rem!important;
+  }
+
+  @media (max-width: 567px) {
+    .navbar {
+      padding: 0;
+    }
+    .navbarBackgound {
+      padding: 0;
+      background-color: #000 !important;
+    }
+    .linkLogo {
+      font-size: 1.5rem !important;
+    }
+    .logo {
+      width: 2rem;
+    }
+    .userImg {
+      width: 4rem;
+    }
+    .spanUser{
+  display: none;
+    }
+  }

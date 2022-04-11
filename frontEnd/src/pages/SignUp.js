@@ -45,7 +45,6 @@ function SignUp(props) {
                     <div>
                         {/* <input name="User Photo" className="inputForm" placeholder="URL photo" type="file" value={file} onChange={e=>setFile(e.target.files)} required /> */}
                         <input name="User Photo" className="inputForm" placeholder="URL photo" type="text" value={userPhoto} onChange={e=>setUserPhoto(e.target.value)} required />
-
                     </div>
                     <div>
                         <input name="Email" className="inputForm" placeholder="Email address" type="email" value={mail} onChange={e=>setMail(e.target.value)} required />
