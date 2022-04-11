@@ -36,11 +36,11 @@
 }
 .custom-linkRouter {
     text-decoration: none;
-    color: white;
+    color: rgb(178 18 52);
     text-decoration: underline;
 }
 .custom-linkRouter:hover {
-    color: rgb(178 18 52);
+    color: white;
     text-decoration: underline;
 }
 .custom-name {

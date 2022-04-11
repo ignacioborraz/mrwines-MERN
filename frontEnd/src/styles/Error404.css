@@ -1,81 +1,57 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap%27"); 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 .error{
-    background-image: url("../assets/fondoerror.jpg");
-    background-size: cover;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../public/copaSuelo.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  text-shadow: 2px 2px black;
 }
-
-.mainbox {
-    background-color: rgba(0, 0, 0, 0.664);
-    margin: auto;
-    height: 100vh;
-    width: 100%;
-    
-  }
-.error3{
-    margin: auto;
-    height: 100vh;
-width: 50%;
-position: relative;
+.fourCeroFour{
+  color: white;
+  font-size: 15rem;
+  font-family: 'Roboto Slab', serif;
 }
-  
-    .err {
-      color:white;
-      font-size: 20rem;
-      position:absolute;
-      left: 20%;
-      top: 1%;
-      font-family: 'Times New Roman', Times, serif;
-     }
-  
-  .far {
-    position: absolute;
-    font-size: 12.5rem;
-    left: 42%;
-    top: 19%;
-    color: white;
-
+.msg {
+  text-align: center;
+  font-size: 3rem;
+  width: 70%;
+  color: white;
+  font-size: 3rem;
+}
+.custom-linkRouter {
+  text-decoration: none;
+  color: rgb(178 18 52);
+  text-decoration: underline;
+}
+.custom-linkRouter:hover {
+  color: white;
+  text-decoration: underline;
+}
+@media screen and (max-width: 500px){
+  .fourCeroFour{
+    font-size: 10rem;
   }
-  
-   .err2 {
-      color: white;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 20rem;
-      position:absolute;
-      left: 68%;
-      top: 1%;
-      font-family: 'Times New Roman', Times, serif;
-    }
-  
   .msg {
-      text-align: center;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 3rem;
-      position:absolute;
-      left: 16%;
-      top: 45%;
-      width: 70%;
-      color: white;
-      font-weight: 400;
-    }
-    .copa{
-        height: 75vh;
-        margin-left: 52%;
-        margin-top: 24%;
-        
-    }
-  
-  a {
+    font-size: 2rem;
+  }
+}
+.custom-linkRouter {
     text-decoration: none;
+    color: rgb(178 18 52);
+    text-decoration: underline;
+}
+.custom-linkRouter:hover {
     color: white;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
+    text-decoration: underline;
+}
