@@ -4,11 +4,11 @@ const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
 
-const urlFront = 'http://localhost:3000/'
-const urlMrWines = 'http://localhost:4000/'
+/* const urlFront = 'http://localhost:3000/'
+const urlMrWines = 'http://localhost:4000/' */
 
-/* const urlFront = 'https://mrwines.herokuapp.com/'
-const urlMrWines = 'https://mrwines.herokuapp.com/' */
+const urlFront = 'https://mrwines.herokuapp.com/'
+const urlMrWines = 'https://mrwines.herokuapp.com/'
 
 
 const userControllers = {
@@ -111,8 +111,8 @@ const userControllers = {
                                 admin: mrUser.admin,
                                 from: mrUser.from};
                                 console.log(userData)
-                         await mrUser.save() ////agregue un await
-                          const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 1000*60*60*24 })
+                            await mrUser.save() ////agregue un await
+                            const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 1000*60*60*24 })
                             res.json({
                                 success: true, 
                                 from: from, 
