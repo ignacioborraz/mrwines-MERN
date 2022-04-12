@@ -43,7 +43,7 @@ const NavBar = (props) => {
 
         <AppBar className='App-header' position="static">
             
-            <Container maxWidth="xxl" className={navbar ? "navbarBackground navbar-expand-lg " : " navbar navbar-expand-lg "}>
+            <Container maxWidth="xxl" className={navbar ? "navbarBackgound navbar-expand-lg " : " navbar navbar-expand-lg "}>
                 <Toolbar disableGutters>
                     {/* ////////////////////////// BUTTON NAVBAR ////////////////////////// */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

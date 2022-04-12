@@ -1,93 +1,80 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.details-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100% !important;
+	min-height: 100vh;
+	background-image: url('../../public/images/corchos.jpg');
+	background-size: cover;
 }
-
-.botellavino2 {
-    height: 500px;
+.card-details{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	width: 70%;
+	margin: 20vh 0;
+	border-radius: 15px;
+	padding: .8rem 0;
+    border: 1px solid black;
 }
-
-.custom-div1-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.custom-div2-details {
-    height: auto;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-}
-.custom-div2-details h2 {
-  font-size: 3rem;
-}
-
-.padding-right {
-    text-align: center;
-    padding-right: 5rem;
-}
-
-.custom-div3-details {
-	margin: 1rem 0;
-    display: flex;
-    align-items: center;
-	justify-content: space-around;
-    width: 100%;
-    height: 5rem;
-}
-.custom-div3-details button {
-    font-size: 1rem;
-    padding: 1rem;
-    text-align: center;
-}
-.custom-div4-details {
-    margin: 1rem 0;
-}
-.custom-div1-details p {
-    font-size: 1.2rem;
-}
-
-.custom-div1-details-subContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    border: 20px solid;
-	border-image: url("../assets//marco.png");
-	border-image-slice: 14%;
-	border-image-repeat: round;
-	border-image-width: 30px;
-	border-image-outset: 20px;
-}
-
-.custom-price {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.input-customised {
-	height: 4rem;
-	border: none;
-	width: 3rem;
-}
-.button-customised {
-	height: 4rem;
-	border: none;
-	cursor: pointer;
-}
-.container-input-number {
+.flexCard{
 	display: flex;
 }
+.img-details{
+	width: 245px;
+    height: 500px;
+	object-fit: cover;
+}
+.head-details{
+	text-align: center;
+	font-size: 1.5rem;
+}
+.padding-text{
+	padding: .5rem;
+}
+.counterDiv-details{
+	display: flex;
+	align-items: center;
+}
+.productCounter-details{
+	display: flex;
+	align-items: center;
+	margin:0 1rem;
+}
+.btn-details{
+	background-color: black;
+    padding: .5rem;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+	width: 3rem;
+	height: 3rem;
+}
+.btn-details:hover{
+    background-color: rgb(178 18 52);
+}
+.cart-details{
+	width: 4rem;
+}
+.aclaration-details{
+    margin: 1rem 0;
+}
+.input-customised {
+	height: 3rem;
+	width: 3rem;
+	text-align: center;
+	font-size: 2rem;
+}
 /* ///////////////////////Accordion///////////////// */
-
+.custom-div-container-acordion{
+	margin-bottom: 1rem;
+}
 .custom-acordion {
 	height: calc(100% - 20px);
 	width: 100%;
 	display: flex;
-	color: rgba(0,0,0,.87);
+	color: rgba(0,0,0,.85);
 	font-family: 'Roboto', sans-serif;
 }
 .accordion {
@@ -100,7 +87,7 @@
 .box {
 	position: relative;
     transition: all .15s ease-in-out;
-    width: 70%;
+    width: 94%;
 }
 .box::before {
     content: '';
@@ -121,7 +108,7 @@ header .box-title {
 }
 .box-title {
 	line-height: 30px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     width: 100%;
 	display: inline-block;
@@ -131,7 +118,7 @@ header .box-title {
 .box-content {
 	width: 100%;
 	font-size: 11pt;
-	color: rgba(0,0,0,.54);
+	color: rgba(0,0,0,.75);
 	display: none;
 }
 .box-close {
@@ -175,13 +162,40 @@ input:checked + section.box .box-title:before {
 /* ///////////////scroll///////////////// */
 
 #global {
-	height: 100px;
+	height: 200px;
 	width: 100%;
 	overflow-y: scroll;
 }
-#mensajes {
-	height: auto;
-}
-.texto {
+.text {
 	padding:4px;
+	font-size: 1.5rem;
+}
+
+@media screen and (max-width: 520px){
+	.card-details{
+		width: 80%;
+		margin: 15vh 0;
+	}
+	.flexCard{
+		flex-direction: column;
+		align-items: center;
+	}
+}
+@media screen and (max-width: 800px){
+	.card-details{
+		width: 85%;
+	}
+	.img-details{
+		width: 175px;
+		height: 350px;
+		object-fit: cover;
+	}
+}
+@media screen and (max-width: 1500px){
+	.head-details{
+		font-size: 1rem;
+	}
+	.text {
+		font-size: 1rem;
+	}
 }

@@ -36,8 +36,7 @@ function App(props) {
                     <Route path="/*" element={<Error404 />} />
                     <Route path="/shoppingCart" element={<ShoppingCart />} />
                     <Route path="/shop" element={<Shop />} />
-                    <Route path="/wine" element={<WineDetails />} />
-                    {/* <Route path ="/wine/:id" element={<WineDetails />}/> */}        
+                    <Route path ="/wine/:id" element={<WineDetails />}/>     
                     {props.user ? <>
                         <Route path='/signIn' element={<Home />} /> <Route path='/signUp' element={<Error404 />} />
                     </> : <>

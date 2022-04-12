@@ -1,5 +1,6 @@
 import '../styles/styles.css'
 import {Link as LinkRouter} from 'react-router-dom'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 //cuando esté el filtro se va a eliminar esta card y usar la otra
  const WinesCard = () => {
@@ -16,7 +17,10 @@ import {Link as LinkRouter} from 'react-router-dom'
                   </div>
                   <div className='btnShop-div'>
                 <LinkRouter to={'#'}>
-                    <button className='btnShop'>Shop!</button>
+                    <button className='btnShop'>Details</button>
+                </LinkRouter>
+                <LinkRouter to={'#'}>
+                    <button className='btnShop'><ShoppingCartOutlinedIcon/></button>
                 </LinkRouter>
                   </div>
                 </div>
