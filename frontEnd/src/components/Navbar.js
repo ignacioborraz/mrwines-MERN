@@ -74,6 +74,9 @@ const NavBar = (props) => {
                             <MenuItem className="navLi" onClick={handleCloseNavMenu}>
                                 <LinkRouter className="nav-linkUser" to="/blog">Blog</LinkRouter>
                             </MenuItem>
+                            <MenuItem className="navLi" onClick={handleCloseNavMenu}>
+                                <LinkRouter className="nav-linkUser" to="/basket">Basket</LinkRouter>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     {/* ////////////////////////// NAVBAR ////////////////////////// */}
@@ -87,10 +90,13 @@ const NavBar = (props) => {
                         <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
                             <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
                         </Button>
+                        <MenuItem className="navLi" onClick={handleCloseNavMenu}>
+                                <LinkRouter className="nav-linkUser" to="/basket">Basket</LinkRouter>
+                            </MenuItem>
                     </Box>
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
-                        <Tooltip title="user" >
+                        <Tooltip>
                             {props.user ?
                                 <div>
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>

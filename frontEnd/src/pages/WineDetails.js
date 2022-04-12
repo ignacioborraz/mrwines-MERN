@@ -31,7 +31,7 @@ function WineDetails() {
           <div className="padding-text">
             <div className="head-details">
               <h2>{oneWine.nameWine} - {oneWine.type} - {oneWine.variety}</h2>
-              <h2>{oneWine.price} USD</h2>
+              <h2>U$D {oneWine.price}</h2>
             </div>
             <div className="aclaration-details">
               <p className="text">Units are sold by closed box. The images are illustrative only</p>

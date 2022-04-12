@@ -3,7 +3,7 @@ import "../styles/Carrito.css";
 import botellavino2 from "../assets/botellavino2.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-export default function ShoppingCart() {
+export default function Basket() {
   return (
     <div className="div-container0-carrito">
       <div className="div-tittle-carrito">

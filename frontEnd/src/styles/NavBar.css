@@ -25,7 +25,7 @@
   border-radius: 5px;
   color: black;
   color:white;
-  text-shadow:2px 2px black;
+  text-shadow: 2px 2px #333;
   font-weight: bold;
   font-size: x-large;
   text-decoration: none;
@@ -85,7 +85,7 @@
     border-radius: 5px;
     color: black;
     color:white;
-    text-shadow:2px 2px black;
+    text-shadow: 2px 2px #333;
     font-weight: bold;
     font-size: x-large;
     text-decoration: none;

@@ -23,12 +23,11 @@ app.use('/api', Router)
 } */
 
 //app.listen(PORT, HOST, ()=>console.log('SERVER READY ON PORT '+PORT))
-
 app.listen(PORT, ()=>console.log('SERVER READY ON PORT '+PORT))
 
 
 /*en JSON
-    "scripts": {
+"scripts": {
         "start": "node server.js",
         "dev": "nodemon server.js",
         "herocu-postbuild": "cd frontEnd && npm install && npm run build"

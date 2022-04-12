@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
-
 import {Link as LinkRouter} from 'react-router-dom'
-
 import {useDispatch, useSelector} from 'react-redux'
 import wineActions from '../redux/actions/wineActions'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 export default function CardWineShop(props) {
     //console.log(props)
@@ -26,25 +26,30 @@ export default function CardWineShop(props) {
             (data.map(everyWine =>
                 <div className='cardTopWines' key={everyWine._id}>
                     <div className="card-div">
-                        <img className='topWineImg' src={everyWine.photo} alt={everyWine.nameWine}/>
+                        <img className='wineImg' src={everyWine.photo} alt={everyWine.nameWine}/>
                         <div className="infoCard-div">
-                            <h2>{everyWine.nameWine}</h2>
-                            <h3>{everyWine.type} - {everyWine.variety}</h3>
-                            <h3 className='price'>{everyWine.price}</h3>
+                            <h3>{everyWine.nameWine}</h3>
+                            <h4>{everyWine.type}</h4>
+                            <h4>{everyWine.variety}</h4>
+                            <h3 className='price'>U$D {everyWine.price}</h3>
                         </div>
                         <div className='btnShop-div'>
-                            <LinkRouter to={`/wine/${everyWine._id}`}>
-                                <button className='btnShop'>Buy!</button>
-                            </LinkRouter>
+                        {/* <LinkRouter to={'/wine'}>
+                            <button className='btnShop'>Details</button>
+                        </LinkRouter> */}
+                        <LinkRouter to={`/wine/:${everyWine._id}`}>
+                            <button className='btnShop'><InfoOutlinedIcon/></button>
+                        </LinkRouter>
+                        <button className='btnShop'><ShoppingCartOutlinedIcon/></button>
                         </div>
                     </div>
                 </div>
             )) : (
-            <div className='cardTopWines'>
-                <div className="card-div">
-                    <h2>ARMAR CARTA LINDA DE QUE NO ENCUENTRA NADA</h2>
-                </div>
-            </div> )
+            <div className='cardTopWines noWines'>
+                <h2>No matches with your search. Please try again.</h2>
+                <h2>Or contact us to give you a solution.</h2>
+            </div> 
+            )
         }
         </>
     )

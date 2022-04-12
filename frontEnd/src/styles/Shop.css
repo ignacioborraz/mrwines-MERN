@@ -10,15 +10,14 @@
 .red{
   color: rgb(178 18 52);
 }
-.custom-img-copas {
-  width: 80px;
-  height: 100px;
-  margin-left: 1rem;
-}
 .div-checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+}
+.subDiv-checkbox{
+  margin: 0 3vw;
 }
 .container-img-h2 {
   display: flex;
@@ -26,14 +25,14 @@
   align-items: center;
 }
 .title{
-  text-shadow: 2px 2px black;
+  text-shadow: 2px 2px #333;
   font-size: 5rem;
 }
 .section-shop{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 7vh;
+  margin-top: 3.5vh;
   width: 100%;
 }
 .cardTopFive{
@@ -73,7 +72,9 @@ box-shadow: 0px 0px 6px 3px rgb(178 18 52);
   align-items: center;
 }
 .wineImg{
-  width: 130px;
+  height: 180px;
+  object-fit: cover;
+  /* width: 130px; */
 }
 .infoCard-div{
   width: 100%;
@@ -86,14 +87,91 @@ box-shadow: 0px 0px 6px 3px rgb(178 18 52);
   border-radius: 15px;
   max-width: 98vw;
 }
+.noWines{
+  width: auto;
+  max-width: 95%;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.filterText{
+  color: white;
+  text-shadow: 2px 2px #333;
+}
+.inputSearch{
+  border: 1px solid #333;
+  border-radius: 5px;
+  height: 25px;
+  width: 200px;
+}
+/*////////////////////range////////////////////*/
+.range-input{
+  /* color: rgb(178 18 52); */
+  padding: 0 5px;
+  border: 1px solid #333;
+}
+.range-input:focus {
+  outline: none;
+}
+.range-input,
+.range-input::-webkit-slider-runnable-track,
+.range-input::-webkit-slider-thumb {
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+}
+.range-input::-webkit-slider-thumb {
+  background-color: rgb(178 18 52);
+  width: 10px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-top: -9px;
+}
+.range-input::-moz-range-thumb {
+  background-color: rgb(178 18 52);
+  width: 10px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-top: -9px;
+}
+.range-input::-ms-thumb {
+  background-color: rgb(178 18 52);
+  width: 10px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-top: -9px;
+}
+.range-input::-webkit-slider-runnable-track {
+  background-color: #333;
+  height: 2px;
+}
+.range-input:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+.range-input::-moz-range-track {
+  background-color: #333;
+  height: 2px;
+}
+.range-input::-ms-track {
+  background-color: #333;
+  height: 2px;
+}
+.range-input::-ms-fill-lower {
+  background-color: black
+}
+.range-input::-ms-fill-upper {
+  background-color: black;
+} 
+/*///////////////////////////////////////////////////////////*/
 
 @media screen and (max-width: 450px){
   .shop{
     margin-top: 6vh;
   }
-  /* .custom-img-copas{
-    display: none;
-  } */
   .title{
     text-align: center;
   }

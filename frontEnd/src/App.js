@@ -12,7 +12,7 @@ import WineDetails from "./pages/WineDetails"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Blog from "./pages/blog"
-import ShoppingCart from "./pages/ShoppingCart"
+import Basket from "./pages/Basket"
 import NewAdmin from './pages/NewAdmin'
 
 import {connect} from 'react-redux'
@@ -34,7 +34,7 @@ function App(props) {
                 <Routes> 
                     <Route path="/welcome" element={<Welcome />} />
                     <Route path="/*" element={<Error404 />} />
-                    <Route path="/shoppingCart" element={<ShoppingCart />} />
+                    <Route path="/basket" element={<Basket />} />
                     <Route path="/shop" element={<Shop />} />
                     <Route path ="/wine/:id" element={<WineDetails />}/>     
                     {props.user ? <>
