@@ -42,32 +42,30 @@ Router.route('/wines/:id')
 Router.route('/stock/:id')
 .put(modifyStockWine)
 
-/*
+
 const topicControllers = require('../controllers/topicControllers')
 const {getTopics,oneTopic,uploadTopic,deleteTopic,modifyTopic,likeTopic,addComment,modifyComment,deleteComment} = topicControllers
 
-Router.route('/activities')
-.get(getActivities)
-.post(uploadActivity)
+Router.route('/tineraries')
+.get(getTopics)
 
-Router.route('/activities/:id')
-.delete(deleteAct)
-.put(modifyAct)
-.get(oneActivity)
-
-Router.route('/activities/tineraries/:id')
-.get(findActFromTin)
-
-
-
-Router.route('/tineraries/likeDislike/:id')
-.put(passport.authenticate('jwt', {session:false}), likeDislike)
+.put(passport.authenticate('jwt', {session:false}), modifyTopic)
 
 Router.route('/tineraries/comment')
+.post(passport.authenticate('jwt', {session:false}), uploadTopic)
+
+Router.route('/tineraries/:id')
+.get(oneTopic)
+.post(passport.authenticate('jwt', {session: false}), deleteTopic)
+
+Router.route('/tineraries/likeDislike/:id')
+.put(passport.authenticate('jwt', {session:false}), likeTopic)
+
+Router.route('/comentaries/comment')
 .post(passport.authenticate('jwt', {session: false}), addComment)
 .put(passport.authenticate('jwt', {session: false}), modifyComment)
 
 Router.route('/tineraries/comment/:id')
-.post(passport.authenticate('jwt', {session: false}), deleteComment) */
+.put(passport.authenticate('jwt', {session: false}), deleteComment) 
 
 module.exports = Router

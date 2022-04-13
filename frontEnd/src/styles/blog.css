@@ -21,8 +21,12 @@
     min-height:100vh;
     justify-content: center;
 }
+.Card{
+    max-width: 15rem!important;
+}
 .cardBlog{
     margin:15px;
+
 }
 .title{
     text-shadow: 2px 2px black;
@@ -49,6 +53,7 @@
     margin-bottom:10px;
 }
 .NameComment{
+    font-size: 3px!important;
     font-weight: bold !important;
     padding:5px !important;
 }
@@ -63,4 +68,17 @@
 }
 .textarea{
     resize:none;
+}
+.iconblog{
+    display: flex;
+    flex-direction: column;
+    
+}
+.titleblog{
+   width: 95%;
+   font-weight: bold;
+   font-size: 25px;
+}
+.textblog{
+ min-height: 0.5rem;
 }

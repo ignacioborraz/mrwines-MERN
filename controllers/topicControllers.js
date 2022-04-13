@@ -19,6 +19,7 @@ const topicControllers = {
         })
     },
 
+
     oneTopic: async (req,res) => {
         const id = req.params.id
         const user = req.user._id
@@ -37,13 +38,17 @@ const topicControllers = {
             error: error
         })
     },
-    
+   
     uploadTopic: async (req,res) => {
-        const {userPhoto,userName,title,text,tags,likes,comments} = req.body
+        const {title, text} = req.body.comment
         const user = req.user._id
+        const profile = req.user.userPhoto
+        const name = req.user.userName
+
         try {
-        const newTopic = new Topic ({userPhoto,userName,title,text,tags,likes,comments}).save()
-            res.json({success: true,
+        const newTopic = await new Topic ({userPhoto: profile, userName: name, title, text, date: Date.now()}).save()
+          
+        res.json({success: true,
                 response: {newTopic},
                 message: "the topic has been uploaded"})
         }
@@ -56,23 +61,34 @@ const topicControllers = {
 
     deleteTopic: async (req,res) => {
         const id = req.params.id
-        await Topic.findOneAndDelete({_id:id})
+        let all
+        try{
+           await Topic.findOneAndDelete({_id:id},{new:true})
+           all = await Topic.find()
+           res.json({success: true,
+            response: {all},
+            message: "the topic has been uploaded"})
+        }catch (e){
+            error = e
+            res.json({ success: false, response: error})
+        }
+        
     },
 
     modifyTopic: async (req,res) => {
-        const {title,text,tags} = req.body
-        const id = req.params.id
+        const {title, text, id} = req.body.comment
         const user = req.user._id
         try {
             const modifyTopic = await Topic
             .findOneAndUpdate({"_id": id}, {$set:{
                 "title": title,
-                "text": text,
-                "tags": tags}}, {new: true})
+                "text": text,}}, {new: true})
             res.json({success: true,
                 response: {modifyTopic},
-                message: "the topic has been modified"})
+                message: "the topic has been modified"})   
+                 console.log(modifyTopic)
         }
+    
         catch (error) {
             console.log(error)
             res.json({ success: true,
@@ -110,15 +126,20 @@ const topicControllers = {
     },
 
     addComment: async (req, res) => {
-        const {tinId,comments} = req.body
+        console.log(req.body.comment)
+        const {id, comment} = req.body.comment
+        console.log(id)
         const user = req.user._id
+        const userName = req.user.userName
+        const userPhoto = req.user.userPhoto
         try {
-            const newComment = await Topic
-                .findOneAndUpdate({_id: tinId}, {$push: {comments: {comment: comments.comment, userId: user}}}, {new: true})
-                .populate("comments.userId", {userName:1,email:1,userPhoto:1})
-            res.json({success: true,
-                response: {newComment},
-                message: "thanks for comment!"})
+           await Topic
+                .findOneAndUpdate({_id: id}, {$push: {comments: {comment: comment, userId: user, user: userName, profile: userPhoto, id: user, }}}, {new: true})
+                .then(response =>   res.json({success: true,
+                    response: response,
+                    message: "thanks for comment!"}))   
+
+          
         }
         catch (error) {
             console.log(error)

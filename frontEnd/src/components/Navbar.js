@@ -35,7 +35,7 @@ const NavBar = (props) => {
     window.addEventListener("scroll", colorNav)
 
     function signOutUser() {
-        console.log(props.user.email)
+        
         props.signOutUser(props.user.email)
     }
 
@@ -92,7 +92,8 @@ const NavBar = (props) => {
                     <Box sx={{ flexGrow: 0.008 }}>
                         <Tooltip title="user" >
                             {props.user ?
-                                <div>
+                                <div className="logoname">
+                                <span className='spanUser'>{props.user.userName}</span>
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                         <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />
                                     </IconButton>
@@ -117,8 +118,8 @@ const NavBar = (props) => {
                                     {(props.user.admin===true) ? 
                                         <MenuItem onClick={handleCloseUserMenu} className="navLi">
                                             <LinkRouter className="nav-linkUser" aria-current="page" to="/NewAdmin">New Admin</LinkRouter>
-                                        </MenuItem> : 
-                                        <span className='spanUser'>{props.user.userName}</span>
+                                        </MenuItem> : null
+                                        
                                     }
                                     <MenuItem onClick={handleCloseUserMenu} className="navLi">
                                         <LinkRouter className="nav-linkUser" aria-current="page" onClick={signOutUser} to="/">Sign Out</LinkRouter>

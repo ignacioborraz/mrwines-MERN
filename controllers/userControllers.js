@@ -20,7 +20,7 @@ const userControllers = {
             const hashWord = bcryptjs.hashSync(password, 10)
             const newAdmin = await new User({userName,lastName,userPhoto,email,password:[hashWord],admin,from:[from],uniqueString:crypto.randomBytes(15).toString('hex'),verification:true})
             await newAdmin.save()
-            console.log(newAdmin)
+            //console.log(newAdmin)
             res.json({success: true,
                 response: {newAdmin},
                 message: "the admin has been created"})
@@ -90,7 +90,7 @@ const userControllers = {
     },
 
     logInUser: async (req, res) => {
-        console.log(req.body.userLogin)
+     
         const {email, password} = req.body.userLogin
         try {
             const mrUser = await User.findOne({email})
@@ -98,7 +98,7 @@ const userControllers = {
                 res.json({success: false, message: `${email} has no account in MyTinerary, please SIGN UP!`})
             } else {
                 let from = mrUser.from
-                console.log(from)
+                //console.log(from)
                 if (from == 'SignUpForm' || from == "newAdminForm") {
                     if (mrUser.verification ) {
                         let checkedWord =  mrUser.password.filter(pass => bcryptjs.compareSync(password, pass))
@@ -110,7 +110,7 @@ const userControllers = {
                                 userPhoto: mrUser.userPhoto,
                                 admin: mrUser.admin,
                                 from: mrUser.from}
-                                console.log(userData)
+                               // console.log(userData)
                             const token = jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn: 1000*60*60*24 })
                             res.json({
                                 success: true, 
@@ -165,6 +165,7 @@ const userControllers = {
     },
 
     verifyToken:(req, res) => {
+        //console.log('bien')
         if (!req.err) {
         res.json({
             success: true,
@@ -174,6 +175,7 @@ const userControllers = {
                 userPhoto:req.user.userPhoto,
                 admin: req.user.admin,
                 from:"token"},
+                
             message:"Hi! Welcome back "+req.user.name}) 
         } else {
             res.json({

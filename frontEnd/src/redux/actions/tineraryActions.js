@@ -7,21 +7,39 @@ const tineraryActions = { //las acciones son eventos en forma de objetos
         //type: es lo que busca el reductor
         //payload: la carga que se realizará
         return async(dispatch, getState) => {
-            const res = await axios.get(`https://mytinerary-borraz.herokuapp.com/api/tineraries`)
-            dispatch({type:'GET_TINERARIES', payload:res.data.response.tineraries})
+            const res = await axios.get(`http://localhost:4000/api/tineraries`)
+            dispatch({type:'GET_TINERARIES', payload:res.data.response});
+            return res.data.response
+        }
+       
+    },
+    uploadTinerary: (comment)=>{
+        const token = localStorage.getItem("token")
+        return async(dispatch,getState)=>{
+            const answer = await axios.post("http://localhost:4000/api/tineraries/comment",{comment},
+          { headers:{ Authorization: `Bearer ${token}`} }
+           );
+            dispatch({type:'UPD_TINERARY', payload:answer.data.response})
         }
     },
-    uploadTinerary: (city,userPhoto,userName,itinerary,price,time,tags,description,likes,comments)=>{
-        return async(dispatch,getState)=>{
-            const answer = await axios.post('https://mytinerary-borraz.herokuapp.com/api/tineraries',{city,userPhoto,userName,itinerary,price,time,tags,description,likes,comments})
-            dispatch({type:'UPD_TINERARY', payload:answer.data.response.tineraries})
+    modifyTopic: (comment) => {
+        const token = localStorage.getItem("token");
+        return async (dispatch, getState) => {
+            const res = await axios.put("http://localhost:4000/api/tineraries",{comment},
+            { headers: {Authorization: `Bearer ${token}`}});
+            return res.data.response.modifyTopic
         }
     },
     deleteTin: (id) => {
+        const token = localStorage.getItem("token");
         return async(dispatch, getState) => {
             try {
-                const answer = await axios.delete(`https://mytinerary-borraz.herokuapp.com/api/tineraries/${id}`)
-                dispatch({type:'DEL_TINERARY', payload:answer.data.response.tineraries})
+                const answer = await axios.post(`http://localhost:4000/api/tineraries/${id}`,{},
+                {headers:{ Authorization: `Bearer ${token}`}});
+                dispatch({type:'DEL_TINERARY', payload:answer.data.response});
+                   console.log(answer.data.response.all)
+                   return answer.data.response.all
+             
             }catch (err) {
                 console.log(err)
             }
@@ -55,7 +73,7 @@ const tineraryActions = { //las acciones son eventos en forma de objetos
         const token = localStorage.getItem('token')
         return async() => {
             try {
-                const answer = await axios.put(`https://mytinerary-borraz.herokuapp.com/api/tineraries/likeDislike/${id}`,{},
+                const answer = await axios.put(`http://localhost:4000/api/tineraries/likeDislike/${id}`,{},
                     {headers: {Authorization: "Bearer "+token}}
                 )
                 //console.log(answer.data.response)
@@ -65,14 +83,16 @@ const tineraryActions = { //las acciones son eventos en forma de objetos
             }
         }
     },
-    addComment: (commentaries) => {
+    addComment: (comment) => {
+
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const answer = await axios.post(`https://mytinerary-borraz.herokuapp.com/api/tineraries/comment`,{...commentaries},
+            const answer = await axios.post(`http://localhost:4000/api/comentaries/comment`,{comment},
                 {headers: {'Authorization': "Bearer "+token}}
             )
             dispatch({type: 'message', payload: {view: true, message: answer.data.message, success: answer.data.success}
             })
+            console.log(answer.data.response)
             return answer.data.response
         }
     },
