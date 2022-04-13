@@ -24,7 +24,6 @@ const wineActions = {
             try {
                 const answer = await axios.get(urlMrWines+`api/wines/${id}`)
                 dispatch({type:'ONE_WINE', payload:answer.data.response.wines})
-                return console.log(answer.data.response.wines)
             }catch (err) {
                 console.log(err)
             }

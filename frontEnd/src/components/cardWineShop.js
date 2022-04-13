@@ -6,7 +6,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 export default function CardWineShop(props) {
-    //console.log(props)
+    console.log(props)
 
     const dispatch = useDispatch()
 
@@ -37,7 +37,7 @@ export default function CardWineShop(props) {
                         {/* <LinkRouter to={'/wine'}>
                             <button className='btnShop'>Details</button>
                         </LinkRouter> */}
-                        <LinkRouter to={`/wine/:${everyWine._id}`}>
+                        <LinkRouter to={`/wine/${everyWine._id}`}>
                             <button className='btnShop'><InfoOutlinedIcon/></button>
                         </LinkRouter>
                         <button className='btnShop'><ShoppingCartOutlinedIcon/></button>

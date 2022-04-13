@@ -50,10 +50,10 @@ function WineDetails() {
                       <div id="global">
                         <div className="text">
                           <h4>Tasting notes:</h4>
-                          <p className="text">COLOR:{oneWine.color}</p>
-                          <p className="text">AROMA:{oneWine.smell}</p>
-                          <p className="text">PALATE:{oneWine.palate}</p>
-                          <p className="text">FOOD:{oneWine.food}</p>
+                          <p className="text">COLOR: {oneWine.color}</p>
+                          <p className="text">AROMA: {oneWine.smell}</p>
+                          <p className="text">PALATE: {oneWine.palate}</p>
+                          <p className="text">FOOD: {oneWine.food}</p>
                         </div>
                         <div className="text">
                           <h4>Origin:</h4>
