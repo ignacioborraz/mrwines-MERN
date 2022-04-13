@@ -79,19 +79,20 @@ setreload(!reload)
         <CardHeader
           avatar={<Avatar aria-label="recipe">{notes?.userPhoto}</Avatar>}
           action={
-            props.user.userName === notes.userName ? (
+            props.user  ? (
               <div className="iconblog">
-                <EditIcon onClick={() => {
+              {props.user.userName === notes.userName ? ( <EditIcon onClick={() => {
                   updateNote(notes._id)
-                }} />
+                }} />) : null}
+               
 
               </div>
             ) : null
           }
-          title={notes.userName}
+          title={notes?.userName}
           subheader={new Date(notes.date).toUTCString()}
         />
-{props.user.userName === notes.userName ? ( <CardContent>
+{props.user ? ( props.user.userName === notes.userName ? (<CardContent>
   <div>
     <h3
       suppressContentEditableWarning={true}
@@ -106,7 +107,20 @@ setreload(!reload)
       onInput={(event) => setModifidText(event.currentTarget.textContent)}
     > {notes?.text}</p>
   </div>
-</CardContent>) : (<CardContent>
+</CardContent>): ( 
+  <>
+  <div>
+  <h3
+    
+  >{notes.title}</h3>
+</div>
+<div>
+  <p
+    
+  > {notes?.text}</p>
+</div>
+</>) )
+  : (<CardContent>
   <div>
     <h3
      

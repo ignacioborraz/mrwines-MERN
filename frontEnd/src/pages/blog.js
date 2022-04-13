@@ -95,11 +95,11 @@ console.log(date)
             <>
              <Padlet data={date} />
              <div style={{ display: 'flex', flexDirection: 'column' }}>
-             {date.userName === props.user.userName ? (
-
-               <DeleteIcon  onClick={() => {
+             {props.user  ? (
+              props.user.userName === date.userName ? ( <DeleteIcon  onClick={() => {
               deleteNote(date._id);
-            }}/>
+            }}/>): null
+              
              ): null}
             
            
