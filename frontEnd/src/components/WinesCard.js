@@ -17,7 +17,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
                   </div>
                   <div className='btnShop-div'>
                 <LinkRouter to={'#'}>
-                    <button className='btnShop'>Details</button>
+                    <button className='btnShop'>Info</button>
                 </LinkRouter>
                 <LinkRouter to={'#'}>
                     <button className='btnShop'><ShoppingCartOutlinedIcon/></button>

@@ -2,72 +2,46 @@ const Router = require('express').Router()
 const validator = require('../config/validator')
 const passport = require('../config/passport')
 
-const userControllers = require('../controllers/userControllers')
-const {newAdmin,signUpUser,logInUser,signOutUser,verifyEmail,verifyToken} = userControllers
+const {newAdmin,signUpUser,logInUser,signOutUser,verifyEmail,verifyToken} = require('../controllers/userControllers')
 
 Router.route('/auth/newAdmin')
-.post(validator,newAdmin)
-
+    .post(validator,newAdmin)
 Router.route('/auth/signUp')
-.post(validator,signUpUser)
-
+    .post(validator,signUpUser)
 Router.route('/auth/logIn')
-.post(logInUser)
-
+    .post(logInUser)
 Router.route('/auth/signOut')
-.post(signOutUser)
-
+    .post(signOutUser)
 Router.route('/verify/:uniqueString')
-.get(verifyEmail)
-
+    .get(verifyEmail)
 Router.route('/auth/loginToken')
-.get(passport.authenticate('jwt', {session:false}), verifyToken)
+    .get(passport.authenticate('jwt', {session:false}), verifyToken)
 
-
-const wineControllers = require('../controllers/wineControllers')
-const {getWines,getTypeWines,oneWine,uploadWine,deleteWine,modifyInfoWine,modifyStockWine} = wineControllers
+const {getWines,getTypeWines,oneWine,uploadWine,deleteWine,modifyInfoWine,modifyStockWine} = require('../controllers/wineControllers')
 
 Router.route('/wines')
-.get(getWines)
-.post(uploadWine)
-
+    .get(getWines)
+    .post(uploadWine)
 Router.route('/types/:id')
-.get(getTypeWines)
-
+    .get(getTypeWines)
 Router.route('/wines/:id')
-.delete(deleteWine)
-.put(modifyInfoWine)
-.get(oneWine)
-
+    .delete(deleteWine)
+    .put(modifyInfoWine)
+    .get(oneWine)
 Router.route('/stock/:id')
-.put(modifyStockWine)
+    .put(modifyStockWine)
 
-/*
-const topicControllers = require('../controllers/topicControllers')
-const {getTopics,oneTopic,uploadTopic,deleteTopic,modifyTopic,likeTopic,addComment,modifyComment,deleteComment} = topicControllers
+const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld} = require('../controllers/basketControlers')
 
-Router.route('/activities')
-.get(getActivities)
-.post(uploadActivity)
-
-Router.route('/activities/:id')
-.delete(deleteAct)
-.put(modifyAct)
-.get(oneActivity)
-
-Router.route('/activities/tineraries/:id')
-.get(findActFromTin)
-
-
-
-Router.route('/tineraries/likeDislike/:id')
-.put(passport.authenticate('jwt', {session:false}), likeDislike)
-
-Router.route('/tineraries/comment')
-.post(passport.authenticate('jwt', {session: false}), addComment)
-.put(passport.authenticate('jwt', {session: false}), modifyComment)
-
-Router.route('/tineraries/comment/:id')
-.post(passport.authenticate('jwt', {session: false}), deleteComment) */
+Router.route('/basket')
+    .get(passport.authenticate('jwt', {session: false}), getUserBasket)
+    .post(passport.authenticate('jwt', {session: false}), addProduct)
+    .put(passport.authenticate('jwt', {session: false}), modifyProduct)
+Router.route('/basket/:id')
+    .post(passport.authenticate('jwt', {session: false}), deleteProduct)
+Router.route('/buyBasket')
+    .get(passport.authenticate('jwt', {session: false}), getBuy)
+Router.route('/oldBasket')
+    .get(passport.authenticate('jwt', {session: false}), getOld)
 
 module.exports = Router

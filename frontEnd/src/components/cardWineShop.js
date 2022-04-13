@@ -3,10 +3,10 @@ import {Link as LinkRouter} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import wineActions from '../redux/actions/wineActions'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import "../styles/Shop.css"
 
 export default function CardWineShop(props) {
-    //console.log(props)
+    console.log(props)
 
     const dispatch = useDispatch()
 
@@ -34,11 +34,8 @@ export default function CardWineShop(props) {
                             <h3 className='price'>U$D {everyWine.price}</h3>
                         </div>
                         <div className='btnShop-div'>
-                        {/* <LinkRouter to={'/wine'}>
-                            <button className='btnShop'>Details</button>
-                        </LinkRouter> */}
-                        <LinkRouter to={`/wine/:${everyWine._id}`}>
-                            <button className='btnShop'><InfoOutlinedIcon/></button>
+                        <LinkRouter to={`/wine/${everyWine._id}`}>
+                            <button className='btnShop'>Info</button>
                         </LinkRouter>
                         <button className='btnShop'><ShoppingCartOutlinedIcon/></button>
                         </div>

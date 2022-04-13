@@ -21,17 +21,22 @@
 .flexCard{
 	display: flex;
 }
+.img-details-div{
+	display: flex;
+	justify-content: center;
+	width: 300px;
+}
 .img-details{
-	width: 245px;
     height: 500px;
 	object-fit: cover;
+	margin: 0 .5rem;
+	max-width: 300px;
 }
 .head-details{
-	text-align: center;
 	font-size: 1.5rem;
 }
 .padding-text{
-	padding: .5rem;
+	padding: 0 1rem 1rem 0;
 }
 .counterDiv-details{
 	display: flex;
@@ -44,27 +49,36 @@
 }
 .btn-details{
 	background-color: black;
-    padding: .5rem;
-    color: white;
-    border-radius: 5px;
-    font-size: 1rem;
-	width: 3rem;
-	height: 3rem;
+  padding: .5rem;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  height: 44px;
+  width: 73px;
 }
 .btn-details:hover{
     background-color: rgb(178 18 52);
 }
-.cart-details{
-	width: 4rem;
+.price-details{
+	text-align: end;
+	margin-right: 1rem;
+	font-weight: 900;
 }
-.aclaration-details{
+.clarification-details{
     margin: 1rem 0;
 }
 .input-customised {
-	height: 3rem;
-	width: 3rem;
+	height: 2.75rem;
+	/* width: 3rem; */
 	text-align: center;
 	font-size: 2rem;
+	border-radius: 5px;
+	border: 1px solid #333;
+}
+.clarifications-text{
+	margin: 2rem 0;
+	color: #333;
+	font-style: italic;
 }
 /* ///////////////////////Accordion///////////////// */
 .custom-div-container-acordion{
@@ -167,26 +181,26 @@ input:checked + section.box .box-title:before {
 	overflow-y: scroll;
 }
 .text {
-	padding:4px;
+	padding:6px 0;
 	font-size: 1.5rem;
 }
 
 @media screen and (max-width: 520px){
 	.card-details{
 		width: 80%;
+		min-width: 300px;
 		margin: 15vh 0;
 	}
+}
+@media screen and (max-width: 800px){
 	.flexCard{
 		flex-direction: column;
 		align-items: center;
 	}
-}
-@media screen and (max-width: 800px){
 	.card-details{
 		width: 85%;
 	}
 	.img-details{
-		width: 175px;
 		height: 350px;
 		object-fit: cover;
 	}

@@ -1,11 +1,7 @@
 import React, {useEffect, useState} from 'react'
-
 import "../styles/Shop.css"
-//import dosCopas from "../assets/dosCopas.png"
-
 import ControlledCheckbox from "../components/ControlledCheckbox"
 import CardWineShop from '../components/cardWineShop'
-
 import {useDispatch, useSelector} from 'react-redux'
 import wineActions from '../redux/actions/wineActions'
 

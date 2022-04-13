@@ -14,6 +14,7 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 import "../styles/NavBar.css"
 
@@ -43,7 +44,7 @@ const NavBar = (props) => {
 
         <AppBar className='App-header' position="static">
             
-            <Container maxWidth="xxl" className={navbar ? "navbarBackgound navbar-expand-lg " : " navbar navbar-expand-lg "}>
+            <Container maxWidth="xxl" className={navbar ? "navbar navbar-expand-lg " : " navbar navbar-expand-lg "}>
                 <Toolbar disableGutters>
                     {/* ////////////////////////// BUTTON NAVBAR ////////////////////////// */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -74,29 +75,34 @@ const NavBar = (props) => {
                             <MenuItem className="navLi" onClick={handleCloseNavMenu}>
                                 <LinkRouter className="nav-linkUser" to="/blog">Blog</LinkRouter>
                             </MenuItem>
+                            <MenuItem className="navLi" onClick={handleCloseNavMenu}>
+                                <LinkRouter className="nav-linkUser" to="/basket">Basket</LinkRouter>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     {/* ////////////////////////// NAVBAR ////////////////////////// */}
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        <Button onClick={handleCloseNavMenu} className="navLi">
-                            <LinkRouter className="linkGeneral" aria-current="page" to="/">Home</LinkRouter>
-                        </Button>
-                        <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/shop">Shop</LinkRouter>
-                        </Button>
-                        <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
-                        </Button>
-                    </Box>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            <Button onClick={handleCloseNavMenu} className="navLi">
+                                <LinkRouter className="linkGeneral" aria-current="page" to="/">Home</LinkRouter>
+                            </Button>
+                            <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
+                                <LinkRouter className="linkGeneral" to="/shop">Shop</LinkRouter>
+                            </Button>
+                            <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
+                                <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
+                            </Button>
+                        </Box>
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
-                        <Tooltip title="user" >
+                        <Button sx={{ my: 0, color: 'white'}} className="navLi">
+                            <LinkRouter className="linkGeneral" to="/basket"><ShoppingCartOutlinedIcon className='cart-nav'/></LinkRouter>
+                        </Button>
+                        <Tooltip>
                             {props.user ?
-                                <div>
-                                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-                                        <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />
-                                    </IconButton>
-                                </div> :
+                                <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
+                                    <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />
+                                </IconButton>
+                                :
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                     <Avatar className="iconoNav" alt="Remy Sharp"  variant="rounded" />
                                 </IconButton>
