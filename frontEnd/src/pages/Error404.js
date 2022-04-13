@@ -6,18 +6,11 @@ import { Link as LinkRouter } from "react-router-dom";
 
 function Error404(){
 return (
-    <div className="error"> 
-  <div class="mainbox">
-      <div className="error3"> 
-    <div class="err">4</div>
-    <i class="far fa-question-circle fa-spin"></i>
-    <div class="err2">4</div>
-    <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the first place?<p>Let's go <LinkRouter className="custom-linkRouter" to="/home">
-              Home
-            </LinkRouter> and try from there.</p></div>
-            
-      </div>
-      </div>
+  <div className="error"> 
+    <h1 className="fourCeroFour">404</h1>
+    <div class="msg">The page has not been found.
+      <p>Let's go <LinkRouter className="custom-linkRouter" to="/home">Home</LinkRouter> and try from there.</p>
+    </div>     
 </div>
 
 );

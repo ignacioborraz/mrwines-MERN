@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.96c54de4.css",
-    "main.js": "/static/js/main.c0a56822.js",
+    "main.js": "/static/js/main.a5293d6d.js",
     "static/media/corchos.jpg": "/static/media/corchos.508900b55ebb95d96fca.jpg",
     "static/media/tablas.jpg": "/static/media/tablas.cd8c01d0f19e30e63902.jpg",
     "static/media/fondoerror.jpg": "/static/media/fondoerror.929e286e1de2bcbf7596.jpg",
@@ -14,10 +14,10 @@
     "static/media/copasVacias.jpg": "/static/media/copasVacias.9b77af2ba8bf9990f777.jpg",
     "index.html": "/index.html",
     "main.96c54de4.css.map": "/static/css/main.96c54de4.css.map",
-    "main.c0a56822.js.map": "/static/js/main.c0a56822.js.map"
+    "main.a5293d6d.js.map": "/static/js/main.a5293d6d.js.map"
   },
   "entrypoints": [
     "static/css/main.96c54de4.css",
-    "static/js/main.c0a56822.js"
+    "static/js/main.a5293d6d.js"
   ]
 }
