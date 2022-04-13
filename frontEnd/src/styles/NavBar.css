@@ -25,7 +25,11 @@
   border-radius: 5px;
   color: black;
   color:white;
+<<<<<<< HEAD
   text-shadow: 2px 2px #333;
+=======
+  text-shadow: 0 0 10px black, 0 0 10px black, 0px 0px 10px black;
+>>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
   font-weight: bold;
   font-size: x-large;
   text-decoration: none;
@@ -61,9 +65,12 @@
   padding: 1rem;
 }
 .pruebaMenu{
-  margin-right: 2rem!important;
+  margin-right: 2rem !important;
 }
-
+.cart-nav{
+  font-size: 2rem !important;
+  vertical-align: middle;
+}
 
 @media (max-width: 567px) {
   .navbar {

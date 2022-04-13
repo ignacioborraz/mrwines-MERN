@@ -211,14 +211,14 @@ const sendEmail = async (email, uniqueString) => {
     let mailOptions = {
         from: 'mr.wines.wines@gmail.com',
         to: email,
-        subject: "verify MyTinerary account",
+        subject: "verify MrWines account",
         html: `
         <div>
             <h1><a href=${urlMrWines}api/verify/${uniqueString} style="color:red">CLICK!</a> to confirm you account.</h1>
             <h2>Thanks for signing up!</h2>
             <br>
-            <h3>FIND YOUR PERFECT TRIP</h3>
-            <h4>designed by insiders who know and love their cities!</h4>
+            <h3>FIND YOUR PERFECT WINE</h3>
+            <h3>Feel the taste of the vines</h3>
         </div>
         `};
     await transporter.sendMail(mailOptions, function (error, response) {

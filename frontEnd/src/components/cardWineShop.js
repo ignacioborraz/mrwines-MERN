@@ -3,7 +3,11 @@ import {Link as LinkRouter} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import wineActions from '../redux/actions/wineActions'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+<<<<<<< HEAD
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+=======
+import "../styles/Shop.css"
+>>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
 
 export default function CardWineShop(props) {
     console.log(props)
@@ -34,11 +38,16 @@ export default function CardWineShop(props) {
                             <h3 className='price'>U$D {everyWine.price}</h3>
                         </div>
                         <div className='btnShop-div'>
+<<<<<<< HEAD
                         {/* <LinkRouter to={'/wine'}>
                             <button className='btnShop'>Details</button>
                         </LinkRouter> */}
                         <LinkRouter to={`/wine/${everyWine._id}`}>
                             <button className='btnShop'><InfoOutlinedIcon/></button>
+=======
+                        <LinkRouter to={`/wine/${everyWine._id}`}>
+                            <button className='btnShop'>Info</button>
+>>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
                         </LinkRouter>
                         <button className='btnShop'><ShoppingCartOutlinedIcon/></button>
                         </div>
