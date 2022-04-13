@@ -42,7 +42,7 @@
     max-width: 90vw;
 }
 .title{
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px #333;
     font-size: 5rem;
 }
 .cardTopWines{
@@ -199,7 +199,7 @@
     margin-bottom:2em;
 }
 .text-shadow{
-    text-shadow:2px 2px black;
+    text-shadow: 2px 2px #333;
     font-size:1.2em;
     text-align:center;
     margin-top:2em;

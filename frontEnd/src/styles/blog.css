@@ -25,7 +25,7 @@
     margin:15px;
 }
 .title{
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px #333;
     font-size: 5rem;
 }
 .red{
@@ -35,7 +35,7 @@
     font-weight: bold;
     font-size:2rem;
     margin-bottom:1em;
-    /* text-shadow: 2px 2px black; */
+    /* text-shadow: 2px 2px #333; */
 }
 .CommentBody{
     display:flex;
