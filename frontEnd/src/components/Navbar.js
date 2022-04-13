@@ -81,7 +81,6 @@ const NavBar = (props) => {
                         </Menu>
                     </Box>
                     {/* ////////////////////////// NAVBAR ////////////////////////// */}
-<<<<<<< HEAD
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Button onClick={handleCloseNavMenu} className="navLi">
                             <LinkRouter className="linkGeneral" aria-current="page" to="/">Home</LinkRouter>
@@ -98,24 +97,6 @@ const NavBar = (props) => {
                     </Box>
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
-=======
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            <Button onClick={handleCloseNavMenu} className="navLi">
-                                <LinkRouter className="linkGeneral" aria-current="page" to="/">Home</LinkRouter>
-                            </Button>
-                            <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                                <LinkRouter className="linkGeneral" to="/shop">Shop</LinkRouter>
-                            </Button>
-                            <Button sx={{ my: 0, color: 'white', display: 'flex' }} className="navLi">
-                                <LinkRouter className="linkGeneral" to="/blog">Blog</LinkRouter>
-                            </Button>
-                        </Box>
-                    {/* ////////////////////////// USER ICON ////////////////////////// */}
-                    <Box sx={{ flexGrow: 0.008 }}>
-                        <Button sx={{ my: 0, color: 'white'}} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/basket"><ShoppingCartOutlinedIcon className='cart-nav'/></LinkRouter>
-                        </Button>
->>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
                         <Tooltip>
                             {props.user ?
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>

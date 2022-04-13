@@ -28,15 +28,10 @@ function WineDetails() {
           </div>
           <div className="padding-text">
             <div className="head-details">
-<<<<<<< HEAD
-              <h2>{oneWine.nameWine} - {oneWine.type} - {oneWine.variety}</h2>
-              <h2>U$D {oneWine.price}</h2>
-=======
               <h1>{oneWine.nameWine}</h1>
               <h3>{oneWine.type}</h3>
               <h3>{oneWine.variety}</h3>
               <h1 className='price-details'>U$D {oneWine.price}</h1>
->>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
             </div>
             <div className="clarification-details">
             </div>

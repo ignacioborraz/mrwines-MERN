@@ -106,17 +106,10 @@ box-shadow: 0px 0px 6px 3px rgb(178 18 52);
   border-radius: 5px;
   height: 25px;
   width: 200px;
-<<<<<<< HEAD
-}
-/*////////////////////range////////////////////*/
-.range-input{
-  /* color: rgb(178 18 52); */
-=======
   padding:0 4px;
 }
 /*////////////////////range////////////////////*/
 .range-input{
->>>>>>> d24d5ae12e83c2c3f4fc34f950b6bf4e8b2b2c76
   padding: 0 5px;
   border: 1px solid #333;
 }
