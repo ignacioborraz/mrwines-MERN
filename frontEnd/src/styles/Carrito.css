@@ -1,45 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
 }
-
 .div-container0-carrito {
-    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+    background-image: url('../../public/images/botellas.jpg');
+    background-size: cover;
+    padding-bottom: 2rem;
 }
-
 .div-tittle-carrito {
     height: 15vh;
     display: flex;
     align-items: center;
-    padding-left: 2rem;
-    box-shadow: 5px 5px 100px 5px rgba(0, 0, 0, 0.267);
+    justify-content: center;
+    text-shadow: 2px 2px #333;
+    font-size: 3rem;
+    padding-top:3.5em;
+    padding-bottom:2em;
+    color: rgb(178 18 52);
 }
-
 .div-container1-carrito {
     display: flex;
     flex-wrap: wrap;
     min-height: 100%;
+    justify-content: space-evenly;
 }
-
 .div-products-carrito {
-    height: auto;
-    width: 70%;
-}
-
-.div-details-carrito {
-    height: 80vh;
-    width: 30%;
-}
-
-.div1-details {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    height: 10%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: 58%;
 }
-
+.div-details-carrito {
+    height: 100%;
+    width: 40%;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.div1-details {
+    text-align: center;
+    padding: .5rem;
+    font-size: 1.5rem;
+}
 .div2-details {
     display: flex;
     justify-content: center;
@@ -47,113 +60,144 @@
     flex-wrap: wrap;
     height: 10%;
 }
-
-.margin-right {
-    margin-right: 1rem;
-}
-
-.margin-left {
-    margin-left: 1rem;
-}
-
-.div3-details {
-    display: flex;
-    align-items: end;
-    justify-content: space-around;
-    height: 20%;
-    font-size: 1.8rem;
-    padding-right: 5.2rem;
-}
-
-.div4-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 10%;
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-.div5-details {
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.margin-top {
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 50%;
-}
-
-.margin-bottom {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    width: 50%;
-}
-
-.div1-products {
+.discount{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 .3rem;
+}
+.div3-details {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+.div4-details {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+.div5-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    height: 20%;
-    box-shadow: 0px 15px 60px 5px rgba(0, 0, 0, 0.199);
-    background: url(https://st.depositphotos.com/3008028/4294/i/600/depositphotos_42948809-stock-photo-frost-white-background-black-light.jpg) no-repeat center left 30px / 140px;
 }
-
-.custom-img-carrito {
-    width: 50px;
+.btn-basket{
+    font-size: 1rem;
+    border-radius: 5px;
+    color:white;
+    background-color: black;
+    margin: 1rem;
+    height: 2.75rem;
+    width: 155px;
 }
-
+.btn-basket:hover{
+    background-color: #b21234;
+}
+.div1-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    margin:10px;
+    border-radius:15px;
+    border:1px solid #333;
+    padding: .2rem .5rem;
+}
+.img-carrito{
+    height: 80px;
+    object-fit: cover;
+}
+.div-image{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+}
 .div2-products {
-    height: 80%;
-    width: 15%;
     display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    word-wrap:break-word;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    max-width:340px;
+    padding: 5px;
 }
-
-.div3-products {
-    display: flex;
-    justify-content: center;
-    border: none;
-}
-
 .custom-input-products {
-    width: 30%;
+    width: 3rem; 
+    height: 2.75rem;
+	text-align: center;
+	font-size: 2rem;
+	border-radius: 5px;
+	border: 1px solid #333;
 }
-
-.custom-button-products {
-    padding: 1rem;
-}
-
 .div4-products {
     font-size: 1.5rem;
 }
-
 .custom-button-details {
-    padding: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius:5px;
+    color:white;
+    background-color: black;
+    height: 2.75rem;
+    margin: .3rem .3rem 0;
 }
-
+.custom-button-details:hover{
+    background-color: #b21234;
+}
 .custom-input-details {
-    height: 4rem;
-    border: none;
-    border: 1px solid black;
+    height: 2.75rem;
+	border-radius: 5px;
+	border: 1px solid #333;
+    margin: .3rem .3rem;
 }
-
 .icon-delete {
     font-size: 3rem !important;
     cursor: pointer !important;
 }
-
 .icon-delete:hover {
-    color: rgb(134, 134, 134) !important;
+    color: #b21234 !important;
 }
 
-.icon-delete:active {
-    color: red !important;
+@media  screen and (max-width:500px){
+    .div-products-carrito{
+        width: 90%;
+        min-width: 290px;
+    }
+    .div-details-carrito {
+        width: 85%;
+        min-width: 290px;
+        margin-left: 10px;
+    }
+    .div3-details {
+        font-size: 1.8rem;
+    }
+    .div4-details {
+        font-size: 2.2rem;
+    }
+}
+@media  screen and (max-width:650px){
+    .div3-details {
+        font-size: 1.2rem;
+    }
+    .div4-details {
+        font-size: 1.5rem;
+    }
+}
+@media  screen and (min-width:1000px){
+    .div-container1-carrito{
+        flex-wrap: nowrap;
+    }
+    .div-products-carrito{
+        min-width: 30vw;
+    }
+    .div-details-carrito {
+        min-width: 30vw;
+    }
 }

@@ -2,6 +2,7 @@ const Router = require('express').Router()
 const validator = require('../config/validator')
 const passport = require('../config/passport')
 
+
 const {newAdmin,signUpUser,logInUser,signOutUser,verifyEmail,verifyToken} = require('../controllers/userControllers')
 
 Router.route('/auth/newAdmin')
@@ -17,6 +18,7 @@ Router.route('/verify/:uniqueString')
 Router.route('/auth/loginToken')
     .get(passport.authenticate('jwt', {session:false}), verifyToken)
 
+
 const {getWines,getTypeWines,oneWine,uploadWine,deleteWine,modifyInfoWine,modifyStockWine} = require('../controllers/wineControllers')
 
 Router.route('/wines')
@@ -31,6 +33,7 @@ Router.route('/wines/:id')
 Router.route('/stock/:id')
     .put(modifyStockWine)
 
+
 const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld} = require('../controllers/basketControlers')
 
 Router.route('/basket')
@@ -43,5 +46,24 @@ Router.route('/buyBasket')
     .get(passport.authenticate('jwt', {session: false}), getBuy)
 Router.route('/oldBasket')
     .get(passport.authenticate('jwt', {session: false}), getOld)
+
+
+
+const {getTopics,getOneTopic,uploadTopic,deleteTopic,modifyTopic,likeTopic,addComment,modifyComment,deleteComment} = require('../controllers/topicControllers')
+
+Router.route('/topics')
+    .get(getTopics)
+    .put(passport.authenticate('jwt', {session:false}), modifyTopic)
+    .post(passport.authenticate('jwt', {session:false}), uploadTopic)
+Router.route('/topics/:id')
+    .get(getOneTopic)
+    .post(passport.authenticate('jwt', {session: false}), deleteTopic)
+Router.route('/topics/likes/:id')
+    .put(passport.authenticate('jwt', {session:false}), likeTopic)
+Router.route('/comments')
+    .post(passport.authenticate('jwt', {session: false}), addComment)
+    .put(passport.authenticate('jwt', {session: false}), modifyComment)
+Router.route('/comments/:id')
+    .post(passport.authenticate('jwt', {session: false}), deleteComment) 
 
 module.exports = Router

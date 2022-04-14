@@ -4,11 +4,11 @@ const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
 
-/* const urlFront = 'http://localhost:3000/'
-const urlMrWines = 'http://localhost:4000/' */
+const urlFront = 'http://localhost:3000/'
+const urlMrWines = 'http://localhost:4000/'
 
-const urlFront = 'https://mrwines.herokuapp.com/'
-const urlMrWines = 'https://mrwines.herokuapp.com/'
+/* const urlFront = 'https://mrwines.herokuapp.com/'
+const urlMrWines = 'https://mrwines.herokuapp.com/' */
 
 
 const userControllers = {
@@ -119,7 +119,6 @@ const userControllers = {
                                 response: {token, userData}, 
                                 message: `welcome back" ${userData.userName}!`
                             })
-                                console.log(userData.userName + "NOMBREDELLOGEADO")
                         } else {
                             res.json({ success: false, 
                                 from: from,  
@@ -211,7 +210,7 @@ const sendEmail = async (email, uniqueString) => {
     let mailOptions = {
         from: 'mr.wines.wines@gmail.com',
         to: email,
-        subject: "verify MrWines account",
+        subject: "verify MyTinerary account",
         html: `
         <div>
             <h1><a href=${urlMrWines}api/verify/${uniqueString} style="color:red">CLICK!</a> to confirm you account.</h1>

@@ -9,7 +9,7 @@ import {createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import mainReducer from './redux/reducers/mainReducer'
 
-const reduxStore = createStore(mainReducer,applyMiddleware(thunk)) //creamos un almacenamiento de redux
+const reduxStore = createStore(mainReducer,applyMiddleware(thunk))
 
 ReactDOM.render(
     <React.StrictMode>

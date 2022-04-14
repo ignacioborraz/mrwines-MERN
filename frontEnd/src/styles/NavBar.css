@@ -24,7 +24,7 @@
   padding: 1rem 1.4rem;
   border-radius: 5px;
   color: black;
-  color:white;
+  color:white !important;
   text-shadow: 0 0 10px black, 0 0 10px black, 0px 0px 10px black;
   font-weight: bold;
   font-size: x-large;
@@ -43,6 +43,9 @@
 .linkGeneral:hover {
   color: rgb(178 18 52);
   background-color: rgba(255, 255, 255, 0.281);
+  text-shadow: none;
+  /* text-shadow: 0 0 10px #333, 0 0 10px #333, 0px 0px 10px #333; */
+
 }
 .linkAvatar {
   text-decoration: none;
@@ -66,7 +69,23 @@
 .cart-nav{
   font-size: 2rem !important;
   vertical-align: middle;
+  color:white !important;
+  text-shadow: 0 0 10px black, 0 0 10px black, 0px 0px 10px black !important;
+
 }
+.BadgeNumber{
+  color:white !important;
+  
+  
+}
+.css-fvc8ir-MuiBadge-badge{
+  background-color: rgb(178, 18, 52) !important;
+}
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+/*   text-shadow: 0 0 10px black, 0 0 10px black, 0px 0px 10px black !important; 
+ */}
+
+
 
 @media (max-width: 567px) {
   .navbar {

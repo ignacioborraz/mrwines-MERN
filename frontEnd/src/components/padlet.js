@@ -1,113 +1,125 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+//from react
+import {useState,useEffect} from "react"
+
+//from redux
+import {connect} from "react-redux"
+import topicActions from "../redux/actions/topicActions"
+
+//from app
 import "../styles/blog.css"
+import Comments from './comments'
+
+//from libraries
+import {styled} from "@mui/material/styles"
+import EditIcon from "@mui/icons-material/Edit"
+import IconButton from "@mui/material/IconButton"
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import {Typography} from '@mui/material'
 
 
 const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
+    const {expand, ...other } = props
+    return <IconButton {...other} />
 })(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+      transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+      marginLeft: "auto",
+      transition: theme.transitions.create("transform", {duration: theme.transitions.duration.shortest})
+}))
 
-export default function RecipeReviewCard() {
-  const [expanded, setExpanded] = React.useState(false);
+function Padlet(props) {
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    //console.log(props)
 
-  return (
-    <div className="cardBlog">
-      <Card sx={{ maxWidth: 345 }} className="Card">
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              G
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Guillermo Mejia"
-          subheader="April 18, 2022"
-        />
-        <CardContent>
-          <CardHeader
-            title="Mr Wines cobra menos"
-          />
+    const [note, setNote] = useState(props.note)
+    const [title,setTitle] = useState(props.note.title)
+    const [text,setText] = useState(props.note.text)
+    const [newButton,setNewButton] = useState(false)
+    const [reload, setReload] =useState(false)
 
-          <Typography variant="body2" color="text.secondary" tittle="holaa">
-            Hola, hoy me contacte con la pagina de Mr Wines y la verdad que me sorprendio el buen trabajo que hacen , no dudaron en asesorarme y elegir el mejor vino para el cumpleaños de mi suegro , muy conforme con las marcas que trabajan y muy buen precio , Recomendableee!!  
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-          </IconButton>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-          <CardHeader
-            title="Comments"
-          />
-            <div className="CommentBody">
-            <CardHeader className="NameComment"
-            title="Jorge Gonzales"
-          />
-              <p className="Comment">Hola la verdad me hicieron quedar muy bien con mi suegro ami tambien!</p>
-            </div>
-            <div className="CommentBody">
-            <CardHeader className="NameComment"
-            title="Neymar Jr"
-          />
-              <p className="Comment">La verdad ami me parecen caros los precios</p>
-            </div>
-            <div className="CommentBody">
-            <CardHeader className="NameComment"
-            title="Leo Messi"
-          />
-              <p className="Comment">Concuerdo con Jorge</p>
-            </div>
-            <div className="BoxComment">
-            <Typography>Leave your comment</Typography>
-            <textarea className="textarea"/>
-             <button className="btnComment">Comment</button>
-            </div>
-            
-          </CardContent>
-        </Collapse>
-      </Card>
-    </div>
-  );
+    useEffect(() => {  
+        props.getOneTopic(props.note._id)
+          .then(res => setNote(...res))
+          //console.log(note)
+    }, [reload])
+
+    async function modifyNote(event) {
+      event.preventDefault()
+        const commentData = {
+          id: props.note._id,
+          title: title,
+          text: text
+        }
+        await props.modifyTopic(commentData)
+        setReload(!reload)
+        setNewButton(false)
+    }
+
+    function toChangeInputs(event) {
+        setNewButton(true)
+    }
+
+    async function toLike() {
+        await props.likeTopic(props.note._id)
+        setReload(!reload)
+    }
+
+    return (
+      <>
+      {props.user ?
+          (props.user.id === props.note.userTopic._id ? 
+                  (<div className='padleTopic'>
+                      {newButton ? 
+                      <>
+                          <textarea onChange={(event) => setTitle(event.target.value)} defaultValue={note.title} />
+                          <textarea onChange={(event) => setText(event.target.value)} defaultValue={note.text} />
+                          <EditIcon id={note._id} onClick={modifyNote} />
+                      </> : <>
+                          <textarea disabled value={note.title} />
+                          <textarea disabled value={note.text} />
+                          <EditIcon id={note._id} onClick={toChangeInputs} />
+                      </>
+                      }
+                      <IconButton onClick={toLike} aria-label="cart">
+                          {note.likes.includes(props.user.id) ?
+                              <FavoriteIcon /> :
+                              <FavoriteBorderIcon />}
+                          <Typography sx={{color: 'black', paddingLeft: '5px'}}>{note.likes.length} likes</Typography>
+                      </IconButton>
+                  </div>) : (<div>
+                      <textarea disabled value={note.title} />
+                      <textarea disabled value={note.text} />
+                      <IconButton onClick={toLike} aria-label="cart">
+                          {note.likes.includes(props.user.id) ?
+                              <FavoriteIcon /> :
+                              <FavoriteBorderIcon />}
+                          <Typography sx={{color: 'black', paddingLeft: '5px'}}>{note.likes.length} likes</Typography>
+                      </IconButton>
+                  </div>)
+          ) : ( <>
+                <textarea disabled value={note.title} />
+                <textarea disabled value={note.text} />
+                <IconButton aria-label="cart">
+                    <FavoriteBorderIcon />
+                    <Typography sx={{color: 'black', paddingLeft: '5px'}}>{note.likes.length} likes</Typography>
+                </IconButton>
+            </>
+          )
+        }
+        <Comments note={props.note} /></>
+    )
 }
+
+const mapDispatchToProps = {
+    getOneTopic: topicActions.getOneTopic,
+    addComment: topicActions.addComment,
+    modifyComment: topicActions.modifyComment,
+    deleteComment: topicActions.deleteComment,
+    likeTopic: topicActions.likeTopic
+}
+
+const mapStateToProps = (state) => {
+    return {user: state.userReducer.user}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Padlet)
