@@ -112,9 +112,7 @@ function Padlet(props) {
 
 const mapDispatchToProps = {
     getOneTopic: topicActions.getOneTopic,
-    addComment: topicActions.addComment,
-    modifyComment: topicActions.modifyComment,
-    deleteComment: topicActions.deleteComment,
+    modifyTopic: topicActions.modifyTopic,
     likeTopic: topicActions.likeTopic
 }
 

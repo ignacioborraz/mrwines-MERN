@@ -76,8 +76,8 @@ function Blog(props) {
 
 const mapDispatchToProps = {
     getTopics: topicActions.getTopics,
+    modifyTopic: topicActions.modifyTopic,
     uploadTopic: topicActions.uploadTopic,
-    deleteTopic: topicActions.deleteTopic,
 }
 
 const mapStateToProps = (state) => {
