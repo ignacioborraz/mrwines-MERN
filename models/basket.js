@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const basketSchema = new mongoose.Schema ({
     idWine: {type:mongoose.Types.ObjectId, ref:'wine'},
-    idUser: {type:mongoose.Types.ObjectId, ref:'user'},
+    idUser: {type:mongoose.Types.ObjectId, ref:'users'},
     date: {
         booking: {type:Date, required:true},
         sold: {type:Date},

@@ -11,7 +11,8 @@ const basketControllers = {
         if (verifyAdmin) {
             try {
                 basket = await Basket.find({buyState:state})
-                //console.log(basket)
+                    .populate("idWine", {nameWine:1,price:1,photo:1})
+                    .populate("idUser", {email:1,userName:1})
             } catch (err) {
                 error = err
                 console.log(error)
@@ -33,7 +34,8 @@ const basketControllers = {
         if (verifyAdmin) {
             try {
                 basket = await Basket.find({buyState:state})
-                //console.log(basket)
+                    .populate("idWine", {nameWine:1,price:1,photo:1})
+                    .populate("idUser", {email:1,userName:1})
             } catch (err) {
                 error = err
                 console.log(error)
@@ -54,7 +56,10 @@ const basketControllers = {
         let error = null
         try {
             basket = await Basket.find({idUser:idUser, buyState:state})
-            //console.log(basket)
+                .populate("idWine", {nameWine:1,price:1,photo:1,type:1,variety:1})
+                .populate("idUser", {email:1,userName:1})
+                console.log('BASKET BASKET BASKET BASKET BASKET BASKET BASKET BASKET')
+                console.log(basket)
         } catch (err) {
             error = err
             console.log(error)
@@ -67,24 +72,25 @@ const basketControllers = {
     },
     
     addProduct: async (req,res) => {
+        //console.log(req.body)
         const {idWine} = req.body
         const idUser = req.user._id
         const date = {booking: new Date()}
         const amount = 1
         const buyState ="toBuy"
         const user = req.user._id
-        console.log(idWine,idUser,date,amount,buyState)
+        //console.log(idWine,idUser,date,amount,buyState)
         try {
-            const newBasket = await new Basket ({idWine,idUser,date,amount,buyState}).save()
+            const newProduct = await new Basket ({idWine,idUser,date,amount,buyState}).save()
             res.json({success: true,
-                response: {newBasket},
-                message: "the product has been uploaded"})
-                console.log(newproduct)
+                response: {newProduct},
+                message: "the product has been added"})
+                console.log(newProduct)
         }
         catch (error) {
             console.log(error)
             res.json({ success: true,
-                message: "sorry! we couldn't upload the basket, please try again!" })
+                message: "sorry! we couldn't add to the basket, please try again!" })
         }
     },
 

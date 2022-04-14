@@ -1,73 +1,56 @@
-import React from "react";
+import React, {useEffect,useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import basketActions from '../redux/actions/basketActions'
 import "../styles/Carrito.css";
 import botellavino2 from "../assets/botellavino2.png";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-function Carrito() {
-  return (
-    <div className="div-container0-carrito">
-      <div className="div-tittle-carrito">
-        <h1>Carrito</h1>
-      </div>
-      <div className="div-container1-carrito">
-        <div className="div-products-carrito">
-          <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
-            </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
-          </div>
-          <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
-            </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
-          </div>
-          <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
-            </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
-          </div>
+function Carrito(props) {
+
+    console.log(props)
+
+    const [reload, setReload] = useState(false)
+    const [basket,setBasket] = useState([])
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(basketActions.getUserBasket())
+            .then(response=>setBasket(response))
+            //.then(response=>console.log(response))
+    },[reload])
+
+    return (
+        <>
+            <div className="div-container0-carrito">
+                <div className="div-tittle-carrito">
+                    <h1>Carrito</h1>
+                </div>
+                <div className="div-container1-carrito">
+                    <div className="div-products-carrito">
+            {basket?.map( everyWine =>
+                <div className="div1-products">
+                    <div>
+                        <img className="custom-img-carrito" src={everyWine.photo} alt={everyWine.nameWine} />
+                    </div>
+                    <div className="div2-products">
+                        <p>{everyWine.nameWine} - {everyWine.type} - {everyWine.variety}</p>
+                    </div>
+                    <div className="div3-products">
+                          <button>+</button>
+                          <input className="custom-input-products" type="number" defaultValue={everyWine.amount}/>
+                          <button>-</button>
+                    </div>
+                    <div className="div4-products">
+                          <p>{everyWine.price}</p>
+                    </div>
+                    <div>
+                          <DeleteForeverIcon className="icon-delete" />
+                    </div>
+                </div>
+            ) : (
+              <div>START BUYING! - LINK A SHOP</div>
+            )}
           <div className="div1-products">
             <div>
               <img className="custom-img-carrito" src={botellavino2} />
@@ -115,7 +98,8 @@ function Carrito() {
         </div>
       </div>
     </div>
-  );
+    </>
+  )
 }
 
 export default Carrito;

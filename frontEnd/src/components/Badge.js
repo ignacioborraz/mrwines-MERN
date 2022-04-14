@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, {useEffect,useState} from 'react'
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import basketActions from '../redux/actions/basketActions'
+import {useDispatch} from 'react-redux'
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -16,9 +16,19 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function CustomizedBadges() {
+  const [badge,setBadge] = useState([])
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+      dispatch(basketActions.getUserBasket())
+          .then(response=>setBadge(response.length))
+          //.then(response=>console.log(response))
+  },[])
+
   return (
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={3} className="BadgeNumber">  
+      <StyledBadge badgeContent={badge} className="BadgeNumber">  
       <ShoppingCartOutlinedIcon className='cart-nav'/>
       </StyledBadge>
     </IconButton>

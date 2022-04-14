@@ -1,79 +1,53 @@
-import React from "react";
+import React, {useEffect,useState} from 'react'
+import {connect} from "react-redux"
+import basketActions from '../redux/actions/basketActions'
 import "../styles/Carrito.css";
-import botellavino2 from "../assets/botellavino2.png";
-import bot2 from "../assets/bot2.jpg";
-import bot1 from "../assets/bot1.jpg";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
-export default function Basket() {
-  return (
-    <div className="div-container0-carrito">
-      <div className="div-tittle-carrito">
-        <h1>Basket</h1>
-      </div>
-      <div className="div-container1-carrito">
-        <div className="div-products-carrito">
-          <div className="div1-products">
-            <div className="div-image">
-              {/* <img className="img-carrito" src={botellavino2} /> */}
-              <img className="img-carrito" src={bot2} />
-              {/* <img className="img-carrito" src={bot1} /> */}
+function Basket(props) {
+
+    const [reload, setReload] = useState(false)
+    const [basket,setBasket] = useState([])
+
+    useEffect(() => {
+        props.getUserBasket()
+            .then(response=>setBasket(response))
+            //.then(response=>console.log(response))
+    },[reload])
+
+    return (
+        <div className="div-container0-carrito">
+            <div className="div-tittle-carrito">
+                <h1>Basket</h1>
             </div>
-            <div className="div2-products">
-              <p>Fin del Mundo</p>
-              <p>Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
-            </div>
-              <div className="div4-products">
-                <p>$ 500.99</p>
-              </div>
-              <div>
-                <DeleteForeverIcon className="icon-delete"/>
-              </div>
-          </div>
-          <div className="div1-products">
-            <div className="div-image">
-              <img className="img-carrito" src={botellavino2} />
-              {/* <img className="img-carrito" src={bot2} /> */}
-              {/* <img className="img-carrito" src={bot1} /> */}
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo</p>
-              <p>Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
-            </div>
-              <div className="div4-products">
-                <p>$ 500.99</p>
-              </div>
-              <div>
-                <DeleteForeverIcon className="icon-delete"/>
-              </div>
-          </div>
-          <div className="div1-products">
-            <div className="div-image">
-              {/* <img className="img-carrito" src={botellavino2} /> */}
-              {/* <img className="img-carrito" src={bot2} /> */}
-              <img className="img-carrito" src={bot1} />
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo</p>
-              <p>Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
-            </div>
-              <div className="div4-products">
-                <p>$ 500.99</p>
-              </div>
-              <div>
-                <DeleteForeverIcon className="icon-delete"/>
-              </div>
-          </div>
-        </div>
+            <div className="div-container1-carrito">
+                <div className="div-products-carrito">
+                    {basket.length>0 ? basket.map( everyWine =>
+                        <div key={everyWine._id} className="div1-products">
+                          {console.log(everyWine)}
+                            <div className="div-image">
+                            <img className="img-carrito" src={everyWine.photo} alt={everyWine.nameWine} />
+                            </div>
+                            <div className="div2-products">
+                                <p>{everyWine.nameWine}</p>
+                                <p>{everyWine.type} - {everyWine.variety}</p>
+                            </div>
+                            <div className="div2-products">
+                                <p>{everyWine.date.booking}</p>
+                            </div>                            
+                            <div className="div3-products">
+                                <input className="custom-input-products" type="number" defaultValue={everyWine.amount} min="1" max="10"/>
+                            </div>
+                            <div className="div4-products">
+                                <p>{everyWine.price}</p>
+                            </div>
+                            <div>
+                                <DeleteForeverIcon className="icon-delete"/>
+                            </div>
+                        </div> ) : (
+                            <div>START BUYING! - LINK A SHOP</div>
+                        )}
+                  </div>
 
 
         <div className="div-details-carrito">
@@ -102,3 +76,18 @@ export default function Basket() {
    
   );
 }
+
+const mapDispatchToProps = {
+  addProduct: basketActions.addProduct,
+  deleteProduct: basketActions.deleteProduct,
+  getUserBasket: basketActions.getUserBasket
+}
+
+const mapStateToProps = (state) => {
+  return {
+      products: state.productReducer.products,
+      user: state.userReducer.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basket)
