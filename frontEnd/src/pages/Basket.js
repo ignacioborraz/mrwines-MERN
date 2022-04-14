@@ -1,119 +1,104 @@
 import React from "react";
 import "../styles/Carrito.css";
 import botellavino2 from "../assets/botellavino2.png";
+import bot2 from "../assets/bot2.jpg";
+import bot1 from "../assets/bot1.jpg";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 export default function Basket() {
   return (
     <div className="div-container0-carrito">
       <div className="div-tittle-carrito">
-        <h1>Carrito</h1>
+        <h1>Basket</h1>
       </div>
       <div className="div-container1-carrito">
         <div className="div-products-carrito">
           <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
+            <div className="div-image">
+              {/* <img className="img-carrito" src={botellavino2} /> */}
+              <img className="img-carrito" src={bot2} />
+              {/* <img className="img-carrito" src={bot1} /> */}
             </div>
             <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
+              <p>Fin del Mundo</p>
+              <p>Pinot Noir</p>
             </div>
             <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
+              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
             </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
+              <div className="div4-products">
+                <p>$ 500.99</p>
+              </div>
+              <div>
+                <DeleteForeverIcon className="icon-delete"/>
+              </div>
           </div>
           <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
+            <div className="div-image">
+              <img className="img-carrito" src={botellavino2} />
+              {/* <img className="img-carrito" src={bot2} /> */}
+              {/* <img className="img-carrito" src={bot1} /> */}
             </div>
             <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
+              <p>Fin del Mundo</p>
+              <p>Pinot Noir</p>
             </div>
             <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
+              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
             </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
+              <div className="div4-products">
+                <p>$ 500.99</p>
+              </div>
+              <div>
+                <DeleteForeverIcon className="icon-delete"/>
+              </div>
           </div>
           <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
+            <div className="div-image">
+              {/* <img className="img-carrito" src={botellavino2} /> */}
+              {/* <img className="img-carrito" src={bot2} /> */}
+              <img className="img-carrito" src={bot1} />
             </div>
             <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
+              <p>Fin del Mundo</p>
+              <p>Pinot Noir</p>
             </div>
             <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
+              <input className="custom-input-products" type="number" placeholder="0" min="1" max="10"/>
             </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
-          </div>
-          <div className="div1-products">
-            <div>
-              <img className="custom-img-carrito" src={botellavino2} />
-            </div>
-            <div className="div2-products">
-              <p>Fin del Mundo Single Vineyard – Pinot Noir</p>
-            </div>
-            <div className="div3-products">
-              <button>+</button>
-              <input className="custom-input-products" type="number" />
-              <button>-</button>
-            </div>
-            <div className="div4-products">
-              <p>$ 229.999</p>
-            </div>
-            <div>
-              <DeleteForeverIcon className="icon-delete" />
-            </div>
+              <div className="div4-products">
+                <p>$ 500.99</p>
+              </div>
+              <div>
+                <DeleteForeverIcon className="icon-delete"/>
+              </div>
           </div>
         </div>
+
+
         <div className="div-details-carrito">
           <div className="div1-details">
-            <p>¿Tenés un código de descuento?</p>
+            <p>Do you have a discount code?</p>
           </div>
           <div className="div2-details">
-            <div className="margin-right">
-              <input className="custom-input-details" type="text" />
-            </div>
-            <div className="margin-left">
-              <button className="custom-button-details">Aplicar</button>
+            <div className="discount">
+              <input className="custom-input-details" type="text"/>
+              <button className="custom-button-details">Apply</button>
             </div>
           </div>
           <div className="div3-details">
-            <p>Subtotal</p>
-            <p>$1500,00</p>
+            <p>Subtotal: $1500,00</p>
           </div>
           <div className="div4-details">
-            <p>Total</p>
-            <p>$3000,00</p>
+            <p>Total: $3000,00</p>
           </div>
           <div className="div5-details">
-            <button className="margin-bottom">Finalizar compra</button>
-            <button className="margin-top">Seguir comprando</button>
+            <button className="btn-basket">Checkout</button>
+            <button className="btn-basket">Keep buying</button>
           </div>
         </div>
       </div>
     </div>
+   
   );
 }

@@ -75,7 +75,7 @@ function WineDetails() {
             <div className='clarifications-text'>
               <p>The images are illustrative only.</p>
               <p>Units are sold by closed box. Maximum order of 10 closed boxes.</p>
-              <p>For larger orders please contact us.</p>
+              <p>For larger orders or unit sales please contact us.</p>
             </div>
           </div>
         </div>

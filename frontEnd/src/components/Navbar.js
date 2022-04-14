@@ -15,6 +15,7 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Badge from "../components/Badge"
 
 import "../styles/NavBar.css"
 
@@ -95,7 +96,8 @@ const NavBar = (props) => {
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
                         <Button sx={{ my: 0, color: 'white'}} className="navLi">
-                            <LinkRouter className="linkGeneral" to="/basket"><ShoppingCartOutlinedIcon className='cart-nav'/></LinkRouter>
+                            {/* <LinkRouter className="linkGeneral" to="/basket"><ShoppingCartOutlinedIcon className='cart-nav'/></LinkRouter> */}
+                           <LinkRouter className="linkGeneral" to="/basket"> <Badge/></LinkRouter>
                         </Button>
                         <Tooltip>
                             {props.user ?
