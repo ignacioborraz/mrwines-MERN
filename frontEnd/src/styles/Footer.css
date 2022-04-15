@@ -33,6 +33,11 @@
     align-items: center;
     width: 30vw;
 }
+
+.info-icon{
+    vertical-align: middle;
+}
+
 @media screen and (max-width: 700px){
     .divFoot{
         align-items: flex-start;

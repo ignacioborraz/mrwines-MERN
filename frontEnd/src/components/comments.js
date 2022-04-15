@@ -5,9 +5,9 @@ import {Link as LinkRouter} from "react-router-dom"
 import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import AddIcon from '@mui/icons-material/Add'
-
 import {connect} from 'react-redux'
 import topicActions from '../redux/actions/topicActions'
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 function Comments(props) {
 
@@ -56,70 +56,72 @@ function Comments(props) {
     }
 
     return (
-        <>
+        <div className='containerComments'>
             {note.comments?.map((comment) =>
                 (props.user ?
                     (props.user.id !== comment.userId._id ? 
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', color: 'white', backgroundColor: 'rgb(0, 73, 48)'}}>
+                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: 'black', border:'1px solid #333', borderRadius:'15px'}}>
                             <div>
-                                <img alt={comment.userId._id} src={comment.userId.userPhoto} />
+                                <img className="photoPadlet commentPhoto" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                                <Typography variant='subtitle1' sx={{width: '100%', padding: '8px', paddingTop: '0'}}>{comment.userId.email}</Typography>
-                                <Typography variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px',  color: 'black', backgroundColor: 'rgb(126, 196, 165)'}}>{comment.comment}</Typography>
+                                <Typography variant='subtitle1' sx={{width: '100%', padding: '8px', paddingTop: '0'}}>{comment.userId.userName}</Typography>
+                                <TextareaAutosize className='textarea textareaSize' variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px', maxRows:'12', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'5px'}}>{comment.comment}
+                                </TextareaAutosize>
                             </Box>
-                        </Box> :
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', color: 'white', backgroundColor: 'rgb(74, 140, 111)'}}>
+                        </Box> 
+                        :
+                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: '#333', border:'1px solid #333', borderRadius:'15px'}}>
                             <div>
-                                <img alt={comment.userId._id} src={comment.userId.userPhoto} />
+                                <img className="photoPadlet commentPhoto" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                                <Typography variant='h6' sx={{width: '100%', color: 'white'}}>{comment.userId.email}</Typography>
-                                <Box sx={{width: '100%', display: 'flex', paddingTop: '8px', paddingLeft: '0'}}>
+                                <Typography variant='h6' sx={{width: '100%', color: 'white'}}>{comment.userId.userName}</Typography>
+                                <Box sx={{width: '100%', display: 'flex', alignItems:'center', paddingTop: '8px', paddingLeft: '0'}}>
                                     {newButton ? 
                                     <>
-                                        <textarea rows='2' onChange={(event) => setComments(event.target.value)} defaultValue={comment.comment} className='myInputforComment fredokaFont' />
-                                        <EditIcon id={comment._id} onClick={toModify} sx={{bgcolor: 'rgb(196, 165, 126)', '&:hover': {bgcolor: 'rgba(196, 165, 126, 0.7)'}, padding: '5px', margin: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
+                                        <TextareaAutosize className='textarea textareaSize' maxRows='12' onChange={(event) => setComments(event.target.value)} defaultValue={comment.comment}/>
+                                        <EditIcon id={comment._id} onClick={toModify} sx={{bgcolor: 'black', '&:hover': {bgcolor: 'rgb(178, 18, 52)'}, padding: '5px', margin: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
                                     </> : <>
-                                        <textarea rows='2' disabled onChange={(event) => setComments(event.target.value)} defaultValue={comment.comment} className='myInputforComment fredokaFont' />
-                                        <EditIcon id={comment._id} onClick={toChangeInputs} sx={{bgcolor: 'rgb(196, 165, 126)', '&:hover': {bgcolor: 'rgba(196, 165, 126, 0.7)'}, padding: '5px', margin: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
+                                        <TextareaAutosize className='textarea textareaSize' maxRows='12' disabled onChange={(event) => setComments(event.target.value)} defaultValue={comment.comment} />
+                                        <EditIcon id={comment._id} onClick={toChangeInputs} sx={{bgcolor: 'black', '&:hover': {bgcolor: 'rgb(178, 18, 52)'}, padding: '5px', margin: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
                                     </>
                                     }
-                                    <DeleteIcon id={comment._id} onClick={toDelete} sx={{bgcolor: 'rgb(196, 165, 126)', '&:hover': {bgcolor: 'rgba(196, 165, 126, 0.7)'}, padding: '5px', marginTop: '5px', marginBottom: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
+                                    <DeleteIcon id={comment._id} onClick={toDelete} sx={{bgcolor: 'black', '&:hover': {bgcolor: 'rgb(178, 18, 52)'}, padding: '5px', marginTop: '5px', marginBottom: '5px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
                                 </Box>
                             </Box>
                         </Box>
                     ) : 
                     (
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', color: 'white', backgroundColor: 'rgb(0, 73, 48)'}}>
+                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', color: 'black', backgroundColor: 'red'}}>
                             <div className='divImgComment'>
                                 <img className="onlyimgComment" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                                <Typography variant='h6' sx={{width: '100%', padding: '8px', paddingTop: '0'}} className='fredokaFont smallT'>{comment.userId.email}</Typography>
-                                <Typography variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px',  color: 'black', backgroundColor: 'rgb(126, 196, 165)'}} className='fredokaFont'>{comment.comment}</Typography>
+                                <Typography variant='h6' sx={{width: '100%', padding: '8px', paddingTop: '0'}} className='fredokaFont smallT'>{comment.userId.userName}</Typography>
+                                <Typography variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px',  color: 'white', backgroundColor: 'black'}} className='fredokaFont'>{comment.comment}</Typography>
                             </Box>
                         </Box> 
                     )
                 )
             )}
             {props.user ?
-                (<Box sx={{margin: '16px', padding: '8px', display: 'flex', color: 'white', backgroundColor: 'rgb(74, 140, 111)'}}>
+                (<Box sx={{margin: '16px', padding: '8px', display: 'flex', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'15px'}}>
                     <div className='divImgComment2'>
-                        <img className="onlyimgComment2" alt={props.user.name} src={props.user.userPhoto} />
+                        <img  className="photoPadlet commentPhoto" alt={props.user.name} src={props.user.userPhoto} />
                     </div>
                     <Box sx={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                        <Box sx={{width: '100%', display: 'flex', paddingLeft: '8px', paddingRigth: '8px'}}>
-                            <textarea rows='2' onChange={(event) => setInputText(event.target.value)} value={inputText} />
-                            <AddIcon onClick={toAdd} sx={{bgcolor: 'rgb(196, 165, 126)', '&:hover': {bgcolor: 'rgba(196, 165, 126, 0.7)'}, padding: '5px', margin: '5px', marginRigth: '0', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}} />
+                        <Box sx={{width: '100%', display: 'flex', alignItems:'center', paddingLeft: '8px', paddingRigth: '8px'}}>
+                            <TextareaAutosize className="textarea textareaSize" maxRows='12' onChange={(event) => setInputText(event.target.value)} value={inputText} />
+                            <AddIcon onClick={toAdd} sx={{bgcolor: 'black', '&:hover': {bgcolor: 'rgb(178, 18, 52)'}, padding: '3px', margin: '5px', marginRigth: '0', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}}/>
                         </Box>
                     </Box>
                 </Box>
                 ) : (
-                    <LinkRouter to={'/login'}>log in to add a comment!</LinkRouter>
+                    <LinkRouter to={'/signIn'}>log in to add a comment!</LinkRouter>
                 )
             }
-        </>
+        </div>
     )
 }
 

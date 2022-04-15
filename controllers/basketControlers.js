@@ -58,8 +58,8 @@ const basketControllers = {
             basket = await Basket.find({idUser:idUser, buyState:state})
                 .populate("idWine", {nameWine:1,price:1,photo:1,type:1,variety:1})
                 .populate("idUser", {email:1,userName:1})
-                console.log('BASKET BASKET BASKET BASKET BASKET BASKET BASKET BASKET')
-                console.log(basket)
+                //console.log('BASKET BASKET BASKET BASKET BASKET BASKET BASKET BASKET')
+                //console.log(basket)
         } catch (err) {
             error = err
             console.log(error)
@@ -110,14 +110,17 @@ const basketControllers = {
     },
 
     modifyProduct: async (req,res) => {
-        const {productId,amount,buyState,date} = req.body
+        console.log('REQ BODY REQ BODY REQ BODY REQ BODY REQ BODY')
+        console.log(req.body)
+        const {productId,amount} = req.body
+        console.log(amount)
         const user = req.user._id
         try {
             const modifyBasket = await Basket
             .findOneAndUpdate({"_id": productId}, {$set:{
-                "date": date,
-                "amount": amount,
-                "buyState": buyState}}, {new: true})
+                "amount": amount}}, {new: true})
+                console.log('MODIFYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
+                console.log(modifyBasket)
             res.json({success: true,
                 response: {modifyBasket},
                 message: "the product has been modified"})

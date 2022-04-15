@@ -8,12 +8,31 @@ function Basket(props) {
 
     const [reload, setReload] = useState(false)
     const [basket,setBasket] = useState([])
+    const [wine,setWine] = useState([])
+    const [amount,setAmount] = useState("")
 
     useEffect(() => {
         props.getUserBasket()
             .then(response=>setBasket(response))
             //.then(response=>console.log(response))
     },[reload])
+
+    async function toModify(event) {
+      event.preventDefault()
+      setAmount(event.target.value)
+      const commentData = {
+          productId: event.target.id,
+          amount: amount
+        }
+      await props.modifyProduct(commentData)
+      setReload(!reload)
+  }
+
+  async function toDelete(event) {
+        event.preventDefault()
+        await props.deleteProduct(event.target.id)
+        setReload(!reload)
+}
 
     return (
         <div className="div-container0-carrito">
@@ -24,25 +43,21 @@ function Basket(props) {
                 <div className="div-products-carrito">
                     {basket.length>0 ? basket.map( everyWine =>
                         <div key={everyWine._id} className="div1-products">
-                          {console.log(everyWine)}
                             <div className="div-image">
-                            <img className="img-carrito" src={everyWine.photo} alt={everyWine.nameWine} />
+                            <img className="img-carrito" src={everyWine.idWine.photo} alt={everyWine.idWine.nameWine} />
                             </div>
                             <div className="div2-products">
-                                <p>{everyWine.nameWine}</p>
-                                <p>{everyWine.type} - {everyWine.variety}</p>
-                            </div>
-                            <div className="div2-products">
-                                <p>{everyWine.date.booking}</p>
-                            </div>                            
+                                <p>{everyWine.idWine.nameWine}</p>
+                                <p>{everyWine.idWine.type} - {everyWine.idWine.variety}</p>
+                            </div>                           
                             <div className="div3-products">
-                                <input className="custom-input-products" type="number" defaultValue={everyWine.amount} min="1" max="10"/>
+                                <input id={everyWine._id} className="custom-input-products" type="number" onChange={toModify}  defaultValue={everyWine.amount} min="1" max="10"/>
                             </div>
                             <div className="div4-products">
-                                <p>{everyWine.price}</p>
+                                <p>{everyWine.idWine.price}</p>
                             </div>
                             <div>
-                                <DeleteForeverIcon className="icon-delete"/>
+                                <DeleteForeverIcon id={everyWine._id} onClick={toDelete} className="icon-delete"/>
                             </div>
                         </div> ) : (
                             <div>START BUYING! - LINK A SHOP</div>
@@ -79,6 +94,7 @@ function Basket(props) {
 
 const mapDispatchToProps = {
   addProduct: basketActions.addProduct,
+  modifyProduct: basketActions.modifyProduct,
   deleteProduct: basketActions.deleteProduct,
   getUserBasket: basketActions.getUserBasket
 }

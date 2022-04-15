@@ -15,21 +15,19 @@ app.use(cors())
 app.use(express.json())
 app.use('/api', Router)
 
-/* if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static("client/build"))
     app.get("*", (req,res)=> {
         res.sendFile(path.join(__dirname+"/client/build/index.html"))
     })
-} */
+}
 
-//app.listen(PORT, HOST, ()=>console.log('SERVER READY ON PORT '+PORT))
-app.listen(PORT, ()=>console.log('SERVER READY ON PORT '+PORT))
+app.listen(PORT, HOST, ()=>console.log('SERVER READY ON PORT '+PORT))
+//app.listen(PORT, ()=>console.log('SERVER READY ON PORT '+PORT))
 
 
 /*en JSON
-    "scripts": {
-        "start": "node server.js",
-        "dev": "nodemon server.js",
-        "herocu-postbuild": "cd frontEnd && npm install && npm run build"
+"scripts": {
+        "start": "nodemon server.js"
     }
 */

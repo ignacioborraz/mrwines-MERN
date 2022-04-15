@@ -61,7 +61,7 @@ function CardWineShop(props) {
                             <button className='btnShop'>Info</button>
                         </LinkRouter>
                         {props.user ? (
-                            (basket.includes(everyWine._id)) ? (
+                            (props.products.includes(everyWine._id)) ? (
                                 <LinkRouter to={`/wine/${everyWine._id}`}>
                                     <span className='btnShop'><ShoppingCartOutlinedIcon/></span>
                                 </LinkRouter>    

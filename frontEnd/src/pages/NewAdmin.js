@@ -30,7 +30,7 @@ function NewAdmin(props) {
     }
 
     return (
-        <div className="containerForm BgSignUp">
+        <div className="containerFormSign BgSignUp">
             <h1 className=" title white signuptext">Sign up</h1>
             <div className='signBody'>
                 <form onSubmit={handleSubmit} className='form'>

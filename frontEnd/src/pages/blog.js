@@ -17,6 +17,8 @@ import AddBoxIcon from "@mui/icons-material/AddBox"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
 import Typography from '@mui/material/Typography'
+import AddIcon from '@mui/icons-material/Add'
+
 
 
 function Blog(props) {
@@ -52,12 +54,12 @@ function Blog(props) {
                 {props.user ? (
                     <Accordion>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
-                            <Typography>Tell us!</Typography>
+                            <Typography>Post something!</Typography>
                         </AccordionSummary>
-                        <AccordionDetails style={{  display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                            <TextareaAutosize onChange={(event) => setTitle(event.target.value)} value={title} aria-label="empty textarea" placeholder="Title" style={{ width: 300, marginBottom: 20 }}/>
-                            <TextareaAutosize onChange={(event) => setText(event.target.value)} value={text} aria-label="empty textarea" placeholder="Ingresa el texto" style={{ width: 600, height: 100 }}/>
-                            <AddBoxIcon onClick={() => addNote()} />
+                        <AccordionDetails style={{  display: 'flex', flexDirection: 'column', alignItems: 'center', width:'100%', minWidth:300}}>
+                            <TextareaAutosize className="textarea" onChange={(event) => setTitle(event.target.value)} value={title} aria-label="empty textarea" placeholder="Title" style={{ width: 275, marginBottom: 20, padding:'5px' }}/>
+                            <TextareaAutosize className="textarea" onChange={(event) => setText(event.target.value)} value={text} aria-label="empty textarea" placeholder="Topic" style={{ width: 300, minHeight: 100, maxHeight:200, marginBottom: 20, padding:'5px', overflowY: 'scroll'}}/>
+                            <AddIcon onClick={() => addNote()} sx={{bgcolor: 'black', '&:hover': {bgcolor: 'rgb(178, 18, 52)'}, padding: '3px', color: 'white', width: '30px', height: '30px', borderRadius: '15px'}}/>
                         </AccordionDetails>
                     </Accordion>) : null }
                 <div className="containerCardBlog">

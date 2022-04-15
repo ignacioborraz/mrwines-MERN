@@ -20,7 +20,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 251,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -44,7 +44,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 924,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -68,7 +68,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 1515,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -92,7 +92,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 582,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -116,7 +116,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 472,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -140,7 +140,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 581,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -164,7 +164,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 324,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -188,7 +188,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 445,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -212,7 +212,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 951,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -236,7 +236,7 @@ db.wines.insertMany([
     "stock": {
         "stock": [{
             "amount": 144,
-            "adminId": "624daf1ecebdc5a47624aae1"
+            "adminId": "62512d95aaaf1d419a32bb8e"
         }],
         "shipping": [
         ]
@@ -256,9 +256,11 @@ db.wines.insertMany([
     "stars": [
         "4"
     ],
-    "price": 50,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -279,7 +281,10 @@ db.wines.insertMany([
     ],
     "price": 58,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -300,7 +305,10 @@ db.wines.insertMany([
     ],
     "price": 62,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -321,7 +329,10 @@ db.wines.insertMany([
     ],
     "price": 128,
     "stock": {
-        "stock": 60,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -342,7 +353,10 @@ db.wines.insertMany([
     ],
     "price": 59,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -363,7 +377,10 @@ db.wines.insertMany([
     ],
     "price": 70,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -384,7 +401,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -405,7 +425,10 @@ db.wines.insertMany([
     ],
     "price": 5,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -426,7 +449,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -447,7 +473,10 @@ db.wines.insertMany([
     ],
     "price": 12,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -468,7 +497,10 @@ db.wines.insertMany([
     ],
     "price": 14,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -489,7 +521,10 @@ db.wines.insertMany([
     ],
     "price": 9,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -510,7 +545,10 @@ db.wines.insertMany([
     ],
     "price": 12,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -531,7 +569,10 @@ db.wines.insertMany([
     ],
     "price": 14,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -552,7 +593,10 @@ db.wines.insertMany([
     ],
     "price": 9,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -573,7 +617,10 @@ db.wines.insertMany([
     ],
     "price": 3,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -594,7 +641,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -615,7 +665,10 @@ db.wines.insertMany([
     ],
     "price": 11,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -636,7 +689,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -657,7 +713,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -678,7 +737,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -699,7 +761,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -720,7 +785,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -741,7 +809,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -762,7 +833,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -783,7 +857,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -804,7 +881,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -825,7 +905,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -846,7 +929,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -867,7 +953,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -888,7 +977,10 @@ db.wines.insertMany([
     ],
     "price": 7,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -909,7 +1001,10 @@ db.wines.insertMany([
     ],
     "price": 6,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -930,7 +1025,10 @@ db.wines.insertMany([
     ],
     "price": 12,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -951,7 +1049,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -972,7 +1073,10 @@ db.wines.insertMany([
     ],
     "price": 13,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -993,7 +1097,10 @@ db.wines.insertMany([
     ],
     "price": 5,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1014,7 +1121,10 @@ db.wines.insertMany([
     ],
     "price": 16,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1035,7 +1145,10 @@ db.wines.insertMany([
     ],
     "price": 9,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1056,7 +1169,10 @@ db.wines.insertMany([
     ],
     "price": 7,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1077,7 +1193,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1098,7 +1217,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1119,7 +1241,10 @@ db.wines.insertMany([
     ],
     "price": 12,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1140,7 +1265,10 @@ db.wines.insertMany([
     ],
     "price": 21,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1161,7 +1289,10 @@ db.wines.insertMany([
     ],
     "price": 10,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1182,7 +1313,10 @@ db.wines.insertMany([
     ],
     "price": 13,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1203,7 +1337,10 @@ db.wines.insertMany([
     ],
     "price": 4,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1224,7 +1361,10 @@ db.wines.insertMany([
     ],
     "price": 11,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1245,7 +1385,10 @@ db.wines.insertMany([
     ],
     "price": 35,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
@@ -1266,7 +1409,10 @@ db.wines.insertMany([
     ],
     "price": 8,
     "stock": {
-        "stock": 1451,
+        "stock": [{
+            "amount": 445,
+            "adminId": "62512d95aaaf1d419a32bb8e"
+        }],
         "shipping": [
         ]
     }
