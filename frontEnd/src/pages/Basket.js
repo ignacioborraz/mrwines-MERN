@@ -1,15 +1,12 @@
 import React, {useEffect,useState} from 'react'
 import {connect} from "react-redux"
 import basketActions from '../redux/actions/basketActions'
-import "../styles/Carrito.css";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import "../styles/Carrito.css"
 
 function Basket(props) {
 
     const [reload, setReload] = useState(false)
     const [basket,setBasket] = useState([])
-    const [wine,setWine] = useState([])
-    const [amount,setAmount] = useState("")
 
     useEffect(() => {
         props.getUserBasket()
@@ -19,10 +16,9 @@ function Basket(props) {
 
     async function toModify(event) {
       event.preventDefault()
-      setAmount(event.target.value)
       const commentData = {
           productId: event.target.id,
-          amount: amount
+          amount: event.target.value
         }
       await props.modifyProduct(commentData)
       setReload(!reload)
@@ -54,42 +50,39 @@ function Basket(props) {
                                 <input id={everyWine._id} className="custom-input-products" type="number" onChange={toModify}  defaultValue={everyWine.amount} min="1" max="10"/>
                             </div>
                             <div className="div4-products">
-                                <p>{everyWine.idWine.price}</p>
+                                <p> {everyWine.idWine.price} USD</p>
                             </div>
-                            <div>
-                                <DeleteForeverIcon id={everyWine._id} onClick={toDelete} className="icon-delete"/>
+                            <div id={everyWine._id}> 
+                                <span id={everyWine._id} onClick={toDelete} className="icon-delete"> ×</span>
                             </div>
                         </div> ) : (
                             <div>START BUYING! - LINK A SHOP</div>
                         )}
                   </div>
-
-
-        <div className="div-details-carrito">
-          <div className="div1-details">
-            <p>Do you have a discount code?</p>
-          </div>
-          <div className="div2-details">
-            <div className="discount">
-              <input className="custom-input-details" type="text"/>
-              <button className="custom-button-details">Apply</button>
+                  <div className="div-details-carrito">
+                      <div className="div1-details">
+                        <p>Do you have a discount code?</p>
+                      </div>
+                      <div className="div2-details">
+                        <div className="discount">
+                          <input className="custom-input-details" type="text"/>
+                          <button className="custom-button-details">Apply</button>
+                        </div>
+                    </div>
+                    <div className="div3-details">
+                        <p>Subtotal: $1500,00</p>
+                    </div>
+                    <div className="div4-details">
+                        <p>Total: $3000,00</p>
+                    </div>
+                    <div className="div5-details">
+                        <button className="btn-basket">Checkout</button>
+                        <button className="btn-basket">Keep buying</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="div3-details">
-            <p>Subtotal: $1500,00</p>
-          </div>
-          <div className="div4-details">
-            <p>Total: $3000,00</p>
-          </div>
-          <div className="div5-details">
-            <button className="btn-basket">Checkout</button>
-            <button className="btn-basket">Keep buying</button>
-          </div>
         </div>
-      </div>
-    </div>
-   
-  );
+    )
 }
 
 const mapDispatchToProps = {

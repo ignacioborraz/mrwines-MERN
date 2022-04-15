@@ -34,13 +34,14 @@ Router.route('/stock/:id')
     .put(modifyStockWine)
 
 
-const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld} = require('../controllers/basketControlers')
+const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld,getProduct} = require('../controllers/basketControlers')
 
 Router.route('/basket')
     .get(passport.authenticate('jwt', {session: false}), getUserBasket)
     .post(passport.authenticate('jwt', {session: false}), addProduct)
     .put(passport.authenticate('jwt', {session: false}), modifyProduct)
-Router.route('/basket/:id')
+Router.route("/basket/:id")
+    .get(passport.authenticate('jwt', {session: false}), getProduct)
     .delete(passport.authenticate('jwt', {session: false}), deleteProduct)
 Router.route('/buyBasket')
     .get(passport.authenticate('jwt', {session: false}), getBuy)

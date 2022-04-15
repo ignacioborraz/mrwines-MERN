@@ -41,7 +41,7 @@
   font-weight: bold !important;
 }
 .linkGeneral:hover {
-  color: rgb(178 18 52);
+  color: rgb(178 18 52) !important;
   background-color: rgba(255, 255, 255, 0.281);
   text-shadow: none;
   /* text-shadow: 0 0 10px #333, 0 0 10px #333, 0px 0px 10px #333; */

@@ -107,6 +107,17 @@
     border:1px solid #333;
     padding: .2rem .5rem;
 }
+.CartEmpty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin:10px;
+    border-radius:15px;
+    border:1px solid #333;
+    padding: 2rem;
+    font-weight: bold;
+}
 .img-carrito{
     height: 80px;
     object-fit: cover;
@@ -139,6 +150,9 @@
 .div4-products {
     font-size: 1.5rem;
 }
+.margin{
+    margin: 0 .5rem;
+}
 .custom-button-details {
     padding: .5rem;
     font-size: 1rem;
@@ -163,6 +177,12 @@
 }
 .icon-delete:hover {
     color: #b21234 !important;
+}
+.textDecorationBasket{
+    color: #b21234;
+}
+.textDecorationBasket:hover{
+    color: black;
 }
 
 @media  screen and (max-width:500px){

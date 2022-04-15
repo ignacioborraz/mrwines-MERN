@@ -78,14 +78,14 @@ function Padlet(props) {
     }
 
     return (
-      <div className="containerPadlet">
-      {props.user ?
-          (props.user.id === props.note.userTopic._id ? 
-            (<div className='padleTopic'>
-                <div>
-                    <img className="photoPadlet" alt={note.userTopic._id} src={note.userTopic.userPhoto} />
-                    <h2>{note.userTopic.userName}</h2>
-                </div>
+    <div className="containerPadlet">
+        <div>
+            <img className="photoPadlet" alt={note.userTopic._id} src={note.userTopic.userPhoto} />
+            <h2>{note.userTopic.userName}</h2>
+        </div>
+        {props.user ?
+            (props.user.id === props.note.userTopic._id ? 
+              (<div className='padleTopic'>
                 <div className="borderTop">
                     {newButton ? 
                     <>  
@@ -111,10 +111,6 @@ function Padlet(props) {
                 </div>
             </div>) : 
             (<div className='padleTopic'>
-                <div>
-                    <img className="photoPadlet" alt={note.userTopic.userName} src={note.userTopic.userPhoto} />
-                    <h2>{note.userTopic.userName}</h2>
-                </div>
                 <div className="borderTop">
                     <textarea className="textarea text-blog titleBlog" disabled value={note.title} />
                     <textarea className="textarea text-blog bodyBlog" disabled value={note.text} />

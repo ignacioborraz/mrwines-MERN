@@ -22,7 +22,7 @@ function Comments(props) {
     useEffect(() => {  
         props.getOneTopic(props.note._id)
             .then(res => setNote(...res))
-            console.log(note)
+            //console.log(note)
     }, [reload])
 
     async function toAdd(event) {
@@ -56,28 +56,29 @@ function Comments(props) {
     }
 
     return (
+        <>
         <div className='containerComments'>
             {note.comments?.map((comment) =>
                 (props.user ?
                     (props.user.id !== comment.userId._id ? 
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: 'black', border:'1px solid #333', borderRadius:'15px'}}>
+                        <Box key={comment._id} sx={{margin: '8px 0', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: 'black', border:'1px solid #333', borderRadius:'15px'}}>
                             <div>
                                 <img className="photoPadlet commentPhoto" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                                <Typography variant='subtitle1' sx={{width: '100%', padding: '8px', paddingTop: '0'}}>{comment.userId.userName}</Typography>
-                                <TextareaAutosize className='textarea textareaSize' variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px', maxRows:'12', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'5px'}}>{comment.comment}
+                                <Typography variant='h6' sx={{width: '100%'}}>{comment.userId.userName}</Typography>
+                                <TextareaAutosize className='textarea textareaSize' variant="subtitle2" disabled sx={{width: '100%', display: 'flex', padding: '8px', maxRows:'12', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'5px'}}>{comment.comment}
                                 </TextareaAutosize>
                             </Box>
                         </Box> 
                         :
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: '#333', border:'1px solid #333', borderRadius:'15px'}}>
+                        <Box key={comment._id} sx={{margin: '8px 0', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: '#333', border:'1px solid #333', borderRadius:'15px'}}>
                             <div>
                                 <img className="photoPadlet commentPhoto" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
                                 <Typography variant='h6' sx={{width: '100%', color: 'white'}}>{comment.userId.userName}</Typography>
-                                <Box sx={{width: '100%', display: 'flex', alignItems:'center', paddingTop: '8px', paddingLeft: '0'}}>
+                                <Box sx={{width: '100%', display: 'flex', alignItems:'center', paddingLeft: '0'}}>
                                     {newButton ? 
                                     <>
                                         <TextareaAutosize className='textarea textareaSize' maxRows='12' onChange={(event) => setComments(event.target.value)} defaultValue={comment.comment}/>
@@ -91,24 +92,28 @@ function Comments(props) {
                                 </Box>
                             </Box>
                         </Box>
-                    ) : 
+                    ) 
+                    : 
                     (
-                        <Box key={comment._id} sx={{margin: '16px', padding: '8px',  display: 'flex', color: 'black', backgroundColor: 'red'}}>
-                            <div className='divImgComment'>
-                                <img className="onlyimgComment" alt={comment.userId.name} src={comment.userId.userPhoto} />
+                        <Box key={comment._id} sx={{margin: '8px 0', padding: '8px',  display: 'flex', alignItems:'center', color: 'white', backgroundColor: 'black', border:'1px solid #333', borderRadius:'15px'}}>
+                            <div>
+                                <img className="photoPadlet commentPhoto" alt={comment.userId.name} src={comment.userId.userPhoto} />
                             </div>
                             <Box sx={{paddingLeft: '8px', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                                <Typography variant='h6' sx={{width: '100%', padding: '8px', paddingTop: '0'}} className='fredokaFont smallT'>{comment.userId.userName}</Typography>
-                                <Typography variant="subtitle2" sx={{width: '100%', display: 'flex', padding: '8px',  color: 'white', backgroundColor: 'black'}} className='fredokaFont'>{comment.comment}</Typography>
+                                <Typography variant='h6' sx={{width: '100%'}}>{comment.userId.userName}</Typography>
+                                <TextareaAutosize className='textarea textareaSize' variant="subtitle2" disabled sx={{width: '100%', display: 'flex', padding: '8px', maxRows:'12', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'5px'}}>{comment.comment}
+                                </TextareaAutosize>
                             </Box>
                         </Box> 
                     )
                 )
             )}
+        </div>
+        <div>
             {props.user ?
-                (<Box sx={{margin: '16px', padding: '8px', display: 'flex', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'15px'}}>
+                (<Box sx={{margin: '8px 0', padding: '8px', display: 'flex', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'15px'}}>
                     <div className='divImgComment2'>
-                        <img  className="photoPadlet commentPhoto" alt={props.user.name} src={props.user.userPhoto} />
+                        <img  className="photoPadlet commentPhoto" alt={props.user.userName} src={props.user.userPhoto} />
                     </div>
                     <Box sx={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                         <Box sx={{width: '100%', display: 'flex', alignItems:'center', paddingLeft: '8px', paddingRigth: '8px'}}>
@@ -118,10 +123,13 @@ function Comments(props) {
                     </Box>
                 </Box>
                 ) : (
-                    <LinkRouter to={'/signIn'}>log in to add a comment!</LinkRouter>
+                <Box sx={{margin: '8px 0', padding: '8px', display: 'flex', color: 'black', backgroundColor: 'white', border:'1px solid #333', borderRadius:'15px'}}>
+                    <h3><LinkRouter className='textDecorationNewComment' to={'/signIn'}>Log in</LinkRouter> to add a comment!</h3>
+                </Box>
                 )
             }
         </div>
+        </>
     )
 }
 

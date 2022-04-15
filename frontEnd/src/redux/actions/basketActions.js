@@ -26,8 +26,18 @@ const basketActions = {
         return async(dispatch, getState) => {
             const answer = await axios.get(urlMrWines+`api/basket`,{headers: {Authorization: "Bearer "+token}})
             dispatch({type:'GET_PRO', payload:answer.data.response.basket})
-            console.log(answer.data.response.basket)
+            //console.log(answer.data.response.basket)
             return answer.data.response.basket
+        }
+    },
+
+    getProduct: (id) => {
+        const token = localStorage.getItem('token')
+        return async(dispatch, getState) => {
+            const answer = await axios.get(urlMrWines+`api/basket/${id}`,{headers: {Authorization: "Bearer "+token}})
+            dispatch({type:'GET_ONE', payload:answer.data.response.basket})
+            console.log(answer.data.response.basket)
+            return (answer.data.response.basket)
         }
     },
 
@@ -42,8 +52,6 @@ const basketActions = {
     },
 
     deleteProduct: (id) => {
-        //console.log('ID ID ID ID ID ID ID ID ID ID')
-        //console.log(id)
         const token = localStorage.getItem('token')
         return async(dispatch, getState) => {
             try {
@@ -57,11 +65,10 @@ const basketActions = {
     },
 
     modifyProduct: (commentData) => {
-        console.log('ID ID ID ID ID ID ID ID ID ID')
-        console.log(commentData)
+        //console.log(commentData)
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const answer = await axios.put(urlMrWines+`api/basket`,{commentData},
+            const answer = await axios.put(urlMrWines+`api/basket`,{...commentData},
             {headers: {Authorization: "Bearer "+token}})
         dispatch({type: 'message', payload: {view: true, message: answer.data.message, success: answer.data.success}})
         return answer.data.response

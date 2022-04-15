@@ -47,7 +47,6 @@ const basketControllers = {
             })
         }
     },
-
     
     getUserBasket: async (req,res) => {
         let basket
@@ -60,6 +59,29 @@ const basketControllers = {
                 .populate("idUser", {email:1,userName:1})
                 //console.log('BASKET BASKET BASKET BASKET BASKET BASKET BASKET BASKET')
                 //console.log(basket)
+        } catch (err) {
+            error = err
+            console.log(error)
+        }
+        res.json({
+            response: error ? 'ERROR' : {basket},
+            success: error ? false:true,
+            error: error
+        })
+    },
+
+    getProduct: async (req,res) => {
+        //console.log(req.params.id)
+        let product = req.params.id
+        let idUser = req.user._id
+        let basket
+        let error = null
+        try {
+            basket = await Basket.find({idUser:idUser,_id:product})
+                .populate("idWine", {nameWine:1,price:1,photo:1,type:1,variety:1})
+                .populate("idUser", {email:1,userName:1})
+                console.log('PRODUCT PRODUCT PRODUCT PRODUCT PRODUCT PRODUCT PRODUCT PRODUCT')
+                console.log(basket)
         } catch (err) {
             error = err
             console.log(error)
