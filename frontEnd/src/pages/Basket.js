@@ -2,11 +2,14 @@ import React, {useEffect,useState} from 'react'
 import {connect} from "react-redux"
 import basketActions from '../redux/actions/basketActions'
 import "../styles/Carrito.css"
+import {Link as LinkRouter } from 'react-router-dom'
 
 function Basket(props) {
 
     const [reload, setReload] = useState(false)
     const [basket,setBasket] = useState([])
+    const [secret,setSecret] = useState("")
+    const [discount,setDiscount] = useState(0)
 
     useEffect(() => {
         props.getUserBasket()
@@ -14,21 +17,48 @@ function Basket(props) {
             //.then(response=>console.log(response))
     },[reload])
 
-    async function toModify(event) {
-      event.preventDefault()
-      const commentData = {
-          productId: event.target.id,
-          amount: event.target.value
-        }
-      await props.modifyProduct(commentData)
-      setReload(!reload)
-  }
+    let subtot = 0
+    basket.forEach(everyWine => {
+        subtot = subtot + everyWine.idWine.price*everyWine.amount
+    })
 
-  async function toDelete(event) {
+    async function toModify(event) {
+        event.preventDefault()
+        const commentData = {
+            productId: event.target.id,
+            amount: event.target.value
+        }
+        await props.modifyProduct(commentData)
+        setReload(!reload)
+    }
+
+    async function toDelete(event) {
         event.preventDefault()
         await props.deleteProduct(event.target.id)
         setReload(!reload)
-}
+    }
+
+    function discountFunction(event) {
+        event.preventDefault()
+        if (secret.trim()==="missWines") {
+            setDiscount(25)
+        } else if (secret.trim()==="lordWines") {
+            setDiscount(15)
+        } else {
+            setDiscount(0)
+        }
+    }
+
+    async function toChangeState(event) {
+        event.preventDefault()
+        const commentData = {}
+        basket.map(everyWine => {
+            commentData.productId = everyWine._id
+            commentData.buyState = "bought"
+            props.modifyState(commentData)
+        })
+        setReload(!reload)
+    }
 
     return (
         <div className="div-container0-carrito">
@@ -56,28 +86,35 @@ function Basket(props) {
                                 <span id={everyWine._id} onClick={toDelete} className="icon-delete"> ×</span>
                             </div>
                         </div> ) : (
-                            <div>START BUYING! - LINK A SHOP</div>
-                        )}
-                  </div>
-                  <div className="div-details-carrito">
-                      <div className="div1-details">
-                        <p>Do you have a discount code?</p>
-                      </div>
-                      <div className="div2-details">
-                        <div className="discount">
-                          <input className="custom-input-details" type="text"/>
-                          <button className="custom-button-details">Apply</button>
+                        <div className="CartEmpty">
+                            <p>Your cart is empty</p>
+                            <p>Choose a product in the <LinkRouter className="textDecorationBasket" to="/shop">shop!</LinkRouter></p>
                         </div>
+                        )
+                    }
+                </div>
+                <div className="div-details-carrito">
+                    <div className="div1-details">
+                        <p>Do you have a discount code?</p>
+                    </div>
+                    <div className="div2-details">
+                    <div className="discount">
+                        <input className="custom-input-details" type="text" onChange={event => setSecret(event.target.value)}/>
+                        <button className="custom-button-details" onClick={discountFunction}>Apply</button>
+                    </div>
                     </div>
                     <div className="div3-details">
-                        <p>Subtotal: $1500,00</p>
+                        <p>Subtotal: {subtot} USD</p>
+                    </div>
+                    <div className="div3-details">
+                        <p>Discount: {discount} %</p>
                     </div>
                     <div className="div4-details">
-                        <p>Total: $3000,00</p>
+                        <p>Total: {discount>0 ? subtot*(100-discount)/100 : subtot} USD</p>
                     </div>
                     <div className="div5-details">
-                        <button className="btn-basket">Checkout</button>
-                        <button className="btn-basket">Keep buying</button>
+                        <button className="btn-basket" onClick={toChangeState}>Checkout</button>
+                        <LinkRouter className="btn-basket" to="/shop">Keep buying</LinkRouter>
                     </div>
                 </div>
             </div>
@@ -89,7 +126,8 @@ const mapDispatchToProps = {
   addProduct: basketActions.addProduct,
   modifyProduct: basketActions.modifyProduct,
   deleteProduct: basketActions.deleteProduct,
-  getUserBasket: basketActions.getUserBasket
+  getUserBasket: basketActions.getUserBasket,
+  modifyState: basketActions.modifyState
 }
 
 const mapStateToProps = (state) => {

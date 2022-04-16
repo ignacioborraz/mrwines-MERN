@@ -132,17 +132,17 @@ const basketControllers = {
     },
 
     modifyProduct: async (req,res) => {
-        console.log('REQ BODY REQ BODY REQ BODY REQ BODY REQ BODY')
-        console.log(req.body)
+        //console.log('REQ BODY REQ BODY REQ BODY REQ BODY REQ BODY')
+        //console.log(req.body)
         const {productId,amount} = req.body
-        console.log(amount)
+        //console.log(amount)
         const user = req.user._id
         try {
             const modifyBasket = await Basket
             .findOneAndUpdate({"_id": productId}, {$set:{
                 "amount": amount}}, {new: true})
-                console.log('MODIFYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
-                console.log(modifyBasket)
+                //console.log('MODIFYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
+                //console.log(modifyBasket)
             res.json({success: true,
                 response: {modifyBasket},
                 message: "the product has been modified"})
@@ -151,6 +151,29 @@ const basketControllers = {
             console.log(error)
             res.json({ success: true,
                 message: "sorry! we couldn't modify the product, please try again!" })
+        }
+    },
+
+    modifyState: async (req,res) => {
+        console.log('REQ BODY REQ BODY REQ BODY REQ BODY REQ BODY')
+        console.log(req.body)
+        const {productId,buyState} = req.body
+        console.log(buyState)
+        const user = req.user._id
+        try {
+            const modifyBasket = await Basket
+            .findOneAndUpdate({"_id": productId}, {$set:{
+                "buyState": buyState}}, {new: true})
+                console.log('MODIFYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
+                console.log(modifyBasket)
+            res.json({success: true,
+                response: {modifyBasket},
+                message: "check the email to finalize the purchase"})
+        }
+        catch (error) {
+            console.log(error)
+            res.json({ success: true,
+                message: "sorry! we couldn't modify the state, please try again!" })
         }
     }
 }

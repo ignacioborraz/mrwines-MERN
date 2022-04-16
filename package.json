@@ -25,4 +25,5 @@
         "dev": "nodemon server.js",
         "herocu-postbuild": "cd frontEnd && npm install && npm run build"
     }
+
 }

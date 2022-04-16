@@ -9,7 +9,7 @@ import "../styles/Shop.css"
 
 function CardWineShop(props) {
 
-    console.log(props)
+    //console.log(props)
 
     const [reload, setReload] = useState(false)
     const [basket,setBasket] = useState([])
@@ -28,7 +28,7 @@ function CardWineShop(props) {
 
     async function toAdd(event) {
         const idWine = event.target.value
-        console.log(idWine)
+        //console.log(idWine)
         await props.addProduct(idWine)
         setReload(!reload)
     }

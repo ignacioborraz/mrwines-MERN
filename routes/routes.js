@@ -34,7 +34,7 @@ Router.route('/stock/:id')
     .put(modifyStockWine)
 
 
-const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld,getProduct} = require('../controllers/basketControlers')
+const {addProduct,modifyProduct,deleteProduct,getUserBasket,getBuy,getOld,getProduct,modifyState} = require('../controllers/basketControlers')
 
 Router.route('/basket')
     .get(passport.authenticate('jwt', {session: false}), getUserBasket)
@@ -44,7 +44,8 @@ Router.route("/basket/:id")
     .get(passport.authenticate('jwt', {session: false}), getProduct)
     .delete(passport.authenticate('jwt', {session: false}), deleteProduct)
 Router.route('/buyBasket')
-    .get(passport.authenticate('jwt', {session: false}), getBuy)
+    .get(passport.authenticate('jwt', {session: false}), getBuy)    
+    .put(passport.authenticate('jwt', {session: false}), modifyState)
 Router.route('/oldBasket')
     .get(passport.authenticate('jwt', {session: false}), getOld)
 

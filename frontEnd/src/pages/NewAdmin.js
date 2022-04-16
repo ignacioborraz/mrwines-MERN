@@ -31,7 +31,7 @@ function NewAdmin(props) {
 
     return (
         <div className="containerFormSign BgSignUp">
-            <h1 className=" title white signuptext">Sign up</h1>
+            <h1 className=" title white signuptext">New Admin</h1>
             <div className='signBody'>
                 <form onSubmit={handleSubmit} className='form'>
                     <div>

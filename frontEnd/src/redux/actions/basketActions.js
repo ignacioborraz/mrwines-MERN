@@ -73,6 +73,18 @@ const basketActions = {
         dispatch({type: 'message', payload: {view: true, message: answer.data.message, success: answer.data.success}})
         return answer.data.response
         }
+    },
+
+    modifyState: (commentData) => {
+        //console.log(commentData)
+        const token = localStorage.getItem('token')
+        return async (dispatch, getState) => {
+            const answer = await axios.put(urlMrWines+`api/buyBasket`,{...commentData},
+            {headers: {Authorization: "Bearer "+token}})
+        dispatch({type: 'message', payload: {view: true, message: answer.data.message, success: answer.data.success}})
+        console.log(answer.data.response)
+        return answer.data.response
+        }
     }
 
 }
