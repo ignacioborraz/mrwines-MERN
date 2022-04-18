@@ -41,7 +41,9 @@ const wineReducer = (state = initialState, action) => {
         case 'FIL_WINES':
             return {
                 ...state,
-                filter: state.wines.filter(everyWine => everyWine.nameWine.toLowerCase().startsWith(action.payload.toLowerCase()))
+                filter: state.wines.filter(everyWine => everyWine.nameWine.toLowerCase().startsWith(action.payload.toLowerCase()) ||
+                everyWine.type.toLowerCase().startsWith(action.payload.toLowerCase()) ||
+                everyWine.variety.toLowerCase().startsWith(action.payload.toLowerCase()))
             }
         default:
             return state
