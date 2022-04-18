@@ -9,7 +9,7 @@ const userActions = {
         //el formulario debe tener los inputs de registro en una variable que se llame userData
         //chequeen el modelo para ver LOS CAMPOS REQUERIDOS
         //falta configurar la creacion de ADMIN
-        console.log(userData)
+        //console.log(userData)
         return async (dispatch, getState) => {
             const res = await axios.post(urlMrWines+'api/auth/newAdmin', {userData})
             console.log(res)
@@ -28,10 +28,10 @@ const userActions = {
         //el formulario debe tener los inputs de registro en una variable que se llame userData
         //chequeen el modelo para ver LOS CAMPOS REQUERIDOS
         //falta configurar la creacion de ADMIN
-        console.log(userData)
+        //console.log(userData)
         return async (dispatch, getState) => {
             const res = await axios.post(urlMrWines+'api/auth/signUp', {userData})
-            console.log(res)
+            //console.log(res)
             dispatch({ //despacho al reductor
                 type: 'message',
                 payload: {
@@ -50,7 +50,7 @@ const userActions = {
         console.log(userLogin)
         return async (dispatch, getState) => {
             const res = await axios.post(urlMrWines+'api/auth/logIn', {userLogin})
-            console.log(res)
+            //console.log(res)
             if(res.data.success) {
                 localStorage.setItem('token',res.data.response.token)
                 dispatch({

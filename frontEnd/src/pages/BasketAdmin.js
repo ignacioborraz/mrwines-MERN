@@ -90,11 +90,11 @@ function Basket(props) {
                                 <p className="custom-input-products">{everyWine.amount}</p>
                             </div>
                             {everyWine.buyState==="bought" ? (
-                                <button id={everyWine._id} className="btn-basket" onClick={changeToShip}>to ship</button>
+                                <button id={everyWine._id} className="btn-basket" onClick={changeToShip}>To ship</button>
                             ) : (everyWine.buyState==="toShip" ? (
-                                <button id={everyWine._id} className="btn-basket" onClick={changeToDel}>to deliver</button>
+                                <button id={everyWine._id} className="btn-basket" onClick={changeToDel}>To deliver</button>
                             ) : (
-                                <span className="btn-basket">delivered</span>
+                                <button className="btn-basket">Delivered</button>
                             ))}
                             
                         </div>)) : (

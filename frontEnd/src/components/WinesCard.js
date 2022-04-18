@@ -17,7 +17,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
         .then(response => setWine(response))
   },[])
 
-  console.log(wine)
+  //console.log(wine)
 
   return (
     <div className='cardTopWines'>

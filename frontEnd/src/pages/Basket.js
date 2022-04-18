@@ -76,7 +76,7 @@ function Basket(props) {
                                 <p>{everyWine.idWine.nameWine}</p>
                                 <p>{everyWine.idWine.type} - {everyWine.idWine.variety}</p>
                             </div>                           
-                            <div className="div3-products">
+                            <div className="div4-products">
                                 <input id={everyWine._id} className="custom-input-products" type="number" onChange={toModify}  defaultValue={everyWine.amount} min="1" max="10"/>
                             </div>
                             <div className="div4-products">
@@ -114,7 +114,7 @@ function Basket(props) {
                     </div>
                     <div className="div5-details">
                         <button className="btn-basket" onClick={toChangeState}>Checkout</button>
-                        <LinkRouter className="btn-basket" to="/shop">Keep buying</LinkRouter>
+                        <LinkRouter to="/shop"><button className="btn-basket">Keep buying</button></LinkRouter>
                     </div>
                 </div>
             </div>

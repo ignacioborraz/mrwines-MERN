@@ -108,7 +108,7 @@ function WineDetails(props) {
                 ) : (
                     <button className='btnShop' value={oneWine._id} onClick={toAdd}>Buy</button>
                 )}
-                <LinkRouter className="btn-basket" to="/shop">Keep buying</LinkRouter>
+                <LinkRouter to="/shop"><button className="btn-basket">Keep buying</button></LinkRouter>
             </> ) : (
                 <button className='btnShop'>Buy</button>
             )
