@@ -5,11 +5,23 @@ const urlMrWines = 'http://localhost:4000/'
 
 const basketActions = {
 
-    getBuy: () => {
+    getDelivered: () => {
         const token = localStorage.getItem('token')
         return async(dispatch, getState) => {
-            const answer = await axios.get(urlMrWines+`api/buyBasket`,{headers: {Authorization: "Bearer "+token}})
+            const answer = await axios.get(urlMrWines+`api/deliveredBasket`,{headers: {Authorization: "Bearer "+token}})
             dispatch({type:'GET_PRO', payload:answer.data.response.basket})
+            //console.log(answer.data.response.basket)
+            return answer.data.response.basket
+        }
+    },
+
+    getShip: () => {
+        const token = localStorage.getItem('token')
+        return async(dispatch, getState) => {
+            const answer = await axios.get(urlMrWines+`api/shipBasket`,{headers: {Authorization: "Bearer "+token}})
+            dispatch({type:'GET_PRO', payload:answer.data.response.basket})
+            //console.log(answer.data.response.basket)
+            return answer.data.response.basket
         }
     },
 

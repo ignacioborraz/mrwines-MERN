@@ -2,16 +2,39 @@ const Basket = require('../models/basket')
 
 const basketControllers = {
 
-    getBuy: async (req,res) => {
+    getDelivered: async (req,res) => {
         let basket
-        let state = "buy"
+        let state = "delivered"
         let error = null
         const admin = req.user._id
         const verifyAdmin = req.user.admin
         if (verifyAdmin) {
             try {
                 basket = await Basket.find({buyState:state})
-                    .populate("idWine", {nameWine:1,price:1,photo:1})
+                    .populate("idWine", {nameWine:1,type:1,price:1,photo:1})
+                    .populate("idUser", {email:1,userName:1})
+            } catch (err) {
+                error = err
+                console.log(error)
+            }
+            res.json({
+                response: error ? 'ERROR' : {basket},
+                success: error ? false:true,
+                error: error
+            })
+        }
+    },
+
+    getShip: async (req,res) => {
+        let basket
+        let state = "toShip"
+        let error = null
+        const admin = req.user._id
+        const verifyAdmin = req.user.admin
+        if (verifyAdmin) {
+            try {
+                basket = await Basket.find({buyState:state})
+                    .populate("idWine", {nameWine:1,type:1,price:1,photo:1})
                     .populate("idUser", {email:1,userName:1})
             } catch (err) {
                 error = err
@@ -154,7 +177,6 @@ const basketControllers = {
         console.log('REQ BODY REQ BODY REQ BODY REQ BODY REQ BODY')
         console.log(req.body)
         const {productId,buyState} = req.body
-        console.log(buyState)
         const user = req.user._id
         try {
             const modifyBasket = await Basket
@@ -164,7 +186,7 @@ const basketControllers = {
                 console.log(modifyBasket)
             res.json({success: true,
                 response: {modifyBasket},
-                message: "check the email to finalize the purchase"})
+                message: "done!"})
         }
         catch (error) {
             console.log(error)

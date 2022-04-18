@@ -13,6 +13,7 @@ import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Blog from "./pages/blog"
 import Basket from "./pages/Basket"
+import Baskets from "./pages/BasketAdmin"
 import NewAdmin from './pages/NewAdmin'
 
 import {connect} from 'react-redux'
@@ -43,7 +44,16 @@ function App(props) {
                         <Route path='/signIn' element={<SignIn />} /> <Route path='/signIn' element={<SignUp />} />
                     </>}
                     <Route path ="/signUp" element={<SignUp/>}/>
-                    <Route path ="/newAdmin" element={<NewAdmin/>}/>
+                    {props.user ?
+                    <>
+                        {(props.user.admin) ? <>
+                            <Route path ="/newAdmin" element={<NewAdmin/>} /> <Route path='/baskets' element={<Baskets />} />
+                        </> : <>
+                            <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} />
+                        </>}
+                    </> : <>
+                        <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} />
+                    </>}
                     <Route path ="/blog" element={<Blog/>}/>
                     <Route path="/" index element={<Home />} />
                 </Routes>

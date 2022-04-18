@@ -95,14 +95,21 @@ const NavBar = (props) => {
                         </Box>
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
-                        <span sx={{ my: 0, color: 'white'}} className="navLi">
-                           <LinkRouter className="linkGeneral" to="/basket"> <Badge/></LinkRouter>
-                        </span>
                         <Tooltip title='user menu'>
                             {props.user ?
+                            <>
+                                {props.user.admin ?
+                                    <>
+                                        <span>{props.user.userName}</span>
+                                    </> : <>
+                                        <span sx={{ my: 0, color: 'white'}} className="navLi">
+                                            <LinkRouter className="linkGeneral" to="/basket"> <Badge/></LinkRouter>
+                                        </span>
+                                    </>}
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                     <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />
                                 </IconButton>
+                            </>
                                 :
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                     <Avatar className="iconoNav" alt="Remy Sharp"  variant="rounded" />
@@ -122,9 +129,14 @@ const NavBar = (props) => {
                             {props.user ?
                                 <div> 
                                     {(props.user.admin===true) ? 
+                                        <>
+                                        <MenuItem onClick={handleCloseUserMenu} className="navLi">
+                                            <LinkRouter className="nav-linkUser" aria-current="page" to="/Baskets">Baskets</LinkRouter>
+                                        </MenuItem>
                                         <MenuItem onClick={handleCloseUserMenu} className="navLi">
                                             <LinkRouter className="nav-linkUser" aria-current="page" to="/NewAdmin">New Admin</LinkRouter>
-                                        </MenuItem> : 
+                                        </MenuItem> 
+                                        </> : 
                                         <span className='spanUser'>{props.user.userName}</span>
                                     }
                                     <MenuItem onClick={handleCloseUserMenu} className="navLi">

@@ -16,6 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function CustomizedBadges() {
+
   const [badge,setBadge] = useState([])
 
   const dispatch = useDispatch()
