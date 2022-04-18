@@ -15,10 +15,12 @@ import Blog from "./pages/blog"
 import Basket from "./pages/Basket"
 import Baskets from "./pages/BasketAdmin"
 import NewAdmin from './pages/NewAdmin'
+import Products from './pages/Products'
 
 import {connect} from 'react-redux'
 import userActions from './redux/actions/userActions'
 import Snackbar from "../src/components/Snackbar"
+
 
 function App(props) {
 
@@ -47,12 +49,12 @@ function App(props) {
                     {props.user ?
                     <>
                         {(props.user.admin) ? <>
-                            <Route path ="/newAdmin" element={<NewAdmin/>} /> <Route path='/baskets' element={<Baskets />} />
+                            <Route path ="/newAdmin" element={<NewAdmin/>} /> <Route path='/baskets' element={<Baskets />} /> <Route path='/products' element={<Products />} />
                         </> : <>
-                            <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} />
+                            <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} /> <Route path='/products' element={<Error404 />} />
                         </>}
                     </> : <>
-                        <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} />
+                        <Route path ="/newAdmin" element={<Error404 />} /> <Route path='/baskets' element={<Error404 />} /> <Route path='/products' element={<Error404 />} />
                     </>}
                     <Route path ="/blog" element={<Blog/>}/>
                     <Route path="/" index element={<Home />} />

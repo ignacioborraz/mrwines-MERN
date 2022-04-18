@@ -26,14 +26,14 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
                 <div className="card-div">
                   <img className='topWineImg' src={wine.photo} alt={wine._id} />
                   <div className="infoCard-div">
-                    <h2>{wine.nameWine}</h2>
-                    <h3>{wine.type}</h3>
-                    <h3 className='price'>{wine.price} USD</h3>
+                    <h3>{wine.nameWine}</h3>
+                    <h4>{wine.type}</h4>
+                    <h3 className='price'>U$D {wine.price}</h3>
                   </div>
                   <div className='btnShop-div'>
-                <LinkRouter to={`/wine/${wine._id}`}>
-                    <div className='btnShop'>Info</div>
-                </LinkRouter>
+                    <LinkRouter to={`/wine/${wine._id}`}>
+                      <button className='btnInfo'>Info</button>
+                    </LinkRouter>
                   </div>
                 </div>
               </div>

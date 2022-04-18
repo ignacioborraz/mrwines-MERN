@@ -134,6 +134,9 @@ const NavBar = (props) => {
                                             <LinkRouter className="nav-linkUser" aria-current="page" to="/Baskets">Baskets</LinkRouter>
                                         </MenuItem>
                                         <MenuItem onClick={handleCloseUserMenu} className="navLi">
+                                            <LinkRouter className="nav-linkUser" aria-current="page" to="/Products">Products</LinkRouter>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleCloseUserMenu} className="navLi">
                                             <LinkRouter className="nav-linkUser" aria-current="page" to="/NewAdmin">New Admin</LinkRouter>
                                         </MenuItem> 
                                         </> : 

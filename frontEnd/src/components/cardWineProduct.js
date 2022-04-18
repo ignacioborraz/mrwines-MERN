@@ -7,7 +7,7 @@ import basketActions from '../redux/actions/basketActions'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import "../styles/Shop.css"
 
-function CardWineShop(props) {
+function CardWineProduct(props) {
 
     //console.log(props)
 
@@ -26,18 +26,12 @@ function CardWineShop(props) {
     let data = props.search ? filterFromRedux : props.wines
     //console.log(data)
 
-    async function toAdd(event) {
+    async function toModifyStock(event) {
         const idWine = event.target.value
         //console.log(idWine)
         await props.addProduct(idWine)
         setReload(!reload)
     }
-    
-    useEffect(() => {
-        dispatch(basketActions.getUserBasket())
-            .then(response=>setBasket(response))
-            //.then(response=>console.log(response))
-    },[reload])
 
     return (
         <>
@@ -50,28 +44,14 @@ function CardWineShop(props) {
                             <h3>{everyWine.nameWine}</h3>
                             <h4>{everyWine.type}</h4>
                             <h4>{everyWine.variety}</h4>
+                            <h4>{everyWine.country}</h4>
+                            <h4>Year: {2022-everyWine.harvest}</h4>
+                            <h4>Stock: {2022-everyWine.stock.stock[0].amount}</h4>
                             <h3 className='price'>U$D {everyWine.price}</h3>
                         </div>
                         <div className='btnShop-div'>
-                        <LinkRouter to={`/wine/${everyWine._id}`}>
-                            <button className='btnShop'>Info</button>
-                        </LinkRouter>
-                        {props.user ? (
-                            <>
-                            {basket.length>0 ? (
-                                basket.find(product =>
-                                    (product.idWine._id===everyWine._id)) ? (
-                                        <LinkRouter to={`/basket`}><button className="btn-details cart-details"><ShoppingCartOutlinedIcon/></button></LinkRouter>
-                                    ) : (
-                                        <button className='btnShop' value={everyWine._id} onClick={toAdd}>Buy</button>
-                                    )
-                            ) : (
-                                <button className='btnShop' value={everyWine._id} onClick={toAdd}>Buy</button>
-                            )}
-                            </>
-                        ) : (
-                            <button className='btnShop'>Buy</button>
-                        )}
+                            <button className='btnShop'>edit</button>
+                            <button className='btnShop'>delete</button>
                         </div>
                     </div>
                 </div>
@@ -99,4 +79,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardWineShop)
+export default connect(mapStateToProps, mapDispatchToProps)(CardWineProduct)
