@@ -95,11 +95,10 @@ const NavBar = (props) => {
                         </Box>
                     {/* ////////////////////////// USER ICON ////////////////////////// */}
                     <Box sx={{ flexGrow: 0.008 }}>
-                        <Button sx={{ my: 0, color: 'white'}} className="navLi">
-                            {/* <LinkRouter className="linkGeneral" to="/basket"><ShoppingCartOutlinedIcon className='cart-nav'/></LinkRouter> */}
+                        <span sx={{ my: 0, color: 'white'}} className="navLi">
                            <LinkRouter className="linkGeneral" to="/basket"> <Badge/></LinkRouter>
-                        </Button>
-                        <Tooltip>
+                        </span>
+                        <Tooltip title='user menu'>
                             {props.user ?
                                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                                     <Avatar alt="Remy Sharp" className='logo' src={props.user.userPhoto} />

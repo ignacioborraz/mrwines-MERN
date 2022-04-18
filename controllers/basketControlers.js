@@ -27,14 +27,11 @@ const basketControllers = {
 
     getOld: async (req,res) => {
         let basket
-        let state = "old"
+        let state = "bought"
         let error = null
-        const admin = req.user._id
-        const verifyAdmin = req.user.admin
-        if (verifyAdmin) {
             try {
                 basket = await Basket.find({buyState:state})
-                    .populate("idWine", {nameWine:1,price:1,photo:1})
+                    .populate("idWine", {nameWine:1,type:1,price:1,photo:1})
                     .populate("idUser", {email:1,userName:1})
             } catch (err) {
                 error = err
@@ -45,7 +42,6 @@ const basketControllers = {
                 success: error ? false:true,
                 error: error
             })
-        }
     },
     
     getUserBasket: async (req,res) => {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-//const urlMrWines = 'http://localhost:4000/'
-const urlMrWines = 'https://mrwines.herokuapp.com/'
+const urlMrWines = 'http://localhost:4000/'
+//const urlMrWines = 'https://mrwines.herokuapp.com/'
 
 const basketActions = {
 
@@ -14,10 +14,11 @@ const basketActions = {
     },
 
     getOld: () => {
-        const token = localStorage.getItem('token')
         return async(dispatch, getState) => {
-            const answer = await axios.get(urlMrWines+`api/oldBasket`,{headers: {Authorization: "Bearer "+token}})
+            const answer = await axios.get(urlMrWines+`api/oldBasket`)
             dispatch({type:'GET_PRO', payload:answer.data.response.basket})
+            //console.log(answer.data.response.basket)
+            return answer.data.response.basket
         }
     },
 

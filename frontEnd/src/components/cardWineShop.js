@@ -61,13 +61,18 @@ function CardWineShop(props) {
                             <button className='btnShop'>Info</button>
                         </LinkRouter>
                         {props.user ? (
-                            (props.products.includes(everyWine._id)) ? (
-                                <LinkRouter to={`/wine/${everyWine._id}`}>
-                                    <span className='btnShop'><ShoppingCartOutlinedIcon/></span>
-                                </LinkRouter>    
+                            <>
+                            {basket.length>0 ? (
+                                basket.find(product =>
+                                    (product.idWine._id===everyWine._id)) ? (
+                                        <LinkRouter to={`/basket`}><button className="btn-details cart-details"><ShoppingCartOutlinedIcon/></button></LinkRouter>
+                                    ) : (
+                                        <button className='btnShop' value={everyWine._id} onClick={toAdd}>Buy</button>
+                                    )
                             ) : (
                                 <button className='btnShop' value={everyWine._id} onClick={toAdd}>Buy</button>
-                            )
+                            )}
+                            </>
                         ) : (
                             <button className='btnShop'>Buy</button>
                         )}

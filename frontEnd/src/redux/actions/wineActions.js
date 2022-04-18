@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-//const urlMrWines = 'http://localhost:4000/'
-const urlMrWines = 'https://mrwines.herokuapp.com/'
+const urlMrWines = 'http://localhost:4000/'
+//const urlMrWines = 'https://mrwines.herokuapp.com/'
 
 const wineActions = {
 
@@ -9,6 +9,7 @@ const wineActions = {
         return async(dispatch, getState) => {
             const answer = await axios.get(urlMrWines+`api/wines`)
             dispatch({type:'GET_WINES', payload:answer.data.response.wines})
+            return answer.data.response.wines
         }
     },
 
@@ -24,6 +25,7 @@ const wineActions = {
             try {
                 const answer = await axios.get(urlMrWines+`api/wines/${id}`)
                 dispatch({type:'ONE_WINE', payload:answer.data.response.wines})
+                return answer.data.response.wines
             }catch (err) {
                 console.log(err)
             }

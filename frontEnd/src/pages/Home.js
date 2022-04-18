@@ -1,20 +1,25 @@
+import React from 'react'
 //import {Link as LinkRouter} from "react-router-dom"
 import WinesCard from "../components/WinesCard"
 import '../styles/styles.css'
 
-export default function Home () {
+export default function Home (props) {
+
     return (
         <div className="home-container">
             <div className='home topHome'>
                 <div className="logoTitle-div">
-                    <img className="logoHome" src={process.env.PUBLIC_URL+"logoB.png"}/>
+                    <img className="logoHome" src={process.env.PUBLIC_URL+"logoB.png"} alt='logo'/>
                     <h1 className='title slogan'>Feel the taste of the vines</h1>
                 </div>
             </div>
             <div className='home bestWines'>
                 <h1 className="title white">OUR TOP</h1>
                 <div className="topFiveDiv">
-                    <WinesCard/>
+                    <WinesCard idWine='625898a8d76ba6a836c98f02' />
+                    <WinesCard idWine='625898a8d76ba6a836c98f0e' />
+                    <WinesCard idWine='625898a8d76ba6a836c98f21' />
+                    <WinesCard idWine='625898a8d76ba6a836c98f30' />
                 </div>
             </div>
             <div className='home aboutUs'>
@@ -24,4 +29,3 @@ export default function Home () {
         </div>
     )
 }
-

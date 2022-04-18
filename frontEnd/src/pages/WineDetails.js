@@ -4,20 +4,36 @@ import {useParams} from 'react-router-dom'
 import "../styles/WineDetails.css"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import {useDispatch, useSelector} from 'react-redux'
+import {connect} from "react-redux"
 import wineActions from '../redux/actions/wineActions'
+import basketActions from '../redux/actions/basketActions'
 
 
-function WineDetails() {
+function WineDetails(props) {
 
+  const [reload, setReload] = useState(false)
+  const [basket,setBasket] = useState([])
   const {id} = useParams()
   const dispatch = useDispatch()
 
   useEffect(() => {
       dispatch(wineActions.oneWine(id))
-  },[])
+  },[reload])
 
   const oneWine = useSelector(store => store.wineReducer.onlyWine)
-  console.log(oneWine)
+  //console.log(oneWine)
+
+  async function toAdd(event) {
+      const idWine = event.target.value
+      //console.log(idWine)
+      await props.addProduct(idWine)
+      setReload(!reload)
+  }
+
+  useEffect(() => {
+    props.getUserBasket()
+        .then(response=>setBasket(response))
+  },[reload])
 
   return (
     <div className="details-container">
@@ -40,10 +56,10 @@ function WineDetails() {
                 <nav className="accordion arrows">
                   <input type="radio" name="accordion" id="cb1" />
                   <section className="box">
-                    <label className="box-title" for="cb1">
+                    <label className="box-title" htmlFor="cb1">
                       Description
                     </label>
-                    <label className="box-close" for="acc-close"></label>
+                    <label className="box-close" htmlFor="acc-close"></label>
                     <div className="box-content">
                       <style type="text/css"></style>
                       <div id="global">
@@ -51,12 +67,12 @@ function WineDetails() {
                           <h4>Tasting notes:</h4>
                           <p className="text">COLOR: {oneWine.color}</p>
                           <p className="text">AROMA: {oneWine.smell}</p>
-                          <p className="text">PALATE: {oneWine.palate}</p>
+                          <p className="text">TASTE: {oneWine.palate}</p>
                           <p className="text">FOOD: {oneWine.food}</p>
                         </div>
                         <div className="text">
                           <h4>Origin:</h4>
-                          <p className="text">{oneWine.country} - {oneWine.harvest} years</p>
+                          <p className="text">{oneWine.country} - {2022-oneWine.harvest}</p>
                         </div>
                       </div>
                     </div>
@@ -80,14 +96,38 @@ function WineDetails() {
           </div>
         </div>
         <div className = "counterDiv-details">
-            <div className="productCounter-details">
-              <input className="input-customised" type="number" placeholder='0' min="1" max="10" step="1"/>
-            </div>
-            <LinkRouter to={`/basket`}><button className="btn-details cart-details"><ShoppingCartOutlinedIcon/></button></LinkRouter>
+        {props.user ? (
+            <>
+                {basket.length>0 ? (
+                    basket.find(product =>
+                        (product.idWine._id===oneWine._id)) ? (
+                            <LinkRouter to={`/basket`}><button className="btn-details cart-details"><ShoppingCartOutlinedIcon/></button></LinkRouter>
+                        ) : (
+                            <button className='btnShop' value={oneWine._id} onClick={toAdd}>Buy</button>
+                        )
+                ) : (
+                    <button className='btnShop' value={oneWine._id} onClick={toAdd}>Buy</button>
+                )}
+                <LinkRouter className="btn-basket" to="/shop">Keep buying</LinkRouter>
+            </> ) : (
+                <button className='btnShop'>Buy</button>
+            )
+        }
         </div>
       </div>
     </div>
   );
 }
 
-export default WineDetails;
+const mapDispatchToProps = {
+  getUserBasket: basketActions.getUserBasket,
+  addProduct: basketActions.addProduct
+}
+
+const mapStateToProps = (state) => {
+  return {
+      user: state.userReducer.user
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WineDetails)

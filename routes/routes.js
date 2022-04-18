@@ -47,7 +47,7 @@ Router.route('/buyBasket')
     .get(passport.authenticate('jwt', {session: false}), getBuy)    
     .put(passport.authenticate('jwt', {session: false}), modifyState)
 Router.route('/oldBasket')
-    .get(passport.authenticate('jwt', {session: false}), getOld)
+    .get(getOld)
 
 
 
